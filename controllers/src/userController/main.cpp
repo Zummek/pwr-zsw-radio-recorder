@@ -14,12 +14,4 @@ void setup()
 
 void loop()
 {
-  Wire.beginTransmission(WireAddresses::audioController);
-  Wire.write(WireCommands::audioController::startRecording);
-  Wire.endTransmission();
-  delay(2000);
-  Wire.beginTransmission(WireAddresses::audioController);
-  Wire.write(WireCommands::audioController::stopRecording);
-  Wire.endTransmission();
-  delay(2000);
 }

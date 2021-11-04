@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include <AppWire.h>
+#include "AppWire.h"
+#include "AppRadio.h"
 
 void setup()
 {
@@ -10,8 +11,12 @@ void setup()
 
   // Setup the I2C Bus as Master
   Wire.begin();
+
+  AppRadio::init();
 }
 
 void loop()
 {
+  AppRadio::radio.checkRDS();
+  delay(50);  // TODO: temporary delay to avoid overflow
 }

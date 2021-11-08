@@ -432,6 +432,12 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="+5V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="+3V3" urn="urn:adsk.eagle:symbol:26950/1" library_version="1">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND" urn="urn:adsk.eagle:component:26954/1" prefix="GND" library_version="1">
@@ -451,6 +457,19 @@ Each pin can provide or receive a maximum of 40 mA and has an internal pull-up r
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="+5V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="+3V3" urn="urn:adsk.eagle:component:26981/1" prefix="+3V3" library_version="1">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="+3V3" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -4988,6 +5007,246 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="RDA">
+<description>RDA</description>
+<packages>
+<package name="RDA">
+<rectangle x1="0" y1="-12" x2="11" y2="0" layer="21"/>
+<smd name="SDA" x="0" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="SCL" x="0" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="N/C" x="0" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="N/C2" x="0" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="VCC" x="0" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+<smd name="ANT" x="11" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="RCK" x="11" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="L" x="11" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="R" x="11" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="GND" x="11" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="RDA">
+<rectangle x1="0" y1="-16" x2="16" y2="0" layer="94"/>
+<pin name="SDA" x="-4" y="-2" length="middle"/>
+<pin name="SCL" x="-4" y="-5" length="middle"/>
+<pin name="N/C" x="-4" y="-8" length="middle" direction="pas"/>
+<pin name="N/C2" x="-4" y="-11" length="middle" direction="pas"/>
+<pin name="VCC" x="-4" y="-14" length="middle" direction="pwr"/>
+<pin name="ANT" x="20" y="-2" length="middle" direction="in" rot="R180"/>
+<pin name="RCK" x="20" y="-5" length="middle" rot="R180"/>
+<pin name="L" x="20" y="-8" length="middle" direction="out" rot="R180"/>
+<pin name="R" x="20" y="-11" length="middle" direction="out" rot="R180"/>
+<pin name="GND" x="20" y="-14" length="middle" direction="sup" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="RDA">
+<gates>
+<gate name="G$1" symbol="RDA" x="-10.16" y="15.24"/>
+</gates>
+<devices>
+<device name="" package="RDA">
+<connects>
+<connect gate="G$1" pin="ANT" pad="ANT"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="L" pad="L"/>
+<connect gate="G$1" pin="N/C" pad="N/C"/>
+<connect gate="G$1" pin="N/C2" pad="N/C2"/>
+<connect gate="G$1" pin="R" pad="R"/>
+<connect gate="G$1" pin="RCK" pad="RCK"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="discrete" urn="urn:adsk.eagle:library:211">
+<description>Discrete devices (Antenna, Arrrester, Thermistor)</description>
+<packages>
+<package name="PAD-01" urn="urn:adsk.eagle:footprint:12919/1" library_version="2">
+<description>&lt;b&gt;PAD&lt;/b&gt;</description>
+<circle x="0" y="0" radius="0.889" width="0.762" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.3208" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-1.27" y="3.048" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="PAD-01" urn="urn:adsk.eagle:package:12928/1" type="box" library_version="2">
+<description>PAD</description>
+<packageinstances>
+<packageinstance name="PAD-01"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="ANTENNA" urn="urn:adsk.eagle:symbol:12918/1" library_version="2">
+<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="1.27" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="0" y="-5.08" visible="off" length="short" direction="out" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ANTENNA" urn="urn:adsk.eagle:component:12934/2" prefix="ANT" uservalue="yes" library_version="2">
+<description>&lt;b&gt;Antenna&lt;/b&gt;</description>
+<gates>
+<gate name="A" symbol="ANTENNA" x="0" y="10.16"/>
+</gates>
+<devices>
+<device name="" package="PAD-01">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:12928/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="11" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="Audio Connectors" urn="urn:adsk.eagle:library:16251796">
+<description>&lt;h3&gt; PCBLayout.com - Frequently Used &lt;i&gt;Audio Connectors&lt;/i&gt;&lt;/h3&gt;
+
+Visit us at &lt;a href="http://www.PCBLayout.com"&gt;PCBLayout.com&lt;/a&gt; for quick and hassle-free PCB Layout/Manufacturing ordering experience.
+&lt;BR&gt;
+&lt;BR&gt;
+This library has been generated by our experienced pcb layout engineers using current IPC and/or industry standards. We &lt;b&gt;believe&lt;/b&gt; the content to be accurate, complete and current. But, this content is provided as a courtesy and &lt;u&gt;user assumes all risk and responsiblity of it's usage&lt;/u&gt;.
+&lt;BR&gt;
+&lt;BR&gt;
+Feel free to contact us at &lt;a href="mailto:Support@PCBLayout.com"&gt;Support@PCBLayout.com&lt;/a&gt; if you have any questions/concerns regarding any of our content or services.</description>
+<packages>
+<package name="SJ-2523-SMT-TR" urn="urn:adsk.eagle:footprint:16225676/2" library_version="1">
+<wire x1="-5.25" y1="2.5" x2="-5.25" y2="-2" width="0.127" layer="51"/>
+<wire x1="-5.25" y1="-2" x2="-5.25" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="-5.25" y1="-2.5" x2="6.75" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="6.75" y1="-2.5" x2="6.75" y2="2.5" width="0.127" layer="51"/>
+<wire x1="6.75" y1="2.5" x2="-5.25" y2="2.5" width="0.127" layer="51"/>
+<wire x1="-5.25" y1="2.5" x2="-6.75" y2="2.5" width="0.127" layer="51"/>
+<wire x1="-6.75" y1="2.5" x2="-6.75" y2="-2" width="0.127" layer="51"/>
+<wire x1="-6.75" y1="-2" x2="-5.25" y2="-2" width="0.127" layer="51"/>
+<wire x1="-5.25" y1="2.5" x2="-6.75" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-6.75" y1="2.5" x2="-6.75" y2="-2" width="0.127" layer="21"/>
+<wire x1="-6.75" y1="-2" x2="-5.25" y2="-2" width="0.127" layer="21"/>
+<wire x1="7.6" y1="-4.95" x2="4.7" y2="-4.95" width="0.05" layer="39"/>
+<wire x1="4.7" y1="-4.95" x2="4.7" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="4.7" y1="-2.75" x2="-2.1" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="-5.5" y1="-2.25" x2="-7" y2="-2.25" width="0.05" layer="39"/>
+<wire x1="-7" y1="-2.25" x2="-7" y2="2.75" width="0.05" layer="39"/>
+<wire x1="-5.5" y1="2.75" x2="-2.3" y2="2.75" width="0.05" layer="39"/>
+<wire x1="-2.3" y1="2.75" x2="-2.3" y2="4.95" width="0.05" layer="39"/>
+<wire x1="-2.3" y1="4.95" x2="0.6" y2="4.95" width="0.05" layer="39"/>
+<wire x1="0.6" y1="4.95" x2="0.6" y2="2.75" width="0.05" layer="39"/>
+<wire x1="0.6" y1="2.75" x2="7" y2="2.75" width="0.05" layer="39"/>
+<wire x1="-5.25" y1="2.5" x2="-5.25" y2="-2" width="0.127" layer="21"/>
+<wire x1="-5.25" y1="-2" x2="-5.25" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-5.5" y1="2.75" x2="-7" y2="2.75" width="0.05" layer="39"/>
+<wire x1="-2.1" y1="-2.75" x2="-2.1" y2="-4.95" width="0.05" layer="39"/>
+<wire x1="-2.1" y1="-4.95" x2="-5" y2="-4.95" width="0.05" layer="39"/>
+<wire x1="-5" y1="-4.95" x2="-5" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="-5" y1="-2.75" x2="-5.5" y2="-2.75" width="0.05" layer="39"/>
+<wire x1="-5.5" y1="-2.75" x2="-5.5" y2="-2.25" width="0.05" layer="39"/>
+<wire x1="-5.25" y1="2.5" x2="-2.26" y2="2.5" width="0.127" layer="21"/>
+<wire x1="0.57" y1="2.5" x2="6.75" y2="2.5" width="0.127" layer="21"/>
+<wire x1="6.75" y1="2.5" x2="6.75" y2="-1.9" width="0.127" layer="21"/>
+<wire x1="4.77" y1="-2.5" x2="-2.13" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-5.25" y1="-2.5" x2="-4.94" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="7" y1="2.75" x2="7" y2="-1.85" width="0.05" layer="39"/>
+<wire x1="7" y1="-1.85" x2="7.6" y2="-1.85" width="0.05" layer="39"/>
+<wire x1="7.6" y1="-1.85" x2="7.6" y2="-4.95" width="0.05" layer="39"/>
+<text x="-6.768140625" y="5.45193125" size="1.27231875" layer="25">&gt;NAME</text>
+<text x="-6.12091875" y="-7.3342" size="1.27158125" layer="27">&gt;VALUE</text>
+<smd name="1" x="-3.55" y="-3.3" dx="2.4" dy="2.8" layer="1"/>
+<smd name="2" x="6.15" y="-3.45" dx="2.4" dy="2.5" layer="1"/>
+<smd name="3" x="-0.85" y="3.3" dx="2.4" dy="2.8" layer="1"/>
+<hole x="-2.25" y="0" drill="1"/>
+<hole x="3.75" y="0" drill="1"/>
+<circle x="-3.75" y="-5.5" radius="0.1" width="0.6096" layer="21"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="SJ-2523-SMT-TR" urn="urn:adsk.eagle:package:16225688/4" type="model" library_version="1">
+<packageinstances>
+<packageinstance name="SJ-2523-SMT-TR"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="SJ-2523-SMT-TR" urn="urn:adsk.eagle:symbol:16233509/2" library_version="1">
+<text x="-4.44991875" y="6.86325" size="1.77915" layer="95">&gt;NAME</text>
+<text x="-4.44648125" y="-9.01888125" size="1.77835" layer="96">&gt;VALUE</text>
+<wire x1="7.62" y1="-6.35" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="6.35" width="0.254" layer="94"/>
+<wire x1="7.62" y1="6.35" x2="-4.445" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="6.35" x2="-4.445" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="-6.35" x2="7.62" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="1.5875" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="1.5875" y1="1.27" x2="0.635" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="3.302" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="3.302" y1="-5.08" x2="2.3495" y2="-3.81" width="0.1524" layer="94"/>
+<wire x1="2.3495" y1="-3.81" x2="1.397" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-1.905" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-1.905" y1="5.08" x2="-1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.905" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="-5.08" x2="-2.54" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<pin name="TIP" x="12.7" y="-5.08" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="RING" x="12.7" y="2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="SLEEVE" x="12.7" y="5.08" visible="pad" length="middle" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SJ-2523-SMT-TR" urn="urn:adsk.eagle:component:16233521/3" prefix="J" library_version="1">
+<description>&lt;h3&gt; CONN JACK STEREO 2.5MM SMD R/A &lt;/h3&gt;
+&lt;BR&gt;
+&lt;a href="https://www.cuidevices.com/product/resource/sj-252x-smt.pdf"&gt; Manufacturer's datasheet&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="SJ-2523-SMT-TR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SJ-2523-SMT-TR">
+<connects>
+<connect gate="G$1" pin="RING" pad="3"/>
+<connect gate="G$1" pin="SLEEVE" pad="1"/>
+<connect gate="G$1" pin="TIP" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:16225688/4"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="CREATED_BY" value="PCBLayout.com" constant="no"/>
+<attribute name="DIGIKEY_PN" value="CP-2523SJTR-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="CUI Devices" constant="no"/>
+<attribute name="MPN" value="SJ-2523-SMT-TR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5001,6 +5260,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <schematic_group name="I2C"/>
 <schematic_group name="USER_CONTROLLER"/>
 <schematic_group name="AUDIO_CONTOLLER"/>
+<schematic_group name="RADIO_MODULE"/>
 </groups>
 <parts>
 <part name="ARDUINO_NANO_USER_CONTROLLER" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device=""/>
@@ -5012,6 +5272,11 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="4.7k"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="4.7k"/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="U$1" library="RDA" deviceset="RDA" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="ANT1" library="discrete" library_urn="urn:adsk.eagle:library:211" deviceset="ANTENNA" device="" package3d_urn="urn:adsk.eagle:package:12928/1"/>
+<part name="J2" library="Audio Connectors" library_urn="urn:adsk.eagle:library:16251796" deviceset="SJ-2523-SMT-TR" device="" package3d_urn="urn:adsk.eagle:package:16225688/4"/>
+<part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5049,6 +5314,21 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="P+1" gate="1" x="0" y="119.38" smashed="yes" grouprefs="I2C">
 <attribute name="VALUE" x="2.54" y="121.92" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="U$1" gate="G$1" x="63.5" y="124.46" smashed="yes" grouprefs="RADIO_MODULE"/>
+<instance part="GND3" gate="1" x="91.44" y="101.6" smashed="yes" grouprefs="RADIO_MODULE">
+<attribute name="VALUE" x="88.9" y="99.06" size="1.778" layer="96"/>
+</instance>
+<instance part="ANT1" gate="A" x="93.98" y="134.62" smashed="yes" grouprefs="RADIO_MODULE">
+<attribute name="NAME" x="91.44" y="135.89" size="1.778" layer="95"/>
+<attribute name="VALUE" x="96.52" y="129.54" size="1.778" layer="96"/>
+</instance>
+<instance part="J2" gate="G$1" x="114.3" y="116.078" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
+<attribute name="NAME" x="118.74991875" y="109.21475" size="1.77915" layer="95" rot="R180"/>
+<attribute name="VALUE" x="118.74648125" y="125.09688125" size="1.77835" layer="96" rot="R180"/>
+</instance>
+<instance part="+3V1" gate="G$1" x="53.34" y="101.6" smashed="yes" rot="R180">
+<attribute name="VALUE" x="50.8" y="99.06" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5069,6 +5349,12 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="15.24" y1="109.22" x2="20.32" y2="109.22" width="0.1524" layer="91" grouprefs="I2C"/>
 <label x="20.32" y="109.22" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SCL"/>
+<wire x1="59.5" y1="119.46" x2="53.34" y2="119.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="53.34" y1="119.46" x2="53.34" y2="119.38" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<label x="53.34" y="119.38" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -5086,6 +5372,11 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="15.24" y1="101.6" x2="20.32" y2="101.6" width="0.1524" layer="91" grouprefs="I2C"/>
 <label x="20.32" y="101.6" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="SDA"/>
+<wire x1="59.5" y1="122.46" x2="53.34" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<label x="53.34" y="122.428" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -5099,6 +5390,17 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="GND@2"/>
 <wire x1="129.54" y1="76.2" x2="129.54" y2="63.5" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
 <wire x1="129.54" y1="63.5" x2="119.38" y2="63.5" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="83.5" y1="110.46" x2="91.44" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<pinref part="J2" gate="G$1" pin="SLEEVE"/>
+<wire x1="91.44" y1="110.46" x2="91.44" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="101.6" y1="110.998" x2="91.44" y2="110.998" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="91.44" y1="110.998" x2="91.44" y2="110.49" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<junction x="91.44" y="110.49" grouprefs="RADIO_MODULE"/>
+<wire x1="91.44" y1="110.49" x2="91.44" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -5123,6 +5425,39 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="5.08" y1="109.22" x2="0" y2="109.22" width="0.1524" layer="91" grouprefs="I2C"/>
 <junction x="0" y="109.22" grouprefs="I2C"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="ANT1" gate="A" pin="1"/>
+<wire x1="93.98" y1="129.54" x2="93.98" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<pinref part="U$1" gate="G$1" pin="ANT"/>
+<wire x1="93.98" y1="122.46" x2="83.5" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="J2" gate="G$1" pin="TIP"/>
+<pinref part="U$1" gate="G$1" pin="L"/>
+<wire x1="101.6" y1="121.158" x2="96.52" y2="121.158" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="96.52" y1="121.158" x2="96.52" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="96.52" y1="116.46" x2="83.5" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="J2" gate="G$1" pin="RING"/>
+<pinref part="U$1" gate="G$1" pin="R"/>
+<wire x1="101.6" y1="113.538" x2="83.5" y2="113.538" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="83.5" y1="113.538" x2="83.5" y2="113.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+</segment>
+</net>
+<net name="+3V3" class="0">
+<segment>
+<wire x1="53.34" y1="104.14" x2="53.34" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<wire x1="53.34" y1="110.46" x2="59.5" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 </nets>

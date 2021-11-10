@@ -21,6 +21,9 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
   {
     freq = newFreq;
     radio.setBandFrequency(RADIO_BAND_FM, newFreq);
+    // TODO: temporary for testing without display
+    Serial.print("Set frequency: ");
+    Serial.println(newFreq);
   }
 }
 

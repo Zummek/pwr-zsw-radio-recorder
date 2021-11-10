@@ -2,6 +2,7 @@
 #include <Wire.h>
 #include "AppWire.h"
 #include "AppRadio.h"
+#include "Controllers.h"
 
 void setup()
 {
@@ -18,5 +19,6 @@ void setup()
 void loop()
 {
   AppRadio::radio.checkRDS();
-  delay(50);  // TODO: temporary delay to avoid overflow
+  Controllers::readAndProcess();
+  delay(50); // TODO: temporary delay to avoid overflow
 }

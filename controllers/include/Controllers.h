@@ -9,20 +9,24 @@
 
 #include <Arduino.h>
 
+struct AvgController
+{
+  int avgValue;
+  int totalValue;
+  int values[AVG_OF_N_SAMPLES];
+  int index;
+};
+
 class Controllers
 {
 public:
-  static int avgFreqPotVal;
+  static struct AvgController freqPot;
 
   static void readAndProcess();
   static void readFreqPot();
   static int getFormatedFreq();
 
 private:
-  static int freqPotValesTotal;
-  static int freqPotVales[AVG_OF_N_SAMPLES];
-  static int freqPotValuesIndex;
-
   static int round10(int num);
 };
 

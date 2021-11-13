@@ -1,10 +1,7 @@
 #include "Controllers.h"
 #include "AppRadio.h"
 
-int Controllers::avgFreqPotVal;
-int Controllers::freqPotValesTotal;
-int Controllers::freqPotVales[AVG_OF_N_SAMPLES];
-int Controllers::freqPotValuesIndex;
+struct AvgController Controllers::freqPot;
 
 void Controllers::readAndProcess()
 {
@@ -14,19 +11,19 @@ void Controllers::readAndProcess()
 
 void Controllers::readFreqPot()
 {
-  freqPotValesTotal -= freqPotVales[freqPotValuesIndex];
-  freqPotVales[freqPotValuesIndex] = analogRead(FREQ_POT_PIN);
-  freqPotValesTotal += freqPotVales[freqPotValuesIndex++];
+  freqPot.totalValue -= freqPot.values[freqPot.index];
+  freqPot.values[freqPot.index] = analogRead(FREQ_POT_PIN);
+  freqPot.totalValue += freqPot.values[freqPot.index++];
 
-  if (freqPotValuesIndex >= AVG_OF_N_SAMPLES)
-    freqPotValuesIndex = 0;
+  if (freqPot.index >= AVG_OF_N_SAMPLES)
+    freqPot.index = 0;
 
-  avgFreqPotVal = freqPotValesTotal / AVG_OF_N_SAMPLES;
+  freqPot.avgValue = freqPot.totalValue / AVG_OF_N_SAMPLES;
 }
 
 int Controllers::getFormatedFreq()
 {
-  int freq = map(avgFreqPotVal, FREQ_POT_MIN, FREQ_POT_MAX, 8750, 10800);
+  int freq = map(freqPot.avgValue, FREQ_POT_MIN, FREQ_POT_MAX, 8750, 10800);
 
   if (freq < 8750)
     freq = 8750;

@@ -13,14 +13,6 @@
 #include <Ewma.h>
 #include "AppRadio.h"
 
-struct AvgController
-{
-  int avgValue;
-  int totalValue;
-  int values[AVG_OF_N_SAMPLES];
-  int index;
-};
-
 class Controllers
 {
 public:

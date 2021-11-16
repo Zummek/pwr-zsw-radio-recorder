@@ -1,8 +1,6 @@
 #ifndef CONTROLLERS_h
 #define CONTROLLERS_h
 
-#define AVG_OF_N_SAMPLES 15
-
 #define FREQ_POT_PIN A1
 #define FREQ_POT_MIN 30
 #define FREQ_POT_MAX 1020
@@ -12,24 +10,20 @@
 #define VOLUME_POT_MAX 1020
 
 #include <Arduino.h>
-
-struct AvgController
-{
-  int avgValue;
-  int totalValue;
-  int values[AVG_OF_N_SAMPLES];
-  int index;
-};
+#include <Ewma.h>
+#include "AppRadio.h"
 
 class Controllers
 {
 public:
-  static struct AvgController freqPot;
-  static struct AvgController volumePot;
+  static int frequency;
+  static Ewma freqFilter;
+  static int volume;
+  static Ewma volumeFilter;
 
   static void readAndProcess();
-  static void readFreqPot();
-  static void readVolumePot();
+  static void readFrequency();
+  static void readVolume();
   static int getFormatedFreq();
   static int getFormatedVolume();
 

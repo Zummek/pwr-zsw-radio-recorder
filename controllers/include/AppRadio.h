@@ -13,10 +13,12 @@ public:
   static RDA5807M radio;
   static RDSParser rds;
   static RADIO_FREQ freq;
+  static int volume;
 
   static void init();
   static void getFrequency();
   static void setFrequency(RADIO_FREQ freq);
+  static void setVolume(int volume);
 
 private:
   static void _processRDS(uint16_t block1, uint16_t block2, uint16_t block3, uint16_t block4);

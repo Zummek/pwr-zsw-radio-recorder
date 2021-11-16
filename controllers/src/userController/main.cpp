@@ -13,6 +13,7 @@ void setup()
   // Setup the I2C Bus as Master
   Wire.begin();
 
+  Controllers::init();
   AppRadio::init();
 }
 

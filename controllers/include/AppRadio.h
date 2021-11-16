@@ -19,6 +19,7 @@ public:
   static void getFrequency();
   static void setFrequency(RADIO_FREQ freq);
   static void setVolume(int volume);
+  static void switchMute();
 
 private:
   static void _processRDS(uint16_t block1, uint16_t block2, uint16_t block3, uint16_t block4);

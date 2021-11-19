@@ -4,6 +4,12 @@ Ewma Controllers::freqFilter(0.05);
 int Controllers::frequency;
 Ewma Controllers::volumeFilter(0.5);
 int Controllers::volume;
+struct DebounceButton Controllers::muteBtn;
+
+void Controllers::init()
+{
+  pinMode(MUTE_BTN_PIN, INPUT);
+}
 
 void Controllers::readAndProcess()
 {
@@ -11,6 +17,8 @@ void Controllers::readAndProcess()
   AppRadio::setFrequency(getFormatedFreq());
   readVolume();
   AppRadio::setVolume(getFormatedVolume());
+  if (readMute())
+    AppRadio::switchMute();
 }
 
 void Controllers::readFrequency()
@@ -21,6 +29,34 @@ void Controllers::readFrequency()
 void Controllers::readVolume()
 {
   volume = volumeFilter.filter(analogRead(VOLUME_POT_PIN));
+}
+
+bool Controllers::readMute()
+{
+  int reading = digitalRead(MUTE_BTN_PIN);
+
+  if (reading != muteBtn.lastState)
+  {
+    muteBtn.lastDebounceTime = millis();
+  }
+
+  if ((millis() - muteBtn.lastDebounceTime) > muteBtn.debounceDelay)
+  {
+    if (reading != muteBtn.state)
+    {
+      muteBtn.state = reading;
+
+      if (muteBtn.state == HIGH)
+      {
+        muteBtn.lastState = reading;
+        return true;
+      }
+    }
+  }
+
+  muteBtn.lastState = reading;
+
+  return false;
 }
 
 int Controllers::getFormatedFreq()

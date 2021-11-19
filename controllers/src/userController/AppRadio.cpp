@@ -39,6 +39,13 @@ void AppRadio::setVolume(int newVolume)
   }
 }
 
+void AppRadio::switchMute()
+{
+  radio.setMute(!radio.getMute());
+  Serial.print("Switch mute: ");
+  Serial.println(radio.getMute());
+}
+
 void AppRadio::_processRDS(uint16_t block1, uint16_t block2, uint16_t block3, uint16_t block4)
 {
   rds.processData(block1, block2, block3, block4);

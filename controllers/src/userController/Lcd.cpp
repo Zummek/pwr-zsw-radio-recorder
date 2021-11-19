@@ -8,6 +8,7 @@ void Lcd::init()
   lcd.backlight();
 }
 
+<<<<<<< HEAD
 void Lcd::_write(uint8_t col, uint8_t row, char *text) {
   lcd.setCursor(col, row);
   lcd.print(text);
@@ -22,3 +23,9 @@ void Lcd::displayFrequency(int freq) {
 void Lcd::displayRDS(char *rds) {
   Lcd::_write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, rds);
 }
+=======
+void Lcd::write(uint8_t col, uint8_t row, char *text) {
+  lcd.setCursor(col, row);
+  lcd.print(text);
+}
+>>>>>>> Add Lcd class with simple interface

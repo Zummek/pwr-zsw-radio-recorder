@@ -3,6 +3,7 @@
 RDA5807M AppRadio::radio;
 RDSParser AppRadio::rds;
 RADIO_FREQ AppRadio::freq;
+int AppRadio::volume;
 
 void AppRadio::init()
 {
@@ -24,6 +25,17 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
     // TODO: temporary for testing without display
     Serial.print("Set frequency: ");
     Serial.println(newFreq);
+  }
+}
+
+void AppRadio::setVolume(int newVolume)
+{
+  if (volume != newVolume)
+  {
+    volume = newVolume;
+    radio.setVolume(newVolume);
+    Serial.print("Set volume: ");
+    Serial.println(newVolume);
   }
 }
 

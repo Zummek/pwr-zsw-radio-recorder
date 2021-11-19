@@ -19924,6 +19924,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <schematic_group name="AUDIO_CONTOLLER"/>
 <schematic_group name="RADIO_MODULE"/>
 <schematic_group name="POWER_FILTRATION"/>
+<schematic_group name="CONTROLLERS"/>
 </groups>
 <parts>
 <part name="ARDUINO_NANO_USER_CONTROLLER" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device=""/>
@@ -19940,11 +19941,15 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <part name="ANT1" library="discrete" library_urn="urn:adsk.eagle:library:211" deviceset="ANTENNA" device="" package3d_urn="urn:adsk.eagle:package:12928/1"/>
 <part name="J2" library="Audio Connectors" library_urn="urn:adsk.eagle:library:16251796" deviceset="SJ-2523-SMT-TR" device="" package3d_urn="urn:adsk.eagle:package:16225688/4"/>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="R3" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="B25V" package3d_urn="urn:adsk.eagle:package:22683/1" value="10K"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-024X044" package3d_urn="urn:adsk.eagle:package:23630/1" value="100n"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2,5-6E" package3d_urn="urn:adsk.eagle:package:23430/1" value="22u"/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="RW1" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="B25V" package3d_urn="urn:adsk.eagle:package:22683/1" value="10K"/>
+<part name="R5" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="B25V" package3d_urn="urn:adsk.eagle:package:22683/1" value="10K"/>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2,5-6E" package3d_urn="urn:adsk.eagle:package:23430/1" value="22u"/>
 </parts>
 <sheets>
 <sheet>
@@ -19997,10 +20002,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <instance part="+3V1" gate="G$1" x="53.34" y="101.6" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
 <attribute name="VALUE" x="50.8" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="1" x="40.64" y="38.1" smashed="yes" rot="MR0" grouprefs="USER_CONTROLLER">
-<attribute name="NAME" x="44.323" y="34.036" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="44.45" y="39.37" size="1.778" layer="96" rot="MR90"/>
-</instance>
 <instance part="C2" gate="G$1" x="-31.75" y="115.3668" smashed="yes" grouprefs="POWER_FILTRATION">
 <attribute name="NAME" x="-30.226" y="115.7478" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-30.226" y="110.6678" size="1.778" layer="96"/>
@@ -20014,6 +20015,24 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </instance>
 <instance part="GND4" gate="1" x="-26.67" y="100.1268" smashed="yes" grouprefs="POWER_FILTRATION">
 <attribute name="VALUE" x="-29.21" y="97.5868" size="1.778" layer="96"/>
+</instance>
+<instance part="RW1" gate="1" x="-53.34" y="48.26" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-48.133" y="43.434" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-48.006" y="50.038" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="R5" gate="1" x="-53.34" y="27.94" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-49.657" y="23.876" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-49.53" y="29.21" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="GND5" gate="1" x="-35.56" y="71.12" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-33.02" y="73.66" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P+5" gate="1" x="-40.64" y="71.12" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-38.1" y="73.66" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C3" gate="G$1" x="-62.23" y="54.8132" smashed="yes" rot="R180">
+<attribute name="NAME" x="-63.373" y="54.3306" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-63.373" y="59.4106" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -20070,9 +20089,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="GND@2"/>
 <wire x1="40.64" y1="76.2" x2="40.64" y2="60.96" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
 <wire x1="40.64" y1="60.96" x2="22.86" y2="60.96" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<pinref part="R3" gate="1" pin="E"/>
-<wire x1="40.64" y1="60.96" x2="40.64" y2="43.18" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<junction x="40.64" y="60.96" grouprefs="USER_CONTROLLER"/>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
@@ -20102,6 +20118,23 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="-31.75" y1="107.7468" x2="-26.67" y2="107.7468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <junction x="-26.67" y="107.7468" grouprefs="POWER_FILTRATION"/>
 </segment>
+<segment>
+<pinref part="R5" gate="1" pin="A"/>
+<wire x1="-53.34" y1="22.86" x2="-53.34" y2="20.32" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="-53.34" y1="20.32" x2="-35.56" y2="20.32" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-35.56" y1="20.32" x2="-35.56" y2="40.64" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="RW1" gate="1" pin="A"/>
+<wire x1="-35.56" y1="40.64" x2="-35.56" y2="63.5" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-35.56" y1="63.5" x2="-35.56" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-53.34" y1="43.18" x2="-53.34" y2="40.64" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-53.34" y1="40.64" x2="-35.56" y2="40.64" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-35.56" y="40.64" grouprefs="CONTROLLERS"/>
+<pinref part="C3" gate="G$1" pin="-"/>
+<wire x1="-62.23" y1="59.8932" x2="-62.23" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="-62.23" y1="63.5" x2="-35.56" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-35.56" y="63.5"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -20109,11 +20142,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="5V"/>
 <wire x1="45.72" y1="76.2" x2="45.72" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
 <wire x1="45.72" y1="55.88" x2="22.86" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<pinref part="R3" gate="1" pin="A"/>
-<wire x1="40.64" y1="33.02" x2="40.64" y2="30.48" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<wire x1="40.64" y1="30.48" x2="45.72" y2="30.48" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<wire x1="45.72" y1="30.48" x2="45.72" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<junction x="45.72" y="55.88" grouprefs="USER_CONTROLLER"/>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
@@ -20141,6 +20169,18 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="-26.67" y1="120.4468" x2="-21.59" y2="120.4468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <wire x1="-21.59" y1="120.4468" x2="-21.59" y2="117.9068" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <junction x="-26.67" y="120.4468" grouprefs="POWER_FILTRATION"/>
+</segment>
+<segment>
+<pinref part="P+5" gate="1" pin="+5V"/>
+<wire x1="-40.64" y1="68.58" x2="-40.64" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="R5" gate="1" pin="E"/>
+<wire x1="-40.64" y1="55.88" x2="-40.64" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-53.34" y1="33.02" x2="-53.34" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-53.34" y1="35.56" x2="-40.64" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="RW1" gate="1" pin="E"/>
+<wire x1="-53.34" y1="53.34" x2="-53.34" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-53.34" y1="55.88" x2="-40.64" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-40.64" y="55.88" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -20176,12 +20216,32 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="FREQ_POT" class="0">
+<segment>
+<pinref part="RW1" gate="1" pin="S"/>
+<wire x1="-58.42" y1="48.26" x2="-62.23" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-66.04" y="48.26" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<pinref part="C3" gate="G$1" pin="+"/>
+<wire x1="-62.23" y1="48.26" x2="-66.04" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-62.23" y1="52.2732" x2="-62.23" y2="48.26" width="0.1524" layer="91"/>
+<junction x="-62.23" y="48.26"/>
+</segment>
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A1"/>
+<wire x1="22.86" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
+<label x="30.48" y="38.1" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="VOLUME_POT" class="0">
+<segment>
+<pinref part="R5" gate="1" pin="S"/>
+<wire x1="-58.42" y1="27.94" x2="-63.5" y2="27.94" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-63.5" y="27.94" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+</segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A0"/>
-<pinref part="R3" gate="1" pin="S"/>
-<wire x1="22.86" y1="38.1" x2="35.56" y2="38.1" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
-<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A1"/>
+<wire x1="22.86" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
+<label x="30.48" y="35.56" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

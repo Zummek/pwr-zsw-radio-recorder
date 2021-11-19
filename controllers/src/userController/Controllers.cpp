@@ -1,32 +1,31 @@
 #include "Controllers.h"
-#include "AppRadio.h"
 
-int Controllers::avgFreqPotVal;
-int Controllers::freqPotValesTotal;
-int Controllers::freqPotVales[AVG_OF_N_SAMPLES];
-int Controllers::freqPotValuesIndex;
+Ewma Controllers::freqFilter(0.05);
+int Controllers::frequency;
+Ewma Controllers::volumeFilter(0.5);
+int Controllers::volume;
 
 void Controllers::readAndProcess()
 {
-  readFreqPot();
+  readFrequency();
   AppRadio::setFrequency(getFormatedFreq());
+  readVolume();
+  AppRadio::setVolume(getFormatedVolume());
 }
 
-void Controllers::readFreqPot()
+void Controllers::readFrequency()
 {
-  freqPotValesTotal -= freqPotVales[freqPotValuesIndex];
-  freqPotVales[freqPotValuesIndex] = analogRead(FREQ_POT_PIN);
-  freqPotValesTotal += freqPotVales[freqPotValuesIndex++];
+  frequency = freqFilter.filter(analogRead(FREQ_POT_PIN));
+}
 
-  if (freqPotValuesIndex >= AVG_OF_N_SAMPLES)
-    freqPotValuesIndex = 0;
-
-  avgFreqPotVal = freqPotValesTotal / AVG_OF_N_SAMPLES;
+void Controllers::readVolume()
+{
+  volume = volumeFilter.filter(analogRead(VOLUME_POT_PIN));
 }
 
 int Controllers::getFormatedFreq()
 {
-  int freq = map(avgFreqPotVal, FREQ_POT_MIN, FREQ_POT_MAX, 8750, 10800);
+  int freq = map(frequency, FREQ_POT_MIN, FREQ_POT_MAX, 8750, 10800);
 
   if (freq < 8750)
     freq = 8750;
@@ -34,6 +33,11 @@ int Controllers::getFormatedFreq()
     freq = 10800;
 
   return round10(freq);
+}
+
+int Controllers::getFormatedVolume()
+{
+  return map(volume, VOLUME_POT_MIN, VOLUME_POT_MAX, 0, 15);
 }
 
 int Controllers::round10(int num)

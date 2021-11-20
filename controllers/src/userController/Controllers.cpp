@@ -1,4 +1,5 @@
 #include "Controllers.h"
+#include <IRremote.h>
 
 Ewma Controllers::freqFilter(0.05);
 int Controllers::frequency;
@@ -9,6 +10,7 @@ struct DebounceButton Controllers::muteBtn;
 void Controllers::init()
 {
   pinMode(MUTE_BTN_PIN, INPUT);
+  IrReceiver.begin(IR_RECEIVER_PIN);
 }
 
 void Controllers::readAndProcess()
@@ -19,6 +21,7 @@ void Controllers::readAndProcess()
   AppRadio::setVolume(getFormatedVolume());
   if (readMute())
     AppRadio::switchMute();
+  decodeIR();
 }
 
 void Controllers::readFrequency()
@@ -57,6 +60,41 @@ bool Controllers::readMute()
   muteBtn.lastState = reading;
 
   return false;
+}
+
+void Controllers::decodeIR()
+{
+  if (IrReceiver.decode()) {
+    if (!(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
+      switch (IrReceiver.decodedIRData.command)
+      {
+      case 0xC:
+        Serial.println("ON/OFF");
+        break;
+      case 0x20:
+        Serial.println("CH-UP");
+        break;
+      case 0x21:
+        Serial.println("CH-DOWN");
+        break;
+      case 0xD:
+        AppRadio::switchMute();
+        break;
+      case 0x11:
+        Serial.println("VOL-LEFT");
+        break;
+      case 0x10:
+        Serial.println("VOL-RIGHT");
+        break;
+      case 0xB:
+        Serial.println("AV/TV");
+        break;
+
+      default:
+        IrReceiver.printIRResultShort(&Serial);
+      }
+    IrReceiver.resume();
+  }
 }
 
 int Controllers::getFormatedFreq()

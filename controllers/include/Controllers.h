@@ -11,6 +11,8 @@
 
 #define MUTE_BTN_PIN 2
 
+#define IR_RECEIVER_PIN 12
+
 #include <Arduino.h>
 #include <Ewma.h>
 #include "AppRadio.h"
@@ -37,6 +39,7 @@ public:
   static void readFrequency();
   static void readVolume();
   static bool readMute();
+  static void decodeIR();
   static int getFormatedFreq();
   static int getFormatedVolume();
 

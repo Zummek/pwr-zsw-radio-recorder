@@ -20039,6 +20039,181 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="telefunken" urn="urn:adsk.eagle:library:383">
+<description>&lt;b&gt;Telefunken Devices&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TSOP17_TB1" urn="urn:adsk.eagle:footprint:27874/1" library_version="4">
+<description>&lt;b&gt;IR Receiver Modules for Remote Control Systems&lt;/b&gt;&lt;p&gt;
+Source: http://www.vishay.com/docs/82042/82042.pdf</description>
+<wire x1="-1.9" y1="4.55" x2="-3.3" y2="4.55" width="0" layer="20"/>
+<wire x1="-3.3" y1="4.55" x2="-3.3" y2="1.95" width="0" layer="20"/>
+<wire x1="-3.3" y1="1.95" x2="-1.9" y2="1.95" width="0" layer="20"/>
+<wire x1="-1.9" y1="1.95" x2="-1.9" y2="4.55" width="0" layer="20"/>
+<wire x1="-1.9" y1="-4.35" x2="-3.3" y2="-4.35" width="0" layer="20"/>
+<wire x1="-3.3" y1="-4.35" x2="-3.3" y2="-1.75" width="0" layer="20"/>
+<wire x1="-3.3" y1="-1.75" x2="-1.9" y2="-1.75" width="0" layer="20"/>
+<wire x1="-1.9" y1="-1.75" x2="-1.9" y2="-4.35" width="0" layer="20"/>
+<wire x1="-17.5" y1="4.55" x2="-18.9" y2="4.55" width="0" layer="20"/>
+<wire x1="-18.9" y1="4.55" x2="-18.9" y2="1.95" width="0" layer="20"/>
+<wire x1="-18.9" y1="1.95" x2="-17.5" y2="1.95" width="0" layer="20"/>
+<wire x1="-17.5" y1="1.95" x2="-17.5" y2="4.55" width="0" layer="20"/>
+<wire x1="-8.2" y1="4" x2="-11.2" y2="4" width="0" layer="20"/>
+<wire x1="-11.2" y1="4" x2="-11.2" y2="6.4" width="0" layer="20"/>
+<wire x1="-11.2" y1="6.4" x2="-8.2" y2="6.4" width="0" layer="20"/>
+<wire x1="-8.2" y1="6.4" x2="-8.2" y2="4" width="0" layer="20"/>
+<wire x1="-8.2" y1="-6.4" x2="-11.2" y2="-6.4" width="0" layer="20"/>
+<wire x1="-11.2" y1="-6.4" x2="-11.2" y2="-4" width="0" layer="20"/>
+<wire x1="-11.2" y1="-4" x2="-8.2" y2="-4" width="0" layer="20"/>
+<wire x1="-8.2" y1="-4" x2="-8.2" y2="-6.4" width="0" layer="20"/>
+<wire x1="1.1" y1="6.2" x2="1.6" y2="5.7" width="0.1016" layer="21" curve="-90"/>
+<wire x1="1.6" y1="5.7" x2="1.6" y2="-5.7" width="0.1016" layer="21"/>
+<wire x1="1.6" y1="-5.7" x2="1.1" y2="-6.2" width="0.1016" layer="21" curve="-90"/>
+<wire x1="1.1" y1="-6.2" x2="-17.225" y2="-6.2" width="0.1016" layer="21"/>
+<wire x1="-17.225" y1="-6.2" x2="-17.725" y2="-5.7" width="0.1016" layer="21" curve="-90"/>
+<wire x1="-17.725" y1="-5.7" x2="-17.725" y2="5.7" width="0.1016" layer="21"/>
+<wire x1="-17.725" y1="5.7" x2="-17.225" y2="6.2" width="0.1016" layer="21" curve="-90"/>
+<wire x1="-17.225" y1="6.2" x2="1.1" y2="6.2" width="0.1016" layer="21"/>
+<wire x1="-2.65" y1="5.4" x2="-2.65" y2="-5.4" width="0.1016" layer="21"/>
+<wire x1="-2.65" y1="-5.4" x2="-17.025" y2="-5.4" width="0.1016" layer="21"/>
+<wire x1="-17.025" y1="-5.4" x2="-17.025" y2="5.4" width="0.1016" layer="21"/>
+<wire x1="-17.025" y1="5.4" x2="-2.65" y2="5.4" width="0.1016" layer="21"/>
+<wire x1="-17.775" y1="5.4" x2="-18.225" y2="5.4" width="0.1016" layer="21"/>
+<wire x1="-18.225" y1="5.4" x2="-18.725" y2="4.9" width="0.1016" layer="21" curve="90"/>
+<wire x1="-18.725" y1="4.9" x2="-18.725" y2="-4.9" width="0.1016" layer="21"/>
+<wire x1="-18.725" y1="-4.9" x2="-18.225" y2="-5.4" width="0.1016" layer="21" curve="90"/>
+<wire x1="-18.225" y1="-5.4" x2="-17.775" y2="-5.4" width="0.1016" layer="21"/>
+<wire x1="-2" y1="6.15" x2="-2" y2="-6.15" width="0.1016" layer="21"/>
+<wire x1="-2.65" y1="5.4" x2="-2.65" y2="6.15" width="0.1016" layer="21"/>
+<wire x1="-2.65" y1="-5.4" x2="-2.65" y2="-6.15" width="0.1016" layer="21"/>
+<wire x1="-2.7" y1="-2.7" x2="-12" y2="-2.7" width="0.1016" layer="21"/>
+<wire x1="-12" y1="-2.7" x2="-12" y2="2.7" width="0.1016" layer="21" curve="-172.325373"/>
+<wire x1="-12" y1="2.7" x2="-2.7" y2="2.7" width="0.1016" layer="21"/>
+<wire x1="-13.125" y1="1.25" x2="-10.75" y2="1.25" width="0.1016" layer="21"/>
+<wire x1="-10.75" y1="1.25" x2="-10.75" y2="-1.25" width="0.1016" layer="21"/>
+<wire x1="-10.75" y1="-1.25" x2="-13.125" y2="-1.25" width="0.1016" layer="21"/>
+<wire x1="-13.125" y1="-1.25" x2="-13.125" y2="1.25" width="0.1016" layer="21"/>
+<pad name="GND" x="0" y="-3.81" drill="1" diameter="1.6764" rot="R180"/>
+<pad name="VS" x="0" y="-1.27" drill="1" diameter="1.6764" rot="R180"/>
+<pad name="VO" x="0" y="3.81" drill="1" diameter="1.6764" rot="R180"/>
+<text x="-19.05" y="-5.08" size="1.778" layer="25" rot="R90">&gt;NAME</text>
+<text x="-17.78" y="-8.89" size="1.778" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="TSOP17_TB1" urn="urn:adsk.eagle:package:27879/1" type="box" library_version="4">
+<description>IR Receiver Modules for Remote Control Systems
+Source: http://www.vishay.com/docs/82042/82042.pdf</description>
+<packageinstances>
+<packageinstance name="TSOP17_TB1"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="TSOP17_TB1" urn="urn:adsk.eagle:symbol:27873/2" library_version="4">
+<wire x1="-7.62" y1="-1.27" x2="-6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="1.27" x2="-5.08" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="1.27" x2="-6.35" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="1.27" x2="-5.08" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-4.445" y1="0.635" x2="-3.175" y2="0.635" width="0.1524" layer="94"/>
+<wire x1="-3.175" y1="0.635" x2="-3.556" y2="0.889" width="0.1524" layer="94"/>
+<wire x1="-3.175" y1="0.635" x2="-3.556" y2="0.381" width="0.1524" layer="94"/>
+<wire x1="-4.445" y1="-0.635" x2="-3.175" y2="-0.635" width="0.1524" layer="94"/>
+<wire x1="-3.175" y1="-0.635" x2="-3.556" y2="-0.381" width="0.1524" layer="94"/>
+<wire x1="-3.175" y1="-0.635" x2="-3.556" y2="-0.889" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-1.27" x2="-6.35" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-1.27" x2="-5.08" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-1.27" x2="-6.35" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="-8.89" y1="6.35" x2="-8.89" y2="-6.35" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="6.35" x2="-8.89" y2="6.35" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="6.35" x2="10.16" y2="-6.35" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="-6.35" x2="-8.89" y2="-6.35" width="0.4064" layer="94"/>
+<wire x1="0" y1="5.08" x2="3.81" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="3.81" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="-5.08" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="0" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<text x="-8.89" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-8.89" y="-8.89" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VO" x="12.7" y="0" visible="pin" length="short" direction="oc" rot="R180"/>
+<pin name="VS" x="12.7" y="5.08" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="GND" x="12.7" y="-5.08" visible="pin" length="short" direction="pwr" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TSOP17*TB1" urn="urn:adsk.eagle:component:27883/2" prefix="IR" library_version="4">
+<description>&lt;b&gt;TSOP17..TB1&lt;/b&gt; IR Receiver Modules for Remote Control Systems&lt;p&gt;
+Source: http://www.vishay.com/docs/82042/82042.pdf</description>
+<gates>
+<gate name="A" symbol="TSOP17_TB1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TSOP17_TB1">
+<connects>
+<connect gate="A" pin="GND" pad="GND"/>
+<connect gate="A" pin="VO" pad="VO"/>
+<connect gate="A" pin="VS" pad="VS"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:27879/1"/>
+</package3dinstances>
+<technologies>
+<technology name="30">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="33">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="36">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="37">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="38">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="40">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+<technology name="56">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -20082,6 +20257,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2,5-6E" package3d_urn="urn:adsk.eagle:package:23430/1" value="22u"/>
 <part name="S1" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" package3d_urn="urn:adsk.eagle:package:27496/1"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="10k"/>
+<part name="IR1" library="telefunken" library_urn="urn:adsk.eagle:library:383" deviceset="TSOP17*TB1" device="" package3d_urn="urn:adsk.eagle:package:27879/1" technology="30" value="VS1838"/>
 </parts>
 <sheets>
 <sheet>
@@ -20148,31 +20324,35 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <instance part="GND4" gate="1" x="-26.67" y="100.1268" smashed="yes" grouprefs="POWER_FILTRATION">
 <attribute name="VALUE" x="-29.21" y="97.5868" size="1.778" layer="96"/>
 </instance>
-<instance part="RW1" gate="1" x="-73.66" y="68.58" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-68.453" y="63.754" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-68.326" y="70.358" size="1.778" layer="96" rot="MR90"/>
+<instance part="RW1" gate="1" x="-76.2" y="88.9" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-70.993" y="84.074" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-70.866" y="90.678" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="R5" gate="1" x="-73.66" y="48.26" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-69.977" y="44.196" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-69.85" y="49.53" size="1.778" layer="96" rot="MR90"/>
+<instance part="R5" gate="1" x="-76.2" y="68.58" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-72.517" y="64.516" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-72.39" y="69.85" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="GND5" gate="1" x="-55.88" y="91.44" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-53.34" y="93.98" size="1.778" layer="96" rot="R180"/>
+<instance part="GND5" gate="1" x="-58.42" y="111.76" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-55.88" y="114.3" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+5" gate="1" x="-60.96" y="91.44" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-58.42" y="93.98" size="1.778" layer="96" rot="R180"/>
+<instance part="P+5" gate="1" x="-63.5" y="111.76" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-60.96" y="114.3" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C3" gate="G$1" x="-82.55" y="75.1332" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-83.693" y="74.6506" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-83.693" y="79.7306" size="1.778" layer="96" rot="R180"/>
+<instance part="C3" gate="G$1" x="-85.09" y="95.4532" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-86.233" y="94.9706" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-86.233" y="100.0506" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="S1" gate="1" x="-76.2" y="30.48" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-78.74" y="36.83" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-73.025" y="34.29" size="1.778" layer="96"/>
+<instance part="S1" gate="1" x="-78.74" y="50.8" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-81.28" y="57.15" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-75.565" y="54.61" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="-63.5" y="25.4" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-67.31" y="26.8986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-67.31" y="22.098" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="-76.2" y="45.72" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-80.01" y="47.2186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.01" y="42.418" size="1.778" layer="96"/>
+</instance>
+<instance part="IR1" gate="A" x="-91.44" y="30.48" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-100.33" y="38.1" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-100.33" y="21.59" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -20260,24 +20440,28 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </segment>
 <segment>
 <pinref part="R5" gate="1" pin="A"/>
-<wire x1="-73.66" y1="43.18" x2="-73.66" y2="40.64" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="63.5" x2="-76.2" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="-73.66" y1="40.64" x2="-55.88" y2="40.64" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-55.88" y1="40.64" x2="-55.88" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="60.96" x2="-58.42" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="60.96" x2="-58.42" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="RW1" gate="1" pin="A"/>
-<wire x1="-55.88" y1="60.96" x2="-55.88" y2="83.82" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-55.88" y1="83.82" x2="-55.88" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-73.66" y1="63.5" x2="-73.66" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-73.66" y1="60.96" x2="-55.88" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-55.88" y="60.96" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="81.28" x2="-58.42" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="104.14" x2="-58.42" y2="109.22" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="83.82" x2="-76.2" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="81.28" x2="-58.42" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="81.28" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="-"/>
-<wire x1="-82.55" y1="80.2132" x2="-82.55" y2="83.82" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-82.55" y1="83.82" x2="-55.88" y2="83.82" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-55.88" y="83.82" grouprefs="CONTROLLERS"/>
-<wire x1="-55.88" y1="40.64" x2="-55.88" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-55.88" y="40.64" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="100.5332" x2="-85.09" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="104.14" x2="-58.42" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="104.14" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="60.96" x2="-58.42" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="60.96" grouprefs="CONTROLLERS"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="-55.88" y1="25.4" x2="-58.42" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="45.72" x2="-71.12" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="IR1" gate="A" pin="GND"/>
+<wire x1="-78.74" y1="25.4" x2="-58.42" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="25.4" x2="-58.42" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="45.72" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -20316,19 +20500,23 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
-<wire x1="-60.96" y1="88.9" x2="-60.96" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="109.22" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="R5" gate="1" pin="E"/>
-<wire x1="-60.96" y1="76.2" x2="-60.96" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-73.66" y1="53.34" x2="-73.66" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-73.66" y1="55.88" x2="-60.96" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="96.52" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="73.66" x2="-76.2" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="76.2" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="RW1" gate="1" pin="E"/>
-<wire x1="-73.66" y1="73.66" x2="-73.66" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-73.66" y1="76.2" x2="-60.96" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-60.96" y="76.2" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="93.98" x2="-76.2" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="96.52" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="96.52" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="S"/>
-<wire x1="-71.12" y1="27.94" x2="-60.96" y2="27.94" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-60.96" y1="27.94" x2="-60.96" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-60.96" y="55.88" grouprefs="CONTROLLERS"/>
+<wire x1="-73.66" y1="48.26" x2="-63.5" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="48.26" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="76.2" grouprefs="CONTROLLERS"/>
+<pinref part="IR1" gate="A" pin="VO"/>
+<wire x1="-63.5" y1="48.26" x2="-63.5" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="30.48" x2="-78.74" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="48.26" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -20367,12 +20555,12 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <net name="FREQ_POT" class="0">
 <segment>
 <pinref part="RW1" gate="1" pin="S"/>
-<wire x1="-78.74" y1="68.58" x2="-82.55" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-86.36" y="68.58" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="88.9" x2="-85.09" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="88.9" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="-82.55" y1="68.58" x2="-86.36" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-82.55" y1="72.5932" x2="-82.55" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-82.55" y="68.58" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="88.9" x2="-88.9" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="92.9132" x2="-85.09" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-85.09" y="88.9" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A1"/>
@@ -20383,8 +20571,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <net name="VOLUME_POT" class="0">
 <segment>
 <pinref part="R5" gate="1" pin="S"/>
-<wire x1="-78.74" y1="48.26" x2="-83.82" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-83.82" y="48.26" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="68.58" x2="-86.36" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-86.36" y="68.58" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A0"/>
@@ -20395,20 +20583,31 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <net name="MUTE_BTN" class="0">
 <segment>
 <pinref part="S1" gate="1" pin="P1"/>
-<wire x1="-81.28" y1="30.48" x2="-86.36" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-86.36" y="30.48" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-83.82" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="50.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="P"/>
-<wire x1="-81.28" y1="27.94" x2="-83.82" y2="27.94" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-83.82" y1="27.94" x2="-83.82" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-83.82" y1="48.26" x2="-86.36" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="48.26" x2="-86.36" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="S1"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="-83.82" y1="25.4" x2="-68.58" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="45.72" x2="-81.28" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
-<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D12"/>
 <wire x1="-17.78" y1="55.88" x2="-22.86" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
 <label x="-22.86" y="55.88" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D2"/>
+</segment>
+</net>
+<net name="IR_RECEIVER" class="0">
+<segment>
+<pinref part="IR1" gate="A" pin="VS"/>
+<wire x1="-78.74" y1="35.56" x2="-73.66" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-73.66" y="35.56" size="1.778" layer="95" xref="yes" grouprefs="CONTROLLERS"/>
+</segment>
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D12"/>
+<wire x1="-17.78" y1="30.48" x2="-22.86" y2="30.48" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="-22.86" y="30.48" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
 </segment>
 </net>
 </nets>

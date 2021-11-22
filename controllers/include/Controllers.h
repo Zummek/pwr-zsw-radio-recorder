@@ -35,7 +35,7 @@ public:
   static bool remoteVolume;
   static Ewma volumeFilter;
   static struct DebounceButton muteBtn;
-  static bool acceptIRRepeat;
+  static bool allowIRRepeat;
 
   static void init();
   static void readAndProcess();

@@ -8,7 +8,7 @@ Ewma Controllers::volumeFilter(0.5);
 bool Controllers::remoteVolume = false;
 int Controllers::volume;
 struct DebounceButton Controllers::muteBtn;
-bool Controllers::acceptIRRepeat = false;
+bool Controllers::allowIRRepeat = false;
 
 void Controllers::init()
 {
@@ -78,9 +78,9 @@ bool Controllers::readMute()
 void Controllers::decodeIR()
 {
   if (IrReceiver.decode()) {
-    if (acceptIRRepeat || !(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
+    if (allowIRRepeat || !(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
     {
-      acceptIRRepeat = false;
+      allowIRRepeat = false;
 
       switch (IrReceiver.decodedIRData.command)
       {
@@ -90,12 +90,12 @@ void Controllers::decodeIR()
       case 0x20:
         remoteFrequency = true;
         AppRadio::seekUp();
-        acceptIRRepeat = true;
+        allowIRRepeat = true;
         break;
       case 0x21:
         remoteFrequency = true;
         AppRadio::seekDown();
-        acceptIRRepeat = true;
+        allowIRRepeat = true;
         break;
       case 0xD:
         AppRadio::switchMute();
@@ -103,12 +103,12 @@ void Controllers::decodeIR()
       case 0x11:
         remoteVolume = true;
         AppRadio::decreaseRemoteVolume();
-        acceptIRRepeat = true;
+        allowIRRepeat = true;
         break;
       case 0x10:
         remoteVolume = true;
         AppRadio::increaseRemoteVolume();
-        acceptIRRepeat = true;
+        allowIRRepeat = true;
         break;
       case 0xB:
         Serial.println("NONE");

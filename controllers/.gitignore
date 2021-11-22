@@ -3,3 +3,13 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Eagle Backup files, lock
+*.s#?
+*.b#?
+*.l#?
+*.b$?
+*.s$?
+*.l$?
+*.s#*
+*.lck

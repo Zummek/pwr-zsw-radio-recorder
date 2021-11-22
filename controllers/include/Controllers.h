@@ -29,10 +29,10 @@ class Controllers
 {
 public:
   static int frequency;
-  static bool remoteFrequency;
+  static bool blockManuallyFrequency;
   static Ewma freqFilter;
   static int volume;
-  static bool remoteVolume;
+  static bool bloackManuallyVolume;
   static Ewma volumeFilter;
   static struct DebounceButton muteBtn;
   static bool allowIRRepeat;

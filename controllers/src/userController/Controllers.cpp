@@ -2,10 +2,10 @@
 #include <IRremote.h>
 
 Ewma Controllers::freqFilter(0.05);
-bool Controllers::remoteFrequency = false;
+bool Controllers::blockManuallyFrequency = false;
 int Controllers::frequency;
 Ewma Controllers::volumeFilter(0.5);
-bool Controllers::remoteVolume = false;
+bool Controllers::bloackManuallyVolume = false;
 int Controllers::volume;
 struct DebounceButton Controllers::muteBtn;
 bool Controllers::allowIRRepeat = false;
@@ -33,7 +33,7 @@ void Controllers::readFrequency()
   if (tempFreq != frequency)
   {
     frequency = tempFreq;
-    remoteFrequency = false;
+    blockManuallyFrequency = false;
   }
 }
 
@@ -43,7 +43,7 @@ void Controllers::readVolume()
   if (tempVolume != volume)
   {
     volume = tempVolume;
-    remoteVolume = false;
+    bloackManuallyVolume = false;
   }
 }
 
@@ -88,12 +88,12 @@ void Controllers::decodeIR()
         Serial.println("START RECORDING");
         break;
       case 0x20:
-        remoteFrequency = true;
+        blockManuallyFrequency = true;
         AppRadio::seekUp();
         allowIRRepeat = true;
         break;
       case 0x21:
-        remoteFrequency = true;
+        blockManuallyFrequency = true;
         AppRadio::seekDown();
         allowIRRepeat = true;
         break;
@@ -101,12 +101,12 @@ void Controllers::decodeIR()
         AppRadio::switchMute();
         break;
       case 0x11:
-        remoteVolume = true;
+        bloackManuallyVolume = true;
         AppRadio::decreaseRemoteVolume();
         allowIRRepeat = true;
         break;
       case 0x10:
-        remoteVolume = true;
+        bloackManuallyVolume = true;
         AppRadio::increaseRemoteVolume();
         allowIRRepeat = true;
         break;

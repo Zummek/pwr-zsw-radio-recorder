@@ -2,10 +2,13 @@
 #include <IRremote.h>
 
 Ewma Controllers::freqFilter(0.05);
+bool Controllers::remoteFrequency = false;
 int Controllers::frequency;
 Ewma Controllers::volumeFilter(0.5);
+bool Controllers::remoteVolume = false;
 int Controllers::volume;
 struct DebounceButton Controllers::muteBtn;
+bool Controllers::acceptIRRepeat = false;
 
 void Controllers::init()
 {
@@ -26,12 +29,22 @@ void Controllers::readAndProcess()
 
 void Controllers::readFrequency()
 {
-  frequency = freqFilter.filter(analogRead(FREQ_POT_PIN));
+  int tempFreq = freqFilter.filter(analogRead(FREQ_POT_PIN));
+  if (tempFreq != frequency)
+  {
+    frequency = tempFreq;
+    remoteFrequency = false;
+  }
 }
 
 void Controllers::readVolume()
 {
-  volume = volumeFilter.filter(analogRead(VOLUME_POT_PIN));
+  int tempVolume = volumeFilter.filter(analogRead(VOLUME_POT_PIN));
+  if (tempVolume != volume)
+  {
+    volume = tempVolume;
+    remoteVolume = false;
+  }
 }
 
 bool Controllers::readMute()
@@ -65,34 +78,46 @@ bool Controllers::readMute()
 void Controllers::decodeIR()
 {
   if (IrReceiver.decode()) {
-    if (!(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
+    if (acceptIRRepeat || !(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
+    {
+      acceptIRRepeat = false;
+
       switch (IrReceiver.decodedIRData.command)
       {
       case 0xC:
-        Serial.println("ON/OFF");
+        Serial.println("START RECORDING");
         break;
       case 0x20:
-        Serial.println("CH-UP");
+        remoteFrequency = true;
+        AppRadio::seekUp();
+        acceptIRRepeat = true;
         break;
       case 0x21:
-        Serial.println("CH-DOWN");
+        remoteFrequency = true;
+        AppRadio::seekDown();
+        acceptIRRepeat = true;
         break;
       case 0xD:
         AppRadio::switchMute();
         break;
       case 0x11:
-        Serial.println("VOL-LEFT");
+        remoteVolume = true;
+        AppRadio::decreaseRemoteVolume();
+        acceptIRRepeat = true;
         break;
       case 0x10:
-        Serial.println("VOL-RIGHT");
+        remoteVolume = true;
+        AppRadio::increaseRemoteVolume();
+        acceptIRRepeat = true;
         break;
       case 0xB:
-        Serial.println("AV/TV");
+        Serial.println("NONE");
         break;
 
       default:
         IrReceiver.printIRResultShort(&Serial);
       }
+    }
     IrReceiver.resume();
   }
 }

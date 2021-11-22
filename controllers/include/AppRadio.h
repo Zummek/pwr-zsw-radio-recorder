@@ -1,7 +1,7 @@
 #ifndef APPRADIO_h
 #define APPRADIO_h
 
-#define RADIO_DEFAULT_VOLUME 7 // max 15
+#define RADIO_MAX_VOLUME 15
 
 #include <radio.h>
 #include <RDA5807M.h>
@@ -20,11 +20,15 @@ public:
   static void setFrequency(RADIO_FREQ freq);
   static void setVolume(int volume);
   static void switchMute();
+  static void seekUp();
+  static void seekDown();
+  static void increaseRemoteVolume();
+  static void decreaseRemoteVolume();
 
 private:
   static void _processRDS(uint16_t block1, uint16_t block2, uint16_t block3, uint16_t block4);
-  static void _processRDSServiceName(char *name);
-  static void _processRDSText(char *text);
+  static void _processRDSServiceName(char* name);
+  static void _processRDSText(char* text);
 };
 
 #endif

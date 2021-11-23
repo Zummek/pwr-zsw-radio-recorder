@@ -2,6 +2,7 @@
 #define LCD_h
 
 #include <LiquidCrystal_I2C.h>
+#include "Controllers.h"
 
 #define LCD_ADDRESS 0x27
 #define LCD_COLUMNS 16 

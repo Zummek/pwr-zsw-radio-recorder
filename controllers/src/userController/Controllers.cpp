@@ -1,10 +1,7 @@
 #include "Controllers.h"
-<<<<<<< HEAD
 #include <IRremote.h>
-=======
 #include "AppRadio.h"
 #include "Lcd.h"
->>>>>>> Move displaying freq to Controllers
 
 Ewma Controllers::freqFilter(0.05);
 bool Controllers::blockManuallyFrequency = false;

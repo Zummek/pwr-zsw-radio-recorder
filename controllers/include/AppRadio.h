@@ -6,6 +6,7 @@
 #include <radio.h>
 #include <RDA5807M.h>
 #include <RDSParser.h>
+#include "Lcd.h"
 
 class AppRadio
 {

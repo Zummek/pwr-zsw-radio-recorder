@@ -24,6 +24,8 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
     // TODO: temporary for testing without display
     Serial.print("Set frequency: ");
     Serial.println(newFreq);
+
+    Lcd::displayFrequency();
   }
 }
 

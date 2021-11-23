@@ -103,4 +103,5 @@ void AppRadio::_processRDSText(char* text)
   Serial.print("Text: ");
   Serial.println(text);
   // TODO: Do something about this later
+  Lcd::displayRDS(text);
 }

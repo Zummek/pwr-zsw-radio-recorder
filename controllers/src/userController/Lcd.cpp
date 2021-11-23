@@ -8,7 +8,7 @@ void Lcd::init()
   lcd.backlight();
 }
 
-void Lcd::write(uint8_t col, uint8_t row, char *text) {
+void Lcd::_write(uint8_t col, uint8_t row, char *text) {
   lcd.setCursor(col, row);
   lcd.print(text);
 }
@@ -16,5 +16,9 @@ void Lcd::write(uint8_t col, uint8_t row, char *text) {
 void Lcd::displayFrequency(int freq) {
   char buffer[11];
   sprintf(buffer, "%3d.%02d MHz", freq / 100, freq % 100);
-  Lcd::write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, buffer);
+  Lcd::_write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, buffer);
+}
+
+void Lcd::displayRDS(char *rds) {
+  Lcd::_write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, rds);
 }

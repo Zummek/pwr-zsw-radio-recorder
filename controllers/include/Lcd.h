@@ -9,6 +9,8 @@
 
 #define LCD_FREQUENCY_COL 0
 #define LCD_FREQUENCY_ROW 0
+#define LCD_RDS_COL 0
+#define LCD_RDS_ROW 1
 
 class Lcd
 {
@@ -17,9 +19,10 @@ public:
 
   static void init();
   static void displayFrequency(int freq);
+  static void displayRDS(char *rds);
 
 private:
-  static void write(uint8_t col, uint8_t row, char *text);
+  static void _write(uint8_t col, uint8_t row, char *text);
 };
 
 #endif

@@ -43,8 +43,12 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -56,6 +60,48 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
+<layer number="101" name="Patch_Top" color="12" fill="4" visible="no" active="yes"/>
+<layer number="102" name="Vscore" color="7" fill="1" visible="no" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="no" active="yes"/>
+<layer number="104" name="Name" color="16" fill="1" visible="no" active="yes"/>
+<layer number="105" name="tPlate" color="7" fill="1" visible="no" active="yes"/>
+<layer number="106" name="bPlate" color="7" fill="1" visible="no" active="yes"/>
+<layer number="107" name="Crop" color="7" fill="1" visible="no" active="yes"/>
+<layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="no" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="no" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="no" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="no" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="no" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="no" active="yes"/>
+<layer number="209" name="209bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="210" name="210bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="211" name="211bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="212" name="212bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="213" name="213bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="214" name="214bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="215" name="215bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="216" name="216bmp" color="7" fill="1" visible="no" active="yes"/>
+<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
+<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
+<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
+<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
+<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
+<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
+<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
+<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
+<layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -20385,6 +20431,112 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="msgeq7">
+<packages>
+<package name="SOIC8">
+<wire x1="-2.362" y1="-1.803" x2="2.362" y2="-1.803" width="0.1524" layer="51"/>
+<wire x1="2.362" y1="-1.803" x2="2.362" y2="1.803" width="0.1524" layer="21"/>
+<wire x1="2.362" y1="1.803" x2="-2.362" y2="1.803" width="0.1524" layer="51"/>
+<wire x1="-2.362" y1="1.803" x2="-2.362" y2="-1.803" width="0.1524" layer="21"/>
+<circle x="-1.8034" y="-0.9906" radius="0.1436" width="0.2032" layer="21"/>
+<smd name="1" x="-1.905" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="2" x="-0.635" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="3" x="0.635" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="4" x="1.905" y="-2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="5" x="1.905" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="6" x="0.635" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="7" x="-0.635" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<smd name="8" x="-1.905" y="2.6162" dx="0.6096" dy="2.2098" layer="1"/>
+<text x="-1.27" y="-0.635" size="0.4064" layer="27">&gt;VALUE</text>
+<text x="-1.27" y="0" size="0.4064" layer="25">&gt;NAME</text>
+<rectangle x1="-2.0828" y1="-2.8702" x2="-1.7272" y2="-1.8542" layer="51"/>
+<rectangle x1="-0.8128" y1="-2.8702" x2="-0.4572" y2="-1.8542" layer="51"/>
+<rectangle x1="0.4572" y1="-2.8702" x2="0.8128" y2="-1.8542" layer="51"/>
+<rectangle x1="1.7272" y1="-2.8702" x2="2.0828" y2="-1.8542" layer="51"/>
+<rectangle x1="-2.0828" y1="1.8542" x2="-1.7272" y2="2.8702" layer="51"/>
+<rectangle x1="-0.8128" y1="1.8542" x2="-0.4572" y2="2.8702" layer="51"/>
+<rectangle x1="0.4572" y1="1.8542" x2="0.8128" y2="2.8702" layer="51"/>
+<rectangle x1="1.7272" y1="1.8542" x2="2.0828" y2="2.8702" layer="51"/>
+</package>
+<package name="DIL08">
+<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<wire x1="5.08" y1="2.921" x2="-5.08" y2="2.921" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="2.921" x2="-5.08" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-2.921" x2="-5.08" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="1.016" x2="-5.08" y2="-1.016" width="0.1524" layer="21" curve="-180"/>
+<pad name="1" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<text x="-5.334" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MSGEQ7-1">
+<wire x1="-12.7" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="-12.7" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-5.08" x2="-12.7" y2="7.62" width="0.254" layer="94"/>
+<text x="-6.096" y="8.636" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.096" y="-7.874" size="1.778" layer="96">MSGEQ7</text>
+<pin name="DCOUT" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="CG" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="CKIN" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="GND" x="15.24" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="RESET" x="-17.78" y="-2.54" visible="pin" length="middle" direction="in"/>
+<pin name="STROBE" x="-17.78" y="0" visible="pin" length="middle" direction="in"/>
+<pin name="AUDIO_IN" x="-17.78" y="2.54" visible="pin" length="middle" direction="in"/>
+<pin name="VDD" x="-17.78" y="5.08" visible="pin" length="middle" direction="in"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MSGEQ7" prefix="IC">
+<description>7-band graphic equalizer</description>
+<gates>
+<gate name="G$1" symbol="MSGEQ7-1" x="0" y="5.08"/>
+</gates>
+<devices>
+<device name="SOIC" package="SOIC8">
+<connects>
+<connect gate="G$1" pin="AUDIO_IN" pad="5"/>
+<connect gate="G$1" pin="CG" pad="6"/>
+<connect gate="G$1" pin="CKIN" pad="8"/>
+<connect gate="G$1" pin="DCOUT" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="RESET" pad="7"/>
+<connect gate="G$1" pin="STROBE" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="DIP" package="DIL08">
+<connects>
+<connect gate="G$1" pin="AUDIO_IN" pad="5"/>
+<connect gate="G$1" pin="CG" pad="6"/>
+<connect gate="G$1" pin="CKIN" pad="8"/>
+<connect gate="G$1" pin="DCOUT" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="RESET" pad="7"/>
+<connect gate="G$1" pin="STROBE" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -20402,6 +20554,7 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <schematic_group name="POWER_FILTRATION"/>
 <schematic_group name="CONTROLLERS"/>
 <schematic_group name="LCD"/>
+<schematic_group name="EQUALIZER"/>
 </groups>
 <parts>
 <part name="ARDUINO_NANO_USER_CONTROLLER" library="ArduinoNanoV30" deviceset="ARDUINO_NANO" device=""/>
@@ -20433,6 +20586,18 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <part name="I2C_CONVERTER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="MSGEQ7" library="msgeq7" deviceset="MSGEQ7" device="DIP"/>
+<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100n"/>
+<part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100n"/>
+<part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="33p"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="200k"/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="22k"/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="22k"/>
+<part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="10n"/>
 </parts>
 <sheets>
 <sheet>
@@ -20538,6 +20703,49 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </instance>
 <instance part="GND6" gate="1" x="147.32" y="116.84" smashed="yes" rot="R180" grouprefs="LCD">
 <attribute name="VALUE" x="149.86" y="119.38" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="MSGEQ7" gate="G$1" x="73.66" y="162.56" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="67.564" y="171.196" size="1.778" layer="95"/>
+</instance>
+<instance part="C4" gate="G$1" x="48.26" y="175.26" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="NAME" x="46.101" y="178.816" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="53.721" y="178.816" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C6" gate="G$1" x="99.06" y="162.56" smashed="yes" rot="R90" grouprefs="EQUALIZER">
+<attribute name="NAME" x="98.679" y="166.624" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="106.299" y="166.624" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C7" gate="G$1" x="106.68" y="172.72" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="NAME" x="101.981" y="173.736" size="1.778" layer="95"/>
+<attribute name="VALUE" x="107.061" y="173.736" size="1.778" layer="96"/>
+</instance>
+<instance part="R6" gate="G$1" x="106.68" y="177.8" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="102.87" y="179.2986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="107.95" y="179.578" size="1.778" layer="96"/>
+</instance>
+<instance part="GND8" gate="1" x="35.56" y="175.26" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="33.02" y="177.8" size="1.778" layer="96"/>
+</instance>
+<instance part="GND9" gate="1" x="114.3" y="154.94" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="111.76" y="152.4" size="1.778" layer="96"/>
+</instance>
+<instance part="P+8" gate="VCC" x="55.88" y="182.88" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="58.42" y="185.42" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P+9" gate="VCC" x="114.3" y="190.5" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="116.84" y="193.04" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R4" gate="G$1" x="22.86" y="172.72" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="19.05" y="174.2186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="24.13" y="174.498" size="1.778" layer="96"/>
+</instance>
+<instance part="R7" gate="G$1" x="22.86" y="167.64" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="19.05" y="169.1386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="24.13" y="169.418" size="1.778" layer="96"/>
+</instance>
+<instance part="C5" gate="G$1" x="40.64" y="167.64" smashed="yes" rot="R90" grouprefs="EQUALIZER">
+<attribute name="NAME" x="37.719" y="169.164" size="1.778" layer="95"/>
+<attribute name="VALUE" x="42.799" y="169.164" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -20663,6 +20871,25 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="160.02" y1="109.22" x2="147.32" y2="109.22" width="0.1524" layer="91" grouprefs="LCD"/>
 <wire x1="147.32" y1="109.22" x2="147.32" y2="114.3" width="0.1524" layer="91" grouprefs="LCD"/>
+</segment>
+<segment>
+<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="43.18" y1="175.26" x2="38.1" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="1"/>
+<wire x1="109.22" y1="172.72" x2="114.3" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="114.3" y1="172.72" x2="114.3" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="114.3" y1="162.56" x2="114.3" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="114.3" y1="160.02" x2="114.3" y2="157.48" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="104.14" y1="162.56" x2="114.3" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="114.3" y="162.56" grouprefs="EQUALIZER"/>
+<pinref part="MSGEQ7" gate="G$1" pin="GND"/>
+<wire x1="88.9" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="114.3" y="160.02" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -20817,6 +21044,96 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
 <wire x1="160.02" y1="106.68" x2="139.7" y2="106.68" width="0.1524" layer="91" grouprefs="LCD"/>
 <wire x1="139.7" y1="106.68" x2="139.7" y2="114.3" width="0.1524" layer="91" grouprefs="LCD"/>
+</segment>
+<segment>
+<pinref part="MSGEQ7" gate="G$1" pin="VDD"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="167.64" x2="55.88" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="55.88" y1="175.26" x2="50.8" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="55.88" y1="175.26" x2="55.88" y2="180.34" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="55.88" y="175.26" grouprefs="EQUALIZER"/>
+<pinref part="P+8" gate="VCC" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="177.8" x2="114.3" y2="177.8" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="114.3" y1="177.8" x2="114.3" y2="187.96" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="P+9" gate="VCC" pin="VCC"/>
+</segment>
+</net>
+<net name="STROBE" class="0">
+<segment>
+<pinref part="MSGEQ7" gate="G$1" pin="STROBE"/>
+<wire x1="55.88" y1="162.56" x2="40.64" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="40.64" y="162.56" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="RESET" class="0">
+<segment>
+<pinref part="MSGEQ7" gate="G$1" pin="RESET"/>
+<wire x1="55.88" y1="160.02" x2="40.64" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="40.64" y="160.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="DC_OUT" class="0">
+<segment>
+<pinref part="MSGEQ7" gate="G$1" pin="DCOUT"/>
+<wire x1="88.9" y1="167.64" x2="88.9" y2="182.88" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="88.9" y="182.88" size="1.778" layer="95" xref="yes" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="101.6" y1="177.8" x2="91.44" y2="177.8" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="91.44" y1="177.8" x2="91.44" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="MSGEQ7" gate="G$1" pin="CKIN"/>
+<wire x1="91.44" y1="172.72" x2="91.44" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="91.44" y1="165.1" x2="88.9" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="101.6" y1="172.72" x2="91.44" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="91.44" y="172.72" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="MSGEQ7" gate="G$1" pin="CG"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="88.9" y1="162.56" x2="96.52" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="27.94" y1="172.72" x2="30.48" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="30.48" y1="172.72" x2="30.48" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="30.48" y1="167.64" x2="38.1" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="27.94" y1="167.64" x2="30.48" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="30.48" y="167.64" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="MSGEQ7" gate="G$1" pin="AUDIO_IN"/>
+<wire x1="45.72" y1="167.64" x2="45.72" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="45.72" y1="165.1" x2="55.88" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="L" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="172.72" x2="12.7" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="12.7" y="172.72" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+</segment>
+</net>
+<net name="R" class="0">
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="167.64" x2="12.7" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="12.7" y="167.64" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 </nets>

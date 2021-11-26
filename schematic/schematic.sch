@@ -21067,6 +21067,11 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <wire x1="55.88" y1="162.56" x2="40.64" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <label x="40.64" y="162.56" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D4"/>
+<wire x1="-17.78" y1="50.8" x2="-22.86" y2="50.8" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="-22.86" y="50.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
+</segment>
 </net>
 <net name="RESET" class="0">
 <segment>
@@ -21074,12 +21079,22 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <wire x1="55.88" y1="160.02" x2="40.64" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <label x="40.64" y="160.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D3"/>
+<wire x1="-17.78" y1="53.34" x2="-22.86" y2="53.34" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="-22.86" y="53.34" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
+</segment>
 </net>
 <net name="DC_OUT" class="0">
 <segment>
 <pinref part="MSGEQ7" gate="G$1" pin="DCOUT"/>
 <wire x1="88.9" y1="167.64" x2="88.9" y2="182.88" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <label x="88.9" y="182.88" size="1.778" layer="95" xref="yes" grouprefs="EQUALIZER"/>
+</segment>
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A3"/>
+<wire x1="22.86" y1="45.72" x2="27.94" y2="45.72" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="27.94" y="45.72" size="1.778" layer="95" xref="yes" grouprefs="USER_CONTROLLER"/>
 </segment>
 </net>
 <net name="N$5" class="0">

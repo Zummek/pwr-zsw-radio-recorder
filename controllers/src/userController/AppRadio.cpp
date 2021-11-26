@@ -24,7 +24,6 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
     // TODO: temporary for testing without display
     Serial.print("Set frequency: ");
     Serial.println(newFreq);
-
     Lcd::displayFrequency(newFreq);
   }
 }
@@ -50,16 +49,21 @@ void AppRadio::switchMute()
 void AppRadio::seekUp() {
   Serial.println("Seek up");
   AppRadio::radio.seekUp();
-  Serial.println(AppRadio::radio.getFrequency());
   delay(500);
-  Serial.println(AppRadio::radio.getFrequency());
+  int newFreq = AppRadio::radio.getFrequency();
+  Lcd::displayFrequency(newFreq);
+  Serial.print("Set frequency: ");
+  Serial.println(newFreq);
 }
 
 void AppRadio::seekDown() {
   Serial.println("Seek down");
   AppRadio::radio.seekDown();
   delay(500);
-  Serial.println(AppRadio::radio.getFrequency());
+  int newFreq = AppRadio::radio.getFrequency();
+  Lcd::displayFrequency(newFreq);
+  Serial.print("Set frequency: ");
+  Serial.println(newFreq);
 }
 
 void AppRadio::increaseRemoteVolume() {

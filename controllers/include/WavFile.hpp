@@ -3,13 +3,21 @@
 
 #include <SD.h>
 
+#define UINT_SIZE 4
+
 class WavFile
 {
 private:
+    File* file;
+    size_t dataSize;
+    byte wavSampleRate[UINT_SIZE];
+    bool isObjectClosed;
 
+    void writeHeader();
+    void updateSizes();
 public:
-    WavFile(SDLib::File& fileObj);
-    void write(const byte* inBuff, int buffLen);
+    WavFile(File* fileObj, unsigned int sampleRate);
+    void write(const byte* inBuff, size_t buffSize);
     void close();
     virtual ~WavFile();
 };

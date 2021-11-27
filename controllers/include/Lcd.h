@@ -20,9 +20,11 @@ public:
   static void init();
   static void displayFrequency(int freq);
   static void displayRDS(char *rds);
+  static void displayBands(int* value, uint8_t row);
 
 private:
   static void _write(uint8_t col, uint8_t row, char *text);
+  static void _writeByte(uint8_t col, uint8_t row, int n);
 };
 
 #endif

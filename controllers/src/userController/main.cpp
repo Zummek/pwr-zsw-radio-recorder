@@ -4,6 +4,7 @@
 #include "AppRadio.h"
 #include "Controllers.h"
 #include "Lcd.h"
+#include "Equalizer.h"
 
 void setup()
 {
@@ -17,6 +18,7 @@ void setup()
   Controllers::init();
   AppRadio::init();
 
+  Equalizer::init();
   Lcd::init();
 }
 
@@ -25,5 +27,5 @@ void loop()
   AppRadio::radio.checkRDS();
   Controllers::readAndProcess();
 
-  delay(50); // TODO: temporary delay to avoid overflow
+  Equalizer::process();
 }

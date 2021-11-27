@@ -1,7 +1,7 @@
-#include "Controllers.h"
+#include "Controllers.hpp"
 #include <IRremote.h>
-#include "AppRadio.h"
-#include "Lcd.h"
+#include "AppRadio.hpp"
+#include "Lcd.hpp"
 
 Ewma Controllers::freqFilter(0.05);
 bool Controllers::blockManuallyFrequency = false;

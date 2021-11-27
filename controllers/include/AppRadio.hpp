@@ -1,12 +1,13 @@
-#ifndef APPRADIO_h
-#define APPRADIO_h
+#ifndef APPRADIO_H
+#define APPRADIO_H
 
 #define RADIO_MAX_VOLUME 15
 
 #include <radio.h>
 #include <RDA5807M.h>
 #include <RDSParser.h>
-#include "Lcd.h"
+
+#include "Lcd.hpp"
 
 class AppRadio
 {

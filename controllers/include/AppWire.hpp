@@ -1,5 +1,5 @@
-#ifndef I2CBUS_h
-#define I2CBUS_h
+#ifndef I2CBUS_H
+#define I2CBUS_H
 
 namespace WireCommands
 {

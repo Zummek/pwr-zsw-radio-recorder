@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include <AppWire.h>
+#include "AppWire.hpp"
 
 void I2CReceiveEvent(int howMany)
 {

@@ -1,10 +1,10 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include "AppWire.h"
-#include "AppRadio.h"
-#include "Controllers.h"
-#include "Lcd.h"
-#include "Equalizer.h"
+#include "AppWire.hpp"
+#include "AppRadio.hpp"
+#include "Controllers.hpp"
+#include "Lcd.hpp"
+#include "Equalizer.hpp"
 
 void setup()
 {

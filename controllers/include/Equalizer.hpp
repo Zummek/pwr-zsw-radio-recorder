@@ -1,7 +1,7 @@
-#ifndef EQUALIZER_h
-#define EQUALIZER_h
+#ifndef EQUALIZER_H
+#define EQUALIZER_H
 
-#include "Lcd.h"
+#include "Lcd.hpp"
 
 #define EQUALIZER_STROBE 3
 #define EQUALIZER_RESET 4

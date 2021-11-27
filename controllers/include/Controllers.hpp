@@ -1,5 +1,5 @@
-#ifndef CONTROLLERS_h
-#define CONTROLLERS_h
+#ifndef CONTROLLERS_H
+#define CONTROLLERS_H
 
 #define FREQ_POT_PIN A1
 #define FREQ_POT_MIN 30
@@ -15,7 +15,7 @@
 
 #include <Arduino.h>
 #include <Ewma.h>
-#include "AppRadio.h"
+#include "AppRadio.hpp"
 
 struct DebounceButton
 {

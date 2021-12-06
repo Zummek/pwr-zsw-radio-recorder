@@ -1,4 +1,4 @@
-#include "AppWire.hpp"
+#include "I2CBus.hpp"
 #include "Recorder.hpp"
 
 #include <Arduino.h>
@@ -11,10 +11,11 @@
 
 #define SD_SS_PIN 10
 
-#define MAX_FILE_NAME_LEN 32
+#define MAX_FILE_NAME_LEN I2C_MAX_STR_SIZE + 10
 #define MAX_DUP_FILE_NUM 10
 
 void onI2CReceive(int bytesNum);
+void readI2CStrToBuff(char* outBuff, int len);
 void startRecording(const char* baseFileName);
 void stopRecording();
 bool getFileName(const char* baseName, char* outFileName);
@@ -35,7 +36,7 @@ void setup()
 	Recorder::setInputPin(AUDIO_INPUT_PIN);
 	Recorder::setSampleRate(SAMPLING_RATE);
 
-    Wire.begin(WireAddresses::audioController);
+    Wire.begin(static_cast<uint8_t>(I2CAddresses::audioController));
     Wire.onReceive(onI2CReceive);
 
     Serial.println("Audio controller is ready!");
@@ -46,17 +47,36 @@ void loop() {}
 
 void onI2CReceive(int bytesNum)
 {
-    int command = Wire.read();
+    I2CCommands::audioController cmd =
+        static_cast<I2CCommands::audioController>(Wire.read());
+    char cmdArg[I2C_MAX_STR_SIZE];
+    readI2CStrToBuff(cmdArg, bytesNum - 1);
 
-    switch (command)
+    switch (cmd)
     {
-    case WireCommands::audioController::startRecording:
+    case I2CCommands::audioController::startRecording:
+        startRecording(cmdArg);
         break;
-    case WireCommands::audioController::stopRecording:
+    case I2CCommands::audioController::stopRecording:
+        stopRecording();
         break;
     default:
         break;
     }
+}
+
+inline void readI2CStrToBuff(char* outBuff, int len)
+{
+    int buffIndex = 0;
+    int buffLimit = I2C_MAX_STR_SIZE - 1;
+    if (len < buffLimit) buffLimit = len;
+
+    while (buffIndex < buffLimit)
+    {
+        outBuff[buffIndex++] = 
+            static_cast<byte>(Wire.read());
+    }
+    outBuff[buffIndex] = '\0';
 }
 
 void startRecording(const char* baseFileName)

@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include "AppWire.hpp"
+#include "I2CBus.hpp"
 #include "AppRadio.hpp"
 #include "Controllers.hpp"
 #include "Lcd.hpp"

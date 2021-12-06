@@ -16,6 +16,7 @@
 
 #define TIMER1_CTRL_REG_A TCCR1A
 #define TIMER1_CTRL_REG_B TCCR1B
+#define TIMER1_COMP_REG_A OCR1A
 #define TIMER1_IN_CAP_REG ICR1
 #define TIMER1_INT_MASK_REG TIMSK1
 #define TIMER1_INT_REG TIFR1
@@ -29,9 +30,17 @@
 #define TIMER1_MODE_MASK_B (_BV(WGM13) | _BV(WGM12))
 #define TIMER1_MODE_FAST_PWM_ISR_B (_BV(WGM13) & _BV(WGM12))
 
+#define TIMER1_OUT_MODE_MASK_A (_BV(COM1A1) | _BV(COM1A0))
+#define TIMER1_OUT_MODE_OFF_A 0
+#define TIMER1_OUT_MODE_TOGGLE_NO_INV_A (_BV(COM1A1))
+
 #define TIMER1_INT_COMPA_ENABLE _BV(OCIE1A)
 
 #define TIMER1_INT_COMPB_FLAG _BV(OCF1B)
+
+#ifdef AUDIO_PASSTHROUGH
+#define TIMER1_OUT_PIN_A 9
+#endif
 
 #define ADC_CTRL_REG_A ADCSRA
 #define ADC_CTRL_REG_B ADCSRB
@@ -120,6 +129,10 @@ ISR(ADC_vect)
     byte currentSample = ADC_DATA_REG_H;
     buffs[buffIndex][sampleIndex] = currentSample;
 
+#ifdef AUDIO_PASSTHROUGH
+    TIMER1_COMP_REG_A = currentSample;
+#endif
+
     ++sampleIndex;
     if (sampleIndex >= BUFF_SIZE)
     {
@@ -144,6 +157,14 @@ inline void setUpTimer(uint16_t sampleRate)
     uint16_t timer1Top = (F_CPU / sampleRate) - 1;
     TIMER1_IN_CAP_REG = timer1Top;
 
+#ifdef AUDIO_PASSTHROUGH
+    pinMode(TIMER1_OUT_PIN_A, OUTPUT);
+
+    TIMER1_CTRL_REG_A = 
+        (TIMER1_CTRL_REG_A & ~TIMER1_OUT_MODE_MASK_A)
+        | TIMER1_OUT_MODE_TOGGLE_NO_INV_A;
+#endif
+
     TIMER1_INT_MASK_REG |= TIMER1_INT_COMPA_ENABLE;
     
     TIMER1_CTRL_REG_B = 
@@ -153,6 +174,12 @@ inline void setUpTimer(uint16_t sampleRate)
 
 inline void stopTimer()
 {
+#ifdef AUDIO_PASSTHROUGH
+    TIMER1_CTRL_REG_A = 
+        (TIMER1_CTRL_REG_A & ~TIMER1_OUT_MODE_MASK_A)
+        | TIMER1_OUT_MODE_OFF_A;
+#endif
+    
     TIMER1_INT_MASK_REG &= ~TIMER1_INT_COMPA_ENABLE;
 
     TIMER1_CTRL_REG_B = 

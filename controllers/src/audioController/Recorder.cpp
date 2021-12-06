@@ -64,7 +64,7 @@ void setUpADC(uint8_t inputPin, uint16_t sampleRate);
 void stopADC();
 
 void setADCSource(uint8_t pin);
-void setADCFreq(int sampleRate);
+void setADCFreq(uint16_t sampleRate);
 
 uint8_t srcPin;
 uint16_t outSampleRate;
@@ -160,7 +160,7 @@ inline void stopTimer()
         | TIMER1_CLOCK_NO_CLOCK;
 }
 
-inline void setUpADC(uint16_t sampleRate)
+inline void setUpADC(uint8_t inputPin, uint16_t sampleRate)
 {
     POWER_RED_REG &= ~POWER_RED_ADC;
 
@@ -171,7 +171,7 @@ inline void setUpADC(uint16_t sampleRate)
     ADC_IN_REG = 
         (ADC_IN_REG & ~ADC_REF_VOLT_MASK)
         | ADC_REF_VOLT_AVCC;
-    setADCSource(srcPin);
+    setADCSource(inputPin);
 
     ADC_IN_REG |= ADC_LEFT_ALIGN;
     
@@ -219,15 +219,15 @@ inline void setADCSource(uint8_t pin)
         | (pin & ADC_PIN_3_BIT_MASK);
 }
 
-inline void setADCFreq(int sampleRate)
+inline void setADCFreq(uint16_t sampleRate)
 {
-    static const int prescVals[] = {
+    static const uint8_t prescVals[] = {
         128, 64, 32, 16, 8, 4, 2
     };
-    static constexpr int valCount = 
+    static constexpr uint8_t valCount = 
         sizeof(prescVals) / sizeof(prescVals[0]);
 
-    int valIndex = 0;
+    uint8_t valIndex = 0;
     for (; valIndex < valCount; ++valIndex)
     {
         if (F_CPU / prescVals[valIndex] / 14 > sampleRate)
@@ -236,7 +236,7 @@ inline void setADCFreq(int sampleRate)
         }
     }
 
-    static const int prescBits[] = {
+    static const uint8_t prescBits[] = {
         0x7, 0x6, 0x5, 0x4, 0x3, 0x2, 0x1
     };
     ADC_CTRL_REG_A &= ~(prescBits[0]);

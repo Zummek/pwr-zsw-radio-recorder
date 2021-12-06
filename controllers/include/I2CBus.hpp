@@ -8,6 +8,7 @@ namespace I2CCommands
     enum class audioController
     {
         startRecording,
+        cancelRecording,
         stopRecording,
     };
 };

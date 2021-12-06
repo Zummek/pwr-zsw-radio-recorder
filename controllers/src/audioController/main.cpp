@@ -15,12 +15,16 @@
 #define MAX_DUP_FILE_NUM 10
 
 void onI2CReceive(int bytesNum);
-void readI2CStrToBuff(char* outBuff, int len);
+void readI2CStrToBuff(char* outBuff, uint8_t len);
+
 void startRecording(const char* baseFileName);
+void cancelRecording();
 void stopRecording();
+
 bool getFileName(const char* baseName, char* outFileName);
 
 bool isRecording = false;
+char fileName[MAX_FILE_NAME_LEN];
 
 void setup()
 {
@@ -57,18 +61,19 @@ void onI2CReceive(int bytesNum)
     case I2CCommands::audioController::startRecording:
         startRecording(cmdArg);
         break;
+    case I2CCommands::audioController::cancelRecording:
+        cancelRecording();
+        break;
     case I2CCommands::audioController::stopRecording:
         stopRecording();
-        break;
-    default:
         break;
     }
 }
 
-inline void readI2CStrToBuff(char* outBuff, int len)
+inline void readI2CStrToBuff(char* outBuff, uint8_t len)
 {
-    int buffIndex = 0;
-    int buffLimit = I2C_MAX_STR_SIZE - 1;
+    uint8_t buffIndex = 0;
+    uint8_t buffLimit = I2C_MAX_STR_SIZE - 1;
     if (len < buffLimit) buffLimit = len;
 
     while (buffIndex < buffLimit)
@@ -81,12 +86,11 @@ inline void readI2CStrToBuff(char* outBuff, int len)
 
 void startRecording(const char* baseFileName)
 {
-    if (isRecording) stopRecording();
+    stopRecording();
     
     Serial.print("New recording: ");
     Serial.println(baseFileName);
-
-    char fileName[MAX_FILE_NAME_LEN];
+    
     if (!getFileName(baseFileName, fileName))
     {
         Serial.println("Error! File duplicate limit exceeded");
@@ -105,8 +109,22 @@ void startRecording(const char* baseFileName)
     Serial.println(fileName);
 }
 
+void cancelRecording()
+{
+    if (!isRecording) return;
+    Serial.println("Recording cancelled");
+    stopRecording();
+
+    if (!SD.remove(fileName))
+    {
+        Serial.println("Error! Could not delete recorded file");
+    }
+}
+
 void stopRecording()
 {
+    if (!isRecording) return;
+
     Recorder::stopRecording();
     isRecording = false;
 

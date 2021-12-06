@@ -25,6 +25,13 @@ struct DebounceButton
   unsigned long debounceDelay = 50;
 };
 
+enum class UserAction
+{
+  startBtnPress,
+  stopBtnPress,
+  idle
+};
+
 class Controllers
 {
 public:
@@ -38,7 +45,7 @@ public:
   static bool allowIRRepeat;
 
   static void init();
-  static void readAndProcess();
+  static UserAction readAndProcess();
   static void readFrequency();
   static void readVolume();
   static bool readMute();

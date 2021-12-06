@@ -1,12 +1,19 @@
 #include "AppRadio.hpp"
 
+#include <string.h>
+
 RDA5807M AppRadio::radio;
 RDSParser AppRadio::rds;
 RADIO_FREQ AppRadio::freq;
 int AppRadio::volume;
+char AppRadio::rdsTemp[RADIO_RDS_BUFF_SIZE];
+char AppRadio::rdsText[RADIO_RDS_BUFF_SIZE];
+onRDSChangeFuncType AppRadio::rdsCallback = []() {};
 
-void AppRadio::init()
+void AppRadio::init(onRDSChangeFuncType func)
 {
+  rdsCallback = func;
+
   radio.init();
   radio.setMono(false);
   radio.setMute(false);
@@ -25,6 +32,8 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
     Serial.print("Set frequency: ");
     Serial.println(newFreq);
     Lcd::displayFrequency(newFreq);
+
+    _resetSavedRDS();
   }
 }
 
@@ -54,6 +63,8 @@ void AppRadio::seekUp() {
   Lcd::displayFrequency(newFreq);
   Serial.print("Set frequency: ");
   Serial.println(newFreq);
+
+  _resetSavedRDS();
 }
 
 void AppRadio::seekDown() {
@@ -64,6 +75,8 @@ void AppRadio::seekDown() {
   Lcd::displayFrequency(newFreq);
   Serial.print("Set frequency: ");
   Serial.println(newFreq);
+
+  _resetSavedRDS();
 }
 
 void AppRadio::increaseRemoteVolume() {
@@ -90,6 +103,11 @@ void AppRadio::decreaseRemoteVolume() {
     Serial.println("Volume is already min");
 }
 
+void AppRadio::checkRDS()
+{
+  radio.checkRDS();
+}
+
 void AppRadio::_processRDS(uint16_t block1, uint16_t block2, uint16_t block3, uint16_t block4)
 {
   rds.processData(block1, block2, block3, block4);
@@ -99,13 +117,34 @@ void AppRadio::_processRDSServiceName(char* name)
 {
   Serial.print("Service name: ");
   Serial.println(name);
-  // TODO: Do something about this later
 }
 
 void AppRadio::_processRDSText(char* text)
 {
   Serial.print("Text: ");
   Serial.println(text);
-  // TODO: Do something about this later
+
   Lcd::displayRDS(text);
+
+  if (!strchr(text, '-')) return;
+
+  strncpy(rdsTemp, text, RADIO_RDS_BUFF_SIZE);
+  static constexpr uint8_t lastBuffPos =
+    RADIO_RDS_BUFF_SIZE - 1;
+  if (strlen(text) > lastBuffPos)
+  {
+    rdsTemp[lastBuffPos] = '\0';
+  }
+
+  if (strcmp(rdsTemp, rdsText))
+  {
+    strncpy(rdsText, rdsTemp, RADIO_RDS_BUFF_SIZE);
+    (*rdsCallback)();
+  }
+}
+
+void AppRadio::_resetSavedRDS()
+{
+  strncpy(rdsText, "Unknown", RADIO_RDS_BUFF_SIZE);
+  (*rdsCallback)();
 }

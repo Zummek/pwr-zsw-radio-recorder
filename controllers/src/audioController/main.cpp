@@ -6,16 +6,18 @@
 #include <SPI.h>
 #include <SD.h>
 
+#include <string.h>
+
 #define AUDIO_INPUT_PIN 7
 #define SAMPLING_RATE 44100
 
 #define SD_SS_PIN 10
 
-#define MAX_FILE_NAME_LEN I2C_MAX_STR_SIZE + 10
+#define MAX_FILE_NAME_LEN I2C_MAX_ARG_SIZE + 10
 #define MAX_DUP_FILE_NUM 10
 
 void onI2CReceive(int bytesNum);
-void readI2CStrToBuff(char* outBuff, uint8_t len);
+void readI2CArgToBuff(char* outBuff, uint8_t len);
 
 void startRecording(const char* baseFileName);
 void cancelRecording();
@@ -29,6 +31,7 @@ char fileName[MAX_FILE_NAME_LEN];
 void setup()
 {
     Serial.begin(115200);
+    Serial.println();
     Serial.println("Audio controller is starting..");
 
 	if (!SD.begin(SD_SS_PIN))
@@ -53,8 +56,8 @@ void onI2CReceive(int bytesNum)
 {
     I2CCommands::audioController cmd =
         static_cast<I2CCommands::audioController>(Wire.read());
-    char cmdArg[I2C_MAX_STR_SIZE];
-    readI2CStrToBuff(cmdArg, bytesNum - 1);
+    char cmdArg[I2C_MAX_ARG_SIZE];
+    readI2CArgToBuff(cmdArg, bytesNum - 1);
 
     switch (cmd)
     {
@@ -70,10 +73,10 @@ void onI2CReceive(int bytesNum)
     }
 }
 
-inline void readI2CStrToBuff(char* outBuff, uint8_t len)
+inline void readI2CArgToBuff(char* outBuff, uint8_t len)
 {
     uint8_t buffIndex = 0;
-    uint8_t buffLimit = I2C_MAX_STR_SIZE - 1;
+    uint8_t buffLimit = I2C_MAX_ARG_SIZE - 1;
     if (len < buffLimit) buffLimit = len;
 
     while (buffIndex < buffLimit)
@@ -86,7 +89,7 @@ inline void readI2CStrToBuff(char* outBuff, uint8_t len)
 
 void startRecording(const char* baseFileName)
 {
-    stopRecording();
+    if (isRecording) return;
     
     Serial.print("New recording: ");
     Serial.println(baseFileName);

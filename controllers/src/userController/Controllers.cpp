@@ -1,7 +1,6 @@
 #include "Controllers.hpp"
 #include <IRremote.h>
 #include "AppRadio.hpp"
-#include "Lcd.hpp"
 
 Ewma Controllers::freqFilter(0.05);
 bool Controllers::blockManuallyFrequency = false;
@@ -18,7 +17,7 @@ void Controllers::init()
   IrReceiver.begin(IR_RECEIVER_PIN);
 }
 
-void Controllers::readAndProcess()
+UserAction Controllers::readAndProcess()
 {
   readFrequency();
   AppRadio::setFrequency(getFormatedFreq());
@@ -27,6 +26,7 @@ void Controllers::readAndProcess()
   if (readMute())
     AppRadio::switchMute();
   decodeIR();
+  return UserAction::idle;
 }
 
 void Controllers::readFrequency()

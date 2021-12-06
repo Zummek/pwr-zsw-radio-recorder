@@ -1,7 +1,7 @@
 #ifndef I2CBUS_H
 #define I2CBUS_H
 
-#define I2C_MAX_STR_SIZE 32
+#define I2C_MAX_ARG_SIZE 32
 
 namespace I2CCommands
 {

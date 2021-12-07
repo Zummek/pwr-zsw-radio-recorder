@@ -1,7 +1,7 @@
 #ifndef RECORDER_H
 #define RECORDER_H
 
-#include <SD.h>
+#include <SdFat.h>
 
 namespace Recorder
 {

@@ -15,7 +15,7 @@ void AppRadio::init(onRDSChangeFuncType func)
   rdsCallback = func;
 
   radio.init();
-  radio.setMono(false);
+  radio.setMono(true);
   radio.setMute(false);
   radio.attachReceiveRDS(_processRDS);
   rds.attachServicenNameCallback(_processRDSServiceName);

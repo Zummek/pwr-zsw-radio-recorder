@@ -52,7 +52,7 @@
 
 #define WAV_DATA_DATA_OFF WAV_DATA_SIZE_OFF + WAV_DATA_SIZE_LEN
 
-#define WRITE_WAV(VAL_NAME) \
+#define WRITE_WAV(VAL_NAME)    \
     file.seek(VAL_NAME##_OFF); \
     file.write(VAL_NAME, VAL_NAME##_LEN);
 
@@ -60,19 +60,18 @@
     file.write(VAL_NAME, VAL_NAME##_LEN);
 
 #define WRITE_WAV_VAL(VAL_NAME, VAL) \
-    file.seek(VAL_NAME##_OFF); \
+    file.seek(VAL_NAME##_OFF);       \
     file.write(VAL, VAL_NAME##_LEN);
 
 #define WRITE_WAV_VAL_NO_OFF(VAL_NAME, VAL) \
     file.write(VAL, VAL_NAME##_LEN);
 
-void uint32ToBytes(uint32_t input, byte* output);
+void uint32ToBytes(uint32_t input, byte *output);
 
-WavFile::WavFile(File fileObj, uint16_t sampleRate)
-    :file(fileObj), dataSize(0), isObjectClosed(false)
+WavFile::WavFile(File& fileObj, uint16_t sampleRate)
+    : file(fileObj), dataSize(0), isObjectClosed(false)
 {
     uint32ToBytes(sampleRate, wavSampleRate);
-    writeHeader();
 }
 
 void WavFile::writeHeader()
@@ -92,7 +91,12 @@ void WavFile::writeHeader()
     WRITE_WAV_NO_OFF(WAV_DATA_SIZE);
 }
 
-void WavFile::write(const byte* inBuff, size_t buffSize)
+void WavFile::begin()
+{
+    writeHeader();
+}
+
+void WavFile::write(const byte *inBuff, size_t buffSize)
 {
     if (isObjectClosed) return;
     file.write(inBuff, buffSize);
@@ -109,26 +113,19 @@ void WavFile::close()
 
 void WavFile::updateSizes()
 {
-    uint32_t sizeVal = (uint32_t) dataSize;
-
     byte wavDataSize[WAV_UINT_SIZE];
-    uint32ToBytes(sizeVal, wavDataSize);
+    uint32ToBytes(dataSize, wavDataSize);
     WRITE_WAV_VAL(WAV_DATA_SIZE, wavDataSize);
 
     byte wavSize[WAV_UINT_SIZE];
-    uint32ToBytes(sizeVal - (WAV_DATA_DATA_OFF - WAV_FORMAT_OFF), wavSize);
+    uint32ToBytes(dataSize + (WAV_DATA_DATA_OFF - WAV_FORMAT_OFF), wavSize);
     WRITE_WAV_VAL(WAV_SIZE, wavSize);
 }
 
-WavFile::~WavFile()
+void uint32ToBytes(uint32_t input, byte *output)
 {
-    close();
-}
-
-void uint32ToBytes(uint32_t input, byte* output)
-{
-    output[0] = (byte) (input & 0xFF);
-    output[1] = (byte) ((input >> 8) & 0xFF);
-    output[2] = (byte) ((input >> 16) & 0xFF);
-    output[3] = (byte) ((input >> 24) & 0xFF);
+    output[0] = (byte)(input & 0xFF);
+    output[1] = (byte)((input >> 8) & 0xFF);
+    output[2] = (byte)((input >> 16) & 0xFF);
+    output[3] = (byte)((input >> 24) & 0xFF);
 }

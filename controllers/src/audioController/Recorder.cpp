@@ -67,6 +67,8 @@
 
 #define ADC_INT_ENABLE _BV(ADIE)
 
+#define ADC_CPU_CYCLES 14
+
 void setUpTimer(uint16_t sampleRate);
 void stopTimer();
 void setUpADC(uint8_t inputPin, uint16_t sampleRate);
@@ -98,6 +100,7 @@ bool Recorder::startRecording(File& outputFile)
 {
     if (outFile) return false;
     outFile = new WavFile(outputFile, outSampleRate);
+    outFile->begin();
     setUpADC(srcPin, outSampleRate);
     setUpTimer(outSampleRate);
     return true;
@@ -106,9 +109,10 @@ bool Recorder::startRecording(File& outputFile)
 void Recorder::stopRecording()
 {
     if (!outFile) return;
-    delete outFile;
     stopTimer();
     stopADC();
+    outFile->close();
+    delete outFile;
 }
 
 ISR(TIMER1_COMPA_vect)
@@ -255,9 +259,11 @@ inline void setADCFreq(uint16_t sampleRate)
         sizeof(prescVals) / sizeof(prescVals[0]);
 
     uint8_t valIndex = 0;
+    uint16_t doubleSampleRate = sampleRate << 1;
     for (; valIndex < valCount; ++valIndex)
     {
-        if (F_CPU / prescVals[valIndex] / 14 > sampleRate)
+        if (F_CPU / prescVals[valIndex] / ADC_CPU_CYCLES
+            > doubleSampleRate)
         {
             break;
         }

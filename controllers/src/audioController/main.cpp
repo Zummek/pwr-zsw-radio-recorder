@@ -4,12 +4,12 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <SPI.h>
-#include <SD.h>
+#include <SdFat.h>
 
 #include <string.h>
 
 #define AUDIO_INPUT_PIN 7
-#define SAMPLING_RATE 44100
+#define SAMPLING_RATE 16000
 
 #define SD_SS_PIN 10
 
@@ -27,6 +27,8 @@ bool getFileName(const char* baseName, char* outFileName);
 
 bool isRecording = false;
 char fileName[MAX_FILE_NAME_LEN];
+SdFat memCard;
+File audioFile;
 
 void setup()
 {
@@ -34,7 +36,7 @@ void setup()
     Serial.println();
     Serial.println("Audio controller is starting..");
 
-	if (!SD.begin(SD_SS_PIN))
+	if (!memCard.begin(SD_SS_PIN))
 	{
 		Serial.println("Error! SD init failed");
 		while (true);
@@ -99,7 +101,8 @@ void startRecording(const char* baseFileName)
         Serial.println("Error! File duplicate limit exceeded");
         return;
     }
-	File audioFile = SD.open(fileName, FILE_WRITE);
+
+    audioFile = memCard.open(fileName, FILE_WRITE);
     if (!audioFile)
     {
         Serial.println("Error! Could not open the file");
@@ -118,7 +121,7 @@ void cancelRecording()
     Serial.println("Recording cancelled");
     stopRecording();
 
-    if (!SD.remove(fileName))
+    if (!memCard.remove(fileName))
     {
         Serial.println("Error! Could not delete recorded file");
     }
@@ -141,7 +144,7 @@ bool getFileName(const char* baseName, char* outFileName)
     snprintf(outFileName, MAX_FILE_NAME_LEN, "%s.wav", baseName);
     do
     {
-        if (!SD.exists(outFileName)) return true;
+        if (!memCard.exists(outFileName)) return true;
         snprintf(outFileName, MAX_FILE_NAME_LEN, 
             "%s (%d).wav", baseName, ++dupIndex);
     } while (dupIndex <= MAX_DUP_FILE_NUM);

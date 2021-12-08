@@ -127,11 +127,6 @@ void Lcd::displayRDS(char* rds) {
 }
 
 void Lcd::displayBands(int values[], uint8_t row) {
-  Serial.print("Bands: ");
-  for (int i = 0; i < EQUALIZER_BAUNDS_COUNT; i++) {
-    Serial.print(values[i]);
-    Serial.print(" ");
+  for (int i = 0; i < EQUALIZER_BAUNDS_COUNT; i++)
     Lcd::_writeByte(i, row, map(values[i], 0, 1023, 0, 7));
-  }
-  Serial.println();
 }

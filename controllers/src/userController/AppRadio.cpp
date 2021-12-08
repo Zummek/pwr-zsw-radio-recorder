@@ -34,7 +34,7 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
     Serial.println(newFreq);
     Lcd::displayFrequency(newFreq);
 
-    if (abs(newFreq - freq) > 10)
+    if (abs(newFreq - freq) > 20)
     {
       _resetSavedRDS();
     }

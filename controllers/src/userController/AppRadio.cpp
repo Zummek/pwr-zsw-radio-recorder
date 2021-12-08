@@ -1,6 +1,7 @@
 #include "AppRadio.hpp"
 
 #include <string.h>
+#include <math.h>
 
 RDA5807M AppRadio::radio;
 RDSParser AppRadio::rds;
@@ -26,14 +27,18 @@ void AppRadio::setFrequency(RADIO_FREQ newFreq)
 {
   if (freq != newFreq)
   {
-    freq = newFreq;
+
     radio.setBandFrequency(RADIO_BAND_FM, newFreq);
     // TODO: temporary for testing without display
     Serial.print("Set frequency: ");
     Serial.println(newFreq);
     Lcd::displayFrequency(newFreq);
 
-    _resetSavedRDS();
+    if (abs(newFreq - freq) > 10)
+    {
+      _resetSavedRDS();
+    }
+    freq = newFreq;
   }
 }
 
@@ -129,11 +134,17 @@ void AppRadio::_processRDSText(char* text)
   if (!strchr(text, '-')) return;
 
   strncpy(rdsTemp, text, RADIO_RDS_BUFF_SIZE);
+  uint8_t rdsLen = strlen(text);
   static constexpr uint8_t lastBuffPos =
     RADIO_RDS_BUFF_SIZE - 1;
-  if (strlen(text) > lastBuffPos)
+  if (rdsLen > lastBuffPos)
   {
     rdsTemp[lastBuffPos] = '\0';
+  }
+  for (int index = 0; index < rdsLen; ++index)
+  {
+    if (rdsTemp[index] == ':')  rdsTemp[index] = ' ';
+    else if (rdsTemp[index] == '\\') rdsTemp[index] = '-';
   }
 
   if (strcmp(rdsTemp, rdsText))

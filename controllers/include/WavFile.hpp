@@ -9,16 +9,17 @@
 class WavFile
 {
 private:
-    File& file;
+    File* file;
     uint32_t dataSize;
     byte wavSampleRate[WAV_UINT_SIZE];
-    bool isObjectClosed;
 
     void writeHeader();
     void updateSizes();
 public:
+    WavFile();
     WavFile(File& fileObj, uint16_t sampleRate);
     void begin();
+    bool isOpened();
     void write(const byte* inBuff, uint8_t buffSize);
     void close();
 };

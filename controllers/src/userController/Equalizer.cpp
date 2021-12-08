@@ -25,5 +25,5 @@ void Equalizer::process()
     digitalWrite(EQUALIZER_STROBE, HIGH);
   }
 
-  Lcd::displayBands(bandValues, 1);
+  Lcd::displayBands(bandValues);
 }

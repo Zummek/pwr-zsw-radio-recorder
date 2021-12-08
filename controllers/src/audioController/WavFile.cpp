@@ -53,23 +53,27 @@
 #define WAV_DATA_DATA_OFF WAV_DATA_SIZE_OFF + WAV_DATA_SIZE_LEN
 
 #define WRITE_WAV(VAL_NAME)    \
-    file.seek(VAL_NAME##_OFF); \
-    file.write(VAL_NAME, VAL_NAME##_LEN);
+    file->seek(VAL_NAME##_OFF); \
+    file->write(VAL_NAME, VAL_NAME##_LEN);
 
 #define WRITE_WAV_NO_OFF(VAL_NAME) \
-    file.write(VAL_NAME, VAL_NAME##_LEN);
+    file->write(VAL_NAME, VAL_NAME##_LEN);
 
 #define WRITE_WAV_VAL(VAL_NAME, VAL) \
-    file.seek(VAL_NAME##_OFF);       \
-    file.write(VAL, VAL_NAME##_LEN);
+    file->seek(VAL_NAME##_OFF);       \
+    file->write(VAL, VAL_NAME##_LEN);
 
 #define WRITE_WAV_VAL_NO_OFF(VAL_NAME, VAL) \
-    file.write(VAL, VAL_NAME##_LEN);
+    file->write(VAL, VAL_NAME##_LEN);
 
-void uint32ToBytes(uint32_t input, byte *output);
+void uint32ToBytes(uint32_t input, byte* output);
+
+WavFile::WavFile()
+    : file(nullptr), dataSize(0)
+{}
 
 WavFile::WavFile(File& fileObj, uint16_t sampleRate)
-    : file(fileObj), dataSize(0), isObjectClosed(false)
+    : file(&fileObj), dataSize(0)
 {
     uint32ToBytes(sampleRate, wavSampleRate);
 }
@@ -93,22 +97,28 @@ void WavFile::writeHeader()
 
 void WavFile::begin()
 {
+    if (!file) return;
     writeHeader();
 }
 
-void WavFile::write(const byte *inBuff, uint8_t buffSize)
+bool WavFile::isOpened()
 {
-    if (isObjectClosed) return;
-    file.write(inBuff, buffSize);
+    return (file != nullptr);
+}
+
+void WavFile::write(const byte* inBuff, uint8_t buffSize)
+{
+    if (!file) return;
+    file->write(inBuff, buffSize);
     dataSize += buffSize;
 }
 
 void WavFile::close()
 {
-    if (isObjectClosed) return;
+    if (!file) return;
     updateSizes();
-    file.close();
-    isObjectClosed = true;
+    file->close();
+    file = nullptr;
 }
 
 void WavFile::updateSizes()
@@ -122,7 +132,7 @@ void WavFile::updateSizes()
     WRITE_WAV_VAL(WAV_SIZE, wavSize);
 }
 
-void uint32ToBytes(uint32_t input, byte *output)
+void uint32ToBytes(uint32_t input, byte* output)
 {
     output[0] = (byte)(input & 0xFF);
     output[1] = (byte)((input >> 8) & 0xFF);

@@ -118,15 +118,22 @@ void Lcd::_writeByte(uint8_t col, uint8_t row, int n) {
 
 void Lcd::displayFrequency(int freq) {
   char buffer[11];
-  sprintf(buffer, "%3d.%02d MHz", freq / 100, freq % 100);
+  sprintf(buffer, "%3d.%02dMHz", freq / 100, freq % 100);
   Lcd::_write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, buffer);
 }
 
 void Lcd::displayRDS(char* rds) {
-  Lcd::_write(LCD_FREQUENCY_COL, LCD_FREQUENCY_ROW, rds);
+  char buffer[20];
+  strncpy(buffer, rds, 20);
+  buffer[19] = '\0';
+  Lcd::_write(LCD_RDS_COL, LCD_RDS_ROW, buffer);
 }
 
-void Lcd::displayBands(int values[], uint8_t row) {
+void Lcd::displayBands(int values[]) {
   for (int i = 0; i < EQUALIZER_BAUNDS_COUNT; i++)
-    Lcd::_writeByte(i, row, map(values[i], 0, 1023, 0, 7));
+    Lcd::_writeByte(LCD_EQUALIZER_COL + i, LCD_EQUALIZER_ROW, map(values[i], 0, 1023, 0, 7));
+}
+
+void Lcd::displayRecording(char* c) {
+  Lcd::_write(LCD_RECORDING_COL, LCD_RECORDING_ROW, c);
 }

@@ -50,16 +50,6 @@ void setup()
 
     Serial.println("Audio controller is ready!");
     Serial.println();
-
-    //TMP ONLY
-    startRecording("test-b");
-    //delay(5000);
-    Serial.println("juz");Serial.flush();
-    delay(10000);
-    Serial.println("stop");Serial.flush();
-    stopRecording();
-    Serial.println("ee");Serial.flush();
-    //TMP ONLY
 }
 
 void loop() {}

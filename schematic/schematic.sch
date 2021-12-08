@@ -20765,7 +20765,7 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <part name="I2C_CONVERTER" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="MSGEQ7" library="msgeq7" deviceset="MSGEQ7" device="DIP"/>
+<part name="EQ" library="msgeq7" deviceset="MSGEQ7" device="DIP"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100n"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100n"/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="33p"/>
@@ -20794,170 +20794,170 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <attribute name="NAME" x="-12.7" y="22.86" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-12.7" y="20.32" size="1.778" layer="96"/>
 </instance>
-<instance part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" x="101.6" y="55.88" smashed="yes" grouprefs="AUDIO_CONTOLLER">
-<attribute name="NAME" x="86.36" y="25.4" size="1.778" layer="95"/>
-<attribute name="VALUE" x="86.36" y="22.86" size="1.778" layer="96"/>
+<instance part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" x="106.68" y="53.34" smashed="yes" grouprefs="AUDIO_CONTOLLER">
+<attribute name="NAME" x="91.44" y="22.86" size="1.778" layer="95"/>
+<attribute name="VALUE" x="91.44" y="20.32" size="1.778" layer="96"/>
 </instance>
 <instance part="GND1" gate="1" x="40.64" y="81.28" smashed="yes" rot="R180" grouprefs="USER_CONTROLLER">
 <attribute name="VALUE" x="43.18" y="83.82" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND2" gate="1" x="132.08" y="81.28" smashed="yes" rot="R180" grouprefs="AUDIO_CONTOLLER">
-<attribute name="VALUE" x="134.62" y="83.82" size="1.778" layer="96" rot="R180"/>
+<instance part="GND2" gate="1" x="137.16" y="81.28" smashed="yes" rot="R180" grouprefs="AUDIO_CONTOLLER">
+<attribute name="VALUE" x="139.7" y="83.82" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="P+3" gate="1" x="45.72" y="81.28" smashed="yes" grouprefs="USER_CONTROLLER">
 <attribute name="VALUE" x="48.26" y="83.82" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+4" gate="1" x="139.7" y="81.28" smashed="yes" grouprefs="AUDIO_CONTOLLER">
-<attribute name="VALUE" x="142.24" y="83.82" size="1.778" layer="96" rot="R180"/>
+<instance part="P+4" gate="1" x="144.78" y="81.28" smashed="yes" grouprefs="AUDIO_CONTOLLER">
+<attribute name="VALUE" x="147.32" y="83.82" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R1" gate="G$1" x="10.16" y="109.22" smashed="yes" grouprefs="I2C">
-<attribute name="NAME" x="6.35" y="110.7186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="6.35" y="105.918" size="1.778" layer="96"/>
+<instance part="R1" gate="G$1" x="63.5" y="165.1" smashed="yes" grouprefs="I2C">
+<attribute name="NAME" x="59.69" y="166.5986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="59.69" y="161.798" size="1.778" layer="96"/>
 </instance>
-<instance part="R2" gate="G$1" x="10.16" y="101.6" smashed="yes" grouprefs="I2C">
-<attribute name="NAME" x="6.35" y="103.0986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="6.35" y="98.298" size="1.778" layer="96"/>
+<instance part="R2" gate="G$1" x="63.5" y="157.48" smashed="yes" grouprefs="I2C">
+<attribute name="NAME" x="59.69" y="158.9786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="59.69" y="154.178" size="1.778" layer="96"/>
 </instance>
-<instance part="P+1" gate="1" x="0" y="119.38" smashed="yes" grouprefs="I2C">
-<attribute name="VALUE" x="2.54" y="121.92" size="1.778" layer="96" rot="R180"/>
+<instance part="P+1" gate="1" x="53.34" y="175.26" smashed="yes" grouprefs="I2C">
+<attribute name="VALUE" x="55.88" y="177.8" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="U$1" gate="G$1" x="63.5" y="124.46" smashed="yes" grouprefs="RADIO_MODULE"/>
-<instance part="GND3" gate="1" x="91.44" y="101.6" smashed="yes" grouprefs="RADIO_MODULE">
-<attribute name="VALUE" x="88.9" y="99.06" size="1.778" layer="96"/>
+<instance part="U$1" gate="G$1" x="93.98" y="124.46" smashed="yes" grouprefs="RADIO_MODULE"/>
+<instance part="GND3" gate="1" x="121.92" y="101.6" smashed="yes" grouprefs="RADIO_MODULE">
+<attribute name="VALUE" x="119.38" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="ANT1" gate="A" x="93.98" y="134.62" smashed="yes" grouprefs="RADIO_MODULE">
-<attribute name="NAME" x="91.44" y="135.89" size="1.778" layer="95"/>
-<attribute name="VALUE" x="96.52" y="129.54" size="1.778" layer="96"/>
+<instance part="ANT1" gate="A" x="124.46" y="137.16" smashed="yes" grouprefs="RADIO_MODULE">
+<attribute name="NAME" x="121.92" y="138.43" size="1.778" layer="95"/>
+<attribute name="VALUE" x="127" y="132.08" size="1.778" layer="96"/>
 </instance>
-<instance part="J2" gate="G$1" x="114.3" y="116.078" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
-<attribute name="NAME" x="118.74991875" y="109.21475" size="1.77915" layer="95" rot="R180"/>
-<attribute name="VALUE" x="118.74648125" y="125.09688125" size="1.77835" layer="96" rot="R180"/>
+<instance part="J2" gate="G$1" x="144.78" y="116.078" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
+<attribute name="NAME" x="149.22991875" y="109.21475" size="1.77915" layer="95" rot="R180"/>
+<attribute name="VALUE" x="149.22648125" y="125.09688125" size="1.77835" layer="96" rot="R180"/>
 </instance>
-<instance part="+3V1" gate="G$1" x="53.34" y="101.6" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
-<attribute name="VALUE" x="50.8" y="99.06" size="1.778" layer="96"/>
+<instance part="+3V1" gate="G$1" x="83.82" y="101.6" smashed="yes" rot="R180" grouprefs="RADIO_MODULE">
+<attribute name="VALUE" x="81.28" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="-31.75" y="115.3668" smashed="yes" grouprefs="POWER_FILTRATION">
-<attribute name="NAME" x="-30.226" y="115.7478" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-30.226" y="110.6678" size="1.778" layer="96"/>
+<instance part="C2" gate="G$1" x="97.79" y="171.2468" smashed="yes" grouprefs="POWER_FILTRATION">
+<attribute name="NAME" x="99.314" y="171.6278" size="1.778" layer="95"/>
+<attribute name="VALUE" x="99.314" y="166.5478" size="1.778" layer="96"/>
 </instance>
-<instance part="C1" gate="G$1" x="-21.59" y="115.3668" smashed="yes" grouprefs="POWER_FILTRATION">
-<attribute name="NAME" x="-20.447" y="115.8494" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-20.447" y="110.7694" size="1.778" layer="96"/>
+<instance part="C1" gate="G$1" x="107.95" y="171.2468" smashed="yes" grouprefs="POWER_FILTRATION">
+<attribute name="NAME" x="109.093" y="171.7294" size="1.778" layer="95"/>
+<attribute name="VALUE" x="109.093" y="166.6494" size="1.778" layer="96"/>
 </instance>
-<instance part="P+2" gate="1" x="-26.67" y="128.0668" smashed="yes" grouprefs="POWER_FILTRATION">
-<attribute name="VALUE" x="-24.13" y="130.6068" size="1.778" layer="96" rot="R180"/>
+<instance part="P+2" gate="1" x="102.87" y="183.9468" smashed="yes" grouprefs="POWER_FILTRATION">
+<attribute name="VALUE" x="105.41" y="186.4868" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND4" gate="1" x="-26.67" y="100.1268" smashed="yes" grouprefs="POWER_FILTRATION">
-<attribute name="VALUE" x="-29.21" y="97.5868" size="1.778" layer="96"/>
+<instance part="GND4" gate="1" x="102.87" y="156.0068" smashed="yes" grouprefs="POWER_FILTRATION">
+<attribute name="VALUE" x="100.33" y="153.4668" size="1.778" layer="96"/>
 </instance>
-<instance part="RW1" gate="1" x="-76.2" y="129.54" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-70.993" y="124.714" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-70.866" y="131.318" size="1.778" layer="96" rot="MR90"/>
+<instance part="RW1" gate="1" x="-81.28" y="149.86" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-76.073" y="145.034" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-75.946" y="151.638" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="R5" gate="1" x="-76.2" y="109.22" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-72.517" y="105.156" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-72.39" y="110.49" size="1.778" layer="96" rot="MR90"/>
+<instance part="R5" gate="1" x="-81.28" y="124.46" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-77.597" y="120.396" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-77.47" y="125.73" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="GND5" gate="1" x="-58.42" y="160.02" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-55.88" y="162.56" size="1.778" layer="96" rot="R180"/>
+<instance part="GND5" gate="1" x="-63.5" y="180.34" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-60.96" y="182.88" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+5" gate="1" x="-63.5" y="154.94" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-60.96" y="157.48" size="1.778" layer="96" rot="R180"/>
+<instance part="P+5" gate="1" x="-68.58" y="175.26" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-66.04" y="177.8" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C3" gate="G$1" x="-85.09" y="136.0932" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-86.233" y="135.6106" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-86.233" y="140.6906" size="1.778" layer="96" rot="R180"/>
+<instance part="C3" gate="G$1" x="-90.17" y="156.4132" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-91.313" y="155.9306" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-91.313" y="161.0106" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="S1" gate="1" x="-78.74" y="91.44" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-81.28" y="97.79" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-75.565" y="95.25" size="1.778" layer="96"/>
+<instance part="S1" gate="1" x="-83.82" y="101.6" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-86.36" y="107.95" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.645" y="105.41" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="-76.2" y="86.36" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-80.01" y="87.8586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-80.01" y="83.058" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="-81.28" y="96.52" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-85.09" y="98.0186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-85.09" y="93.218" size="1.778" layer="96"/>
 </instance>
-<instance part="IR1" gate="A" x="-91.44" y="30.48" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-100.33" y="38.1" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-100.33" y="21.59" size="1.778" layer="96"/>
+<instance part="IR1" gate="A" x="-106.68" y="30.48" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-115.57" y="38.1" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-115.57" y="21.59" size="1.778" layer="96"/>
 </instance>
-<instance part="I2C_CONVERTER" gate="A" x="162.56" y="104.14" smashed="yes" grouprefs="LCD">
-<attribute name="NAME" x="151.13" y="112.395" size="1.778" layer="95"/>
-<attribute name="VALUE" x="156.21" y="96.52" size="1.778" layer="96"/>
+<instance part="I2C_CONVERTER" gate="A" x="25.4" y="160.02" smashed="yes" grouprefs="LCD">
+<attribute name="NAME" x="13.97" y="168.275" size="1.778" layer="95"/>
+<attribute name="VALUE" x="19.05" y="152.4" size="1.778" layer="96"/>
 </instance>
-<instance part="P+6" gate="VCC" x="139.7" y="116.84" smashed="yes" grouprefs="LCD">
-<attribute name="VALUE" x="142.24" y="119.38" size="1.778" layer="96" rot="R180"/>
+<instance part="P+6" gate="VCC" x="2.54" y="172.72" smashed="yes" grouprefs="LCD">
+<attribute name="VALUE" x="5.08" y="175.26" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND6" gate="1" x="147.32" y="116.84" smashed="yes" rot="R180" grouprefs="LCD">
-<attribute name="VALUE" x="149.86" y="119.38" size="1.778" layer="96" rot="R180"/>
+<instance part="GND6" gate="1" x="10.16" y="172.72" smashed="yes" rot="R180" grouprefs="LCD">
+<attribute name="VALUE" x="12.7" y="175.26" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="MSGEQ7" gate="G$1" x="73.66" y="162.56" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="NAME" x="67.564" y="171.196" size="1.778" layer="95"/>
+<instance part="EQ" gate="G$1" x="17.78" y="109.22" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="11.684" y="117.856" size="1.778" layer="95"/>
 </instance>
-<instance part="C4" gate="G$1" x="48.26" y="175.26" smashed="yes" rot="R270" grouprefs="EQUALIZER">
-<attribute name="NAME" x="46.101" y="178.816" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="53.721" y="178.816" size="1.778" layer="96" rot="R180"/>
+<instance part="C4" gate="G$1" x="-7.62" y="121.92" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="NAME" x="-9.779" y="125.476" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-2.159" y="125.476" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C6" gate="G$1" x="99.06" y="162.56" smashed="yes" rot="R90" grouprefs="EQUALIZER">
-<attribute name="NAME" x="98.679" y="166.624" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="106.299" y="166.624" size="1.778" layer="96" rot="R180"/>
+<instance part="C6" gate="G$1" x="43.18" y="109.22" smashed="yes" rot="R90" grouprefs="EQUALIZER">
+<attribute name="NAME" x="42.799" y="113.284" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="50.419" y="113.284" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C7" gate="G$1" x="106.68" y="172.72" smashed="yes" rot="R270" grouprefs="EQUALIZER">
-<attribute name="NAME" x="101.981" y="173.736" size="1.778" layer="95"/>
-<attribute name="VALUE" x="107.061" y="173.736" size="1.778" layer="96"/>
+<instance part="C7" gate="G$1" x="50.8" y="119.38" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="NAME" x="46.101" y="120.396" size="1.778" layer="95"/>
+<attribute name="VALUE" x="51.181" y="120.396" size="1.778" layer="96"/>
 </instance>
-<instance part="R6" gate="G$1" x="106.68" y="177.8" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="NAME" x="102.87" y="179.2986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="107.95" y="179.578" size="1.778" layer="96"/>
+<instance part="R6" gate="G$1" x="50.8" y="124.46" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="46.99" y="125.9586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="52.07" y="126.238" size="1.778" layer="96"/>
 </instance>
-<instance part="GND8" gate="1" x="35.56" y="175.26" smashed="yes" rot="R270" grouprefs="EQUALIZER">
-<attribute name="VALUE" x="33.02" y="177.8" size="1.778" layer="96"/>
+<instance part="GND8" gate="1" x="-20.32" y="121.92" smashed="yes" rot="R270" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="-22.86" y="124.46" size="1.778" layer="96"/>
 </instance>
-<instance part="GND9" gate="1" x="114.3" y="154.94" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="VALUE" x="111.76" y="152.4" size="1.778" layer="96"/>
+<instance part="GND9" gate="1" x="58.42" y="101.6" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="55.88" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="P+8" gate="VCC" x="55.88" y="182.88" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="VALUE" x="58.42" y="185.42" size="1.778" layer="96" rot="R180"/>
+<instance part="P+8" gate="VCC" x="0" y="129.54" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="2.54" y="132.08" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+9" gate="VCC" x="114.3" y="190.5" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="VALUE" x="116.84" y="193.04" size="1.778" layer="96" rot="R180"/>
+<instance part="P+9" gate="VCC" x="58.42" y="137.16" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="VALUE" x="60.96" y="139.7" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R4" gate="G$1" x="22.86" y="172.72" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="NAME" x="19.05" y="174.2186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="24.13" y="174.498" size="1.778" layer="96"/>
+<instance part="R4" gate="G$1" x="-33.02" y="119.38" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="-36.83" y="120.8786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-31.75" y="121.158" size="1.778" layer="96"/>
 </instance>
-<instance part="R7" gate="G$1" x="22.86" y="167.64" smashed="yes" grouprefs="EQUALIZER">
-<attribute name="NAME" x="19.05" y="169.1386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="24.13" y="169.418" size="1.778" layer="96"/>
+<instance part="R7" gate="G$1" x="-33.02" y="114.3" smashed="yes" grouprefs="EQUALIZER">
+<attribute name="NAME" x="-36.83" y="115.7986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-31.75" y="116.078" size="1.778" layer="96"/>
 </instance>
-<instance part="C5" gate="G$1" x="40.64" y="167.64" smashed="yes" rot="R90" grouprefs="EQUALIZER">
-<attribute name="NAME" x="37.719" y="169.164" size="1.778" layer="95"/>
-<attribute name="VALUE" x="42.799" y="169.164" size="1.778" layer="96"/>
+<instance part="C5" gate="G$1" x="-15.24" y="114.3" smashed="yes" rot="R90" grouprefs="EQUALIZER">
+<attribute name="NAME" x="-18.161" y="115.824" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-13.081" y="115.824" size="1.778" layer="96"/>
 </instance>
-<instance part="MICRO_SD_MODULE" gate="A" x="180.34" y="71.12" smashed="yes" grouprefs="CARD_MODULE">
-<attribute name="NAME" x="156.21" y="81.915" size="1.778" layer="95"/>
-<attribute name="VALUE" x="173.99" y="60.96" size="1.778" layer="96"/>
+<instance part="MICRO_SD_MODULE" gate="A" x="-20.32" y="170.18" smashed="yes" grouprefs="CARD_MODULE">
+<attribute name="NAME" x="-44.45" y="180.975" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-26.67" y="160.02" size="1.778" layer="96"/>
 </instance>
-<instance part="GND7" gate="1" x="170.18" y="60.96" smashed="yes" grouprefs="CARD_MODULE">
-<attribute name="VALUE" x="167.64" y="58.42" size="1.778" layer="96"/>
+<instance part="GND7" gate="1" x="-30.48" y="160.02" smashed="yes" grouprefs="CARD_MODULE">
+<attribute name="VALUE" x="-33.02" y="157.48" size="1.778" layer="96"/>
 </instance>
-<instance part="P+7" gate="VCC" x="162.56" y="60.96" smashed="yes" grouprefs="CARD_MODULE">
-<attribute name="VALUE" x="160.02" y="60.96" size="1.778" layer="96" rot="R180"/>
+<instance part="P+7" gate="VCC" x="-38.1" y="160.02" smashed="yes" grouprefs="CARD_MODULE">
+<attribute name="VALUE" x="-40.64" y="160.02" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="S2" gate="1" x="-78.74" y="50.8" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-81.28" y="57.15" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-75.565" y="54.61" size="1.778" layer="96"/>
+<instance part="S2" gate="1" x="-83.82" y="55.88" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-86.36" y="62.23" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.645" y="59.69" size="1.778" layer="96"/>
 </instance>
-<instance part="R8" gate="G$1" x="-76.2" y="45.72" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-80.01" y="47.2186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-80.01" y="42.418" size="1.778" layer="96"/>
+<instance part="R8" gate="G$1" x="-81.28" y="50.8" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-85.09" y="52.2986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-85.09" y="47.498" size="1.778" layer="96"/>
 </instance>
-<instance part="S3" gate="1" x="-78.74" y="71.12" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-81.28" y="77.47" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-75.565" y="74.93" size="1.778" layer="96"/>
+<instance part="S3" gate="1" x="-83.82" y="78.74" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-86.36" y="85.09" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.645" y="82.55" size="1.778" layer="96"/>
 </instance>
-<instance part="R9" gate="G$1" x="-76.2" y="66.04" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-80.01" y="67.5386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-80.01" y="62.738" size="1.778" layer="96"/>
+<instance part="R9" gate="G$1" x="-81.28" y="73.66" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-85.09" y="75.1586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-85.09" y="70.358" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -20971,24 +20971,24 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="A5"/>
-<wire x1="121.92" y1="53.34" x2="129.54" y2="53.34" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="129.54" y="53.34" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="127" y1="50.8" x2="134.62" y2="50.8" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="134.62" y="50.8" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="109.22" x2="20.32" y2="109.22" width="0.1524" layer="91" grouprefs="I2C"/>
-<label x="20.32" y="109.22" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
+<wire x1="68.58" y1="165.1" x2="73.66" y2="165.1" width="0.1524" layer="91" grouprefs="I2C"/>
+<label x="73.66" y="165.1" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SCL"/>
-<wire x1="59.5" y1="119.46" x2="53.34" y2="119.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="53.34" y1="119.46" x2="53.34" y2="119.38" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<label x="53.34" y="119.38" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
+<wire x1="89.98" y1="119.46" x2="83.82" y2="119.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="83.82" y1="119.46" x2="83.82" y2="119.38" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<label x="83.82" y="119.38" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
 </segment>
 <segment>
 <pinref part="I2C_CONVERTER" gate="A" pin="4"/>
-<wire x1="160.02" y1="101.6" x2="139.7" y2="101.6" width="0.1524" layer="91" grouprefs="LCD"/>
-<label x="139.7" y="101.6" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="LCD"/>
+<wire x1="22.86" y1="157.48" x2="2.54" y2="157.48" width="0.1524" layer="91" grouprefs="LCD"/>
+<label x="2.54" y="157.48" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="LCD"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -20999,23 +20999,23 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="A4"/>
-<wire x1="121.92" y1="50.8" x2="129.54" y2="50.8" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="129.54" y="50.8" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="127" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="134.62" y="48.26" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="101.6" x2="20.32" y2="101.6" width="0.1524" layer="91" grouprefs="I2C"/>
-<label x="20.32" y="101.6" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
+<wire x1="68.58" y1="157.48" x2="73.66" y2="157.48" width="0.1524" layer="91" grouprefs="I2C"/>
+<label x="73.66" y="157.48" size="1.778" layer="95" xref="yes" grouprefs="I2C"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="SDA"/>
-<wire x1="59.5" y1="122.46" x2="53.34" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<label x="53.34" y="122.428" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
+<wire x1="89.98" y1="122.46" x2="83.82" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<label x="83.82" y="122.428" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="RADIO_MODULE"/>
 </segment>
 <segment>
 <pinref part="I2C_CONVERTER" gate="A" pin="3"/>
-<wire x1="160.02" y1="104.14" x2="139.7" y2="104.14" width="0.1524" layer="91" grouprefs="LCD"/>
-<label x="139.7" y="104.14" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="LCD"/>
+<wire x1="22.86" y1="160.02" x2="2.54" y2="160.02" width="0.1524" layer="91" grouprefs="LCD"/>
+<label x="2.54" y="160.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="LCD"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -21028,86 +21028,94 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="GND@2"/>
-<wire x1="132.08" y1="78.74" x2="132.08" y2="66.04" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<wire x1="132.08" y1="66.04" x2="121.92" y2="66.04" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="137.16" y1="78.74" x2="137.16" y2="63.5" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="137.16" y1="63.5" x2="127" y2="63.5" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="83.5" y1="110.46" x2="91.44" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="113.98" y1="110.46" x2="121.92" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 <pinref part="J2" gate="G$1" pin="SLEEVE"/>
-<wire x1="91.44" y1="110.46" x2="91.44" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="101.6" y1="110.998" x2="91.44" y2="110.998" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="91.44" y1="110.998" x2="91.44" y2="110.49" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<junction x="91.44" y="110.49" grouprefs="RADIO_MODULE"/>
-<wire x1="91.44" y1="110.49" x2="91.44" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="121.92" y1="110.46" x2="121.92" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="132.08" y1="110.998" x2="121.92" y2="110.998" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="121.92" y1="110.998" x2="121.92" y2="110.49" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<junction x="121.92" y="110.49" grouprefs="RADIO_MODULE"/>
+<wire x1="121.92" y1="110.49" x2="121.92" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="-"/>
-<wire x1="-21.59" y1="110.2868" x2="-21.59" y2="107.7468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<wire x1="-21.59" y1="107.7468" x2="-26.67" y2="107.7468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="107.95" y1="166.1668" x2="107.95" y2="163.6268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="107.95" y1="163.6268" x2="102.87" y2="163.6268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="-26.67" y1="107.7468" x2="-26.67" y2="102.6668" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="102.87" y1="163.6268" x2="102.87" y2="158.5468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="-31.75" y1="110.2868" x2="-31.75" y2="107.7468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<wire x1="-31.75" y1="107.7468" x2="-26.67" y2="107.7468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<junction x="-26.67" y="107.7468" grouprefs="POWER_FILTRATION"/>
+<wire x1="97.79" y1="166.1668" x2="97.79" y2="163.6268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="97.79" y1="163.6268" x2="102.87" y2="163.6268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<junction x="102.87" y="163.6268" grouprefs="POWER_FILTRATION"/>
 </segment>
 <segment>
 <pinref part="R5" gate="1" pin="A"/>
-<wire x1="-76.2" y1="104.14" x2="-76.2" y2="101.6" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="119.38" x2="-81.28" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="-76.2" y1="101.6" x2="-58.42" y2="101.6" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="101.6" x2="-58.42" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="116.84" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="116.84" x2="-63.5" y2="142.24" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="RW1" gate="1" pin="A"/>
-<wire x1="-58.42" y1="121.92" x2="-58.42" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="144.78" x2="-58.42" y2="157.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="124.46" x2="-76.2" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="121.92" x2="-58.42" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="121.92" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="142.24" x2="-63.5" y2="165.1" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="165.1" x2="-63.5" y2="177.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="144.78" x2="-81.28" y2="142.24" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="142.24" x2="-63.5" y2="142.24" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="142.24" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="-"/>
-<wire x1="-85.09" y1="141.1732" x2="-85.09" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-85.09" y1="144.78" x2="-58.42" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="144.78" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="101.6" x2="-58.42" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="101.6" grouprefs="CONTROLLERS"/>
+<wire x1="-90.17" y1="161.4932" x2="-90.17" y2="165.1" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-90.17" y1="165.1" x2="-63.5" y2="165.1" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="165.1" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="116.84" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="116.84" grouprefs="CONTROLLERS"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="-58.42" y1="86.36" x2="-71.12" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="96.52" x2="-76.2" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="IR1" gate="A" pin="GND"/>
-<wire x1="-78.74" y1="25.4" x2="-58.42" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="25.4" x2="-58.42" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="86.36" grouprefs="CONTROLLERS"/>
+<wire x1="-93.98" y1="25.4" x2="-63.5" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="25.4" x2="-63.5" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="96.52" grouprefs="CONTROLLERS"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="-63.5" y1="50.8" x2="-63.5" y2="73.66" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="73.66" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="73.66" x2="-76.2" y2="73.66" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="73.66" grouprefs="CONTROLLERS"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="-63.5" y1="50.8" x2="-76.2" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="50.8" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="I2C_CONVERTER" gate="A" pin="1"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="160.02" y1="109.22" x2="147.32" y2="109.22" width="0.1524" layer="91" grouprefs="LCD"/>
-<wire x1="147.32" y1="109.22" x2="147.32" y2="114.3" width="0.1524" layer="91" grouprefs="LCD"/>
+<wire x1="22.86" y1="165.1" x2="10.16" y2="165.1" width="0.1524" layer="91" grouprefs="LCD"/>
+<wire x1="10.16" y1="165.1" x2="10.16" y2="170.18" width="0.1524" layer="91" grouprefs="LCD"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="43.18" y1="175.26" x2="38.1" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="-12.7" y1="121.92" x2="-17.78" y2="121.92" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="109.22" y1="172.72" x2="114.3" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="53.34" y1="119.38" x2="58.42" y2="119.38" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="114.3" y1="172.72" x2="114.3" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="114.3" y1="162.56" x2="114.3" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="58.42" y1="119.38" x2="58.42" y2="109.22" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="58.42" y1="109.22" x2="58.42" y2="106.68" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="C6" gate="G$1" pin="2"/>
-<wire x1="114.3" y1="160.02" x2="114.3" y2="157.48" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="104.14" y1="162.56" x2="114.3" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<junction x="114.3" y="162.56" grouprefs="EQUALIZER"/>
-<pinref part="MSGEQ7" gate="G$1" pin="GND"/>
-<wire x1="88.9" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<junction x="114.3" y="160.02" grouprefs="EQUALIZER"/>
+<wire x1="58.42" y1="106.68" x2="58.42" y2="104.14" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="48.26" y1="109.22" x2="58.42" y2="109.22" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="58.42" y="109.22" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="GND"/>
+<wire x1="33.02" y1="106.68" x2="58.42" y2="106.68" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="58.42" y="106.68" grouprefs="EQUALIZER"/>
 </segment>
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="6"/>
-<wire x1="177.8" y1="66.04" x2="170.18" y2="66.04" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="165.1" x2="-30.48" y2="165.1" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
 <pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="170.18" y1="66.04" x2="170.18" y2="63.5" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-30.48" y1="165.1" x2="-30.48" y2="162.56" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -21120,104 +21128,83 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="5V"/>
-<wire x1="139.7" y1="78.74" x2="139.7" y2="60.96" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<wire x1="139.7" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="144.78" y1="78.74" x2="144.78" y2="58.42" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="144.78" y1="58.42" x2="127" y2="58.42" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="5.08" y1="101.6" x2="0" y2="101.6" width="0.1524" layer="91" grouprefs="I2C"/>
-<wire x1="0" y1="101.6" x2="0" y2="109.22" width="0.1524" layer="91" grouprefs="I2C"/>
+<wire x1="58.42" y1="157.48" x2="53.34" y2="157.48" width="0.1524" layer="91" grouprefs="I2C"/>
+<wire x1="53.34" y1="157.48" x2="53.34" y2="165.1" width="0.1524" layer="91" grouprefs="I2C"/>
 <pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="0" y1="109.22" x2="0" y2="116.84" width="0.1524" layer="91" grouprefs="I2C"/>
-<wire x1="5.08" y1="109.22" x2="0" y2="109.22" width="0.1524" layer="91" grouprefs="I2C"/>
-<junction x="0" y="109.22" grouprefs="I2C"/>
+<wire x1="53.34" y1="165.1" x2="53.34" y2="172.72" width="0.1524" layer="91" grouprefs="I2C"/>
+<wire x1="58.42" y1="165.1" x2="53.34" y2="165.1" width="0.1524" layer="91" grouprefs="I2C"/>
+<junction x="53.34" y="165.1" grouprefs="I2C"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="-31.75" y1="117.9068" x2="-31.75" y2="120.4468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<wire x1="-31.75" y1="120.4468" x2="-26.67" y2="120.4468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="97.79" y1="173.7868" x2="97.79" y2="176.3268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="97.79" y1="176.3268" x2="102.87" y2="176.3268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="-26.67" y1="120.4468" x2="-26.67" y2="125.5268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="102.87" y1="176.3268" x2="102.87" y2="181.4068" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
 <pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="-26.67" y1="120.4468" x2="-21.59" y2="120.4468" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<wire x1="-21.59" y1="120.4468" x2="-21.59" y2="117.9068" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
-<junction x="-26.67" y="120.4468" grouprefs="POWER_FILTRATION"/>
-</segment>
-<segment>
-<pinref part="P+5" gate="1" pin="+5V"/>
-<wire x1="-63.5" y1="152.4" x2="-63.5" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<pinref part="R5" gate="1" pin="E"/>
-<wire x1="-63.5" y1="137.16" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="114.3" x2="-76.2" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="116.84" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<pinref part="RW1" gate="1" pin="E"/>
-<wire x1="-76.2" y1="134.62" x2="-76.2" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="137.16" x2="-63.5" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="137.16" grouprefs="CONTROLLERS"/>
-<pinref part="S1" gate="1" pin="S"/>
-<wire x1="-73.66" y1="88.9" x2="-63.5" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-63.5" y1="88.9" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="116.84" grouprefs="CONTROLLERS"/>
-<pinref part="IR1" gate="A" pin="VO"/>
-<wire x1="-63.5" y1="88.9" x2="-63.5" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-63.5" y1="30.48" x2="-78.74" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="88.9" grouprefs="CONTROLLERS"/>
-<junction x="-73.66" y="91.44" grouprefs="CONTROLLERS"/>
+<wire x1="102.87" y1="176.3268" x2="107.95" y2="176.3268" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<wire x1="107.95" y1="176.3268" x2="107.95" y2="173.7868" width="0.1524" layer="91" grouprefs="POWER_FILTRATION"/>
+<junction x="102.87" y="176.3268" grouprefs="POWER_FILTRATION"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="ANT1" gate="A" pin="1"/>
-<wire x1="93.98" y1="129.54" x2="93.98" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="124.46" y1="132.08" x2="124.46" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 <pinref part="U$1" gate="G$1" pin="ANT"/>
-<wire x1="93.98" y1="122.46" x2="83.5" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="124.46" y1="122.46" x2="113.98" y2="122.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 </segment>
 </net>
 <net name="AUDIO" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="TIP"/>
 <pinref part="U$1" gate="G$1" pin="L"/>
-<wire x1="101.6" y1="121.158" x2="96.52" y2="121.158" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="96.52" y1="121.158" x2="96.52" y2="116.84" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="96.52" y1="116.84" x2="96.52" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="96.52" y1="116.46" x2="83.5" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="96.52" y1="116.46" x2="96.52" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="96.52" y1="104.14" x2="101.6" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<label x="101.6" y="104.14" size="1.778" layer="95" xref="yes" grouprefs="RADIO_MODULE"/>
-<junction x="96.52" y="116.84" grouprefs="RADIO_MODULE"/>
+<wire x1="132.08" y1="121.158" x2="127" y2="121.158" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="127" y1="121.158" x2="127" y2="116.84" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="127" y1="116.84" x2="127" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="127" y1="116.46" x2="113.98" y2="116.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="127" y1="116.46" x2="127" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="127" y1="104.14" x2="132.08" y2="104.14" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<label x="132.08" y="104.14" size="1.778" layer="95" xref="yes" grouprefs="RADIO_MODULE"/>
+<junction x="127" y="116.84" grouprefs="RADIO_MODULE"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="A7"/>
-<wire x1="121.92" y1="58.42" x2="129.54" y2="58.42" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="129.54" y="58.42" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="127" y1="55.88" x2="134.62" y2="55.88" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="134.62" y="55.88" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="RING"/>
 <pinref part="U$1" gate="G$1" pin="R"/>
-<wire x1="101.6" y1="113.538" x2="83.5" y2="113.538" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
-<wire x1="83.5" y1="113.538" x2="83.5" y2="113.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="132.08" y1="113.538" x2="113.98" y2="113.538" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="113.98" y1="113.538" x2="113.98" y2="113.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
-<wire x1="53.34" y1="104.14" x2="53.34" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="83.82" y1="104.14" x2="83.82" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="53.34" y1="110.46" x2="59.5" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
+<wire x1="83.82" y1="110.46" x2="89.98" y2="110.46" width="0.1524" layer="91" grouprefs="RADIO_MODULE"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="FREQ_POT" class="0">
 <segment>
 <pinref part="RW1" gate="1" pin="S"/>
-<wire x1="-81.28" y1="129.54" x2="-85.09" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="129.54" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="149.86" x2="-90.17" y2="149.86" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-93.98" y="149.86" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="-85.09" y1="129.54" x2="-88.9" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-85.09" y1="133.5532" x2="-85.09" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-85.09" y="129.54" grouprefs="CONTROLLERS"/>
+<wire x1="-90.17" y1="149.86" x2="-93.98" y2="149.86" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-90.17" y1="153.8732" x2="-90.17" y2="149.86" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-90.17" y="149.86" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A1"/>
@@ -21228,8 +21215,8 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <net name="VOLUME_POT" class="0">
 <segment>
 <pinref part="R5" gate="1" pin="S"/>
-<wire x1="-81.28" y1="109.22" x2="-86.36" y2="109.22" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-86.36" y="109.22" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="124.46" x2="-91.44" y2="124.46" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-91.44" y="124.46" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A0"/>
@@ -21239,28 +21226,21 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </net>
 <net name="MUTE_BTN" class="0">
 <segment>
-<pinref part="S1" gate="1" pin="P1"/>
-<wire x1="-83.82" y1="91.44" x2="-88.9" y2="91.44" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="91.44" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
-<pinref part="S1" gate="1" pin="P"/>
-<wire x1="-83.82" y1="88.9" x2="-86.36" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-86.36" y1="88.9" x2="-86.36" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<pinref part="S1" gate="1" pin="S1"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="86.36" x2="-81.28" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-73.66" y="88.9" grouprefs="CONTROLLERS"/>
-</segment>
-<segment>
 <wire x1="-17.78" y1="55.88" x2="-22.86" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
 <label x="-22.86" y="55.88" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D2"/>
+</segment>
+<segment>
+<pinref part="S1" gate="1" pin="P"/>
+<wire x1="-88.9" y1="101.6" x2="-93.98" y2="101.6" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-93.98" y="101.6" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="IR_RECEIVER" class="0">
 <segment>
 <pinref part="IR1" gate="A" pin="VS"/>
-<wire x1="-78.74" y1="35.56" x2="-73.66" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-73.66" y="35.56" size="1.778" layer="95" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-93.98" y1="35.56" x2="-88.9" y2="35.56" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="35.56" size="1.778" layer="95" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D12"/>
@@ -21272,38 +21252,38 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <segment>
 <pinref part="I2C_CONVERTER" gate="A" pin="2"/>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
-<wire x1="160.02" y1="106.68" x2="139.7" y2="106.68" width="0.1524" layer="91" grouprefs="LCD"/>
-<wire x1="139.7" y1="106.68" x2="139.7" y2="114.3" width="0.1524" layer="91" grouprefs="LCD"/>
+<wire x1="22.86" y1="162.56" x2="2.54" y2="162.56" width="0.1524" layer="91" grouprefs="LCD"/>
+<wire x1="2.54" y1="162.56" x2="2.54" y2="170.18" width="0.1524" layer="91" grouprefs="LCD"/>
 </segment>
 <segment>
-<pinref part="MSGEQ7" gate="G$1" pin="VDD"/>
+<pinref part="EQ" gate="G$1" pin="VDD"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="55.88" y1="167.64" x2="55.88" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="55.88" y1="175.26" x2="50.8" y2="175.26" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="55.88" y1="175.26" x2="55.88" y2="180.34" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<junction x="55.88" y="175.26" grouprefs="EQUALIZER"/>
+<wire x1="0" y1="114.3" x2="0" y2="121.92" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="0" y1="121.92" x2="-5.08" y2="121.92" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="0" y1="121.92" x2="0" y2="127" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="0" y="121.92" grouprefs="EQUALIZER"/>
 <pinref part="P+8" gate="VCC" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="177.8" x2="114.3" y2="177.8" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="114.3" y1="177.8" x2="114.3" y2="187.96" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="55.88" y1="124.46" x2="58.42" y2="124.46" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="58.42" y1="124.46" x2="58.42" y2="134.62" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="P+9" gate="VCC" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="5"/>
-<wire x1="177.8" y1="68.58" x2="165.1" y2="68.58" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<wire x1="165.1" y1="68.58" x2="165.1" y2="55.88" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<wire x1="165.1" y1="55.88" x2="162.56" y2="55.88" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="167.64" x2="-35.56" y2="167.64" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-35.56" y1="167.64" x2="-35.56" y2="154.94" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-35.56" y1="154.94" x2="-38.1" y2="154.94" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
 <pinref part="P+7" gate="VCC" pin="VCC"/>
-<wire x1="162.56" y1="55.88" x2="162.56" y2="58.42" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<wire x1="-38.1" y1="154.94" x2="-38.1" y2="157.48" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
 </segment>
 </net>
 <net name="STROBE" class="0">
 <segment>
-<pinref part="MSGEQ7" gate="G$1" pin="STROBE"/>
-<wire x1="55.88" y1="162.56" x2="40.64" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<label x="40.64" y="162.56" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="STROBE"/>
+<wire x1="0" y1="109.22" x2="-15.24" y2="109.22" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="-15.24" y="109.22" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D4"/>
@@ -21313,9 +21293,9 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </net>
 <net name="RESET" class="0">
 <segment>
-<pinref part="MSGEQ7" gate="G$1" pin="RESET"/>
-<wire x1="55.88" y1="160.02" x2="40.64" y2="160.02" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<label x="40.64" y="160.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="RESET"/>
+<wire x1="0" y1="106.68" x2="-15.24" y2="106.68" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="-15.24" y="106.68" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D3"/>
@@ -21325,9 +21305,9 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </net>
 <net name="DC_OUT" class="0">
 <segment>
-<pinref part="MSGEQ7" gate="G$1" pin="DCOUT"/>
-<wire x1="88.9" y1="167.64" x2="88.9" y2="182.88" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<label x="88.9" y="182.88" size="1.778" layer="95" xref="yes" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="DCOUT"/>
+<wire x1="33.02" y1="114.3" x2="33.02" y2="129.54" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="33.02" y="129.54" size="1.778" layer="95" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A3"/>
@@ -21338,110 +21318,110 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="101.6" y1="177.8" x2="91.44" y2="177.8" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="91.44" y1="177.8" x2="91.44" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<pinref part="MSGEQ7" gate="G$1" pin="CKIN"/>
-<wire x1="91.44" y1="172.72" x2="91.44" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="91.44" y1="165.1" x2="88.9" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="45.72" y1="124.46" x2="35.56" y2="124.46" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="35.56" y1="124.46" x2="35.56" y2="119.38" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="CKIN"/>
+<wire x1="35.56" y1="119.38" x2="35.56" y2="111.76" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="35.56" y1="111.76" x2="33.02" y2="111.76" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="172.72" x2="91.44" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<junction x="91.44" y="172.72" grouprefs="EQUALIZER"/>
+<wire x1="45.72" y1="119.38" x2="35.56" y2="119.38" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="35.56" y="119.38" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="MSGEQ7" gate="G$1" pin="CG"/>
+<pinref part="EQ" gate="G$1" pin="CG"/>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="88.9" y1="162.56" x2="96.52" y2="162.56" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="33.02" y1="109.22" x2="40.64" y2="109.22" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="27.94" y1="172.72" x2="30.48" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="30.48" y1="172.72" x2="30.48" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="-27.94" y1="119.38" x2="-25.4" y2="119.38" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="-25.4" y1="119.38" x2="-25.4" y2="114.3" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="167.64" x2="38.1" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="-25.4" y1="114.3" x2="-17.78" y2="114.3" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="27.94" y1="167.64" x2="30.48" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<junction x="30.48" y="167.64" grouprefs="EQUALIZER"/>
+<wire x1="-27.94" y1="114.3" x2="-25.4" y2="114.3" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<junction x="-25.4" y="114.3" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
-<pinref part="MSGEQ7" gate="G$1" pin="AUDIO_IN"/>
-<wire x1="45.72" y1="167.64" x2="45.72" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<wire x1="45.72" y1="165.1" x2="55.88" y2="165.1" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<pinref part="EQ" gate="G$1" pin="AUDIO_IN"/>
+<wire x1="-10.16" y1="114.3" x2="-10.16" y2="111.76" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<wire x1="-10.16" y1="111.76" x2="0" y2="111.76" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="L" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="172.72" x2="12.7" y2="172.72" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<label x="12.7" y="172.72" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+<wire x1="-38.1" y1="119.38" x2="-43.18" y2="119.38" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="-43.18" y="119.38" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="R" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="167.64" x2="12.7" y2="167.64" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
-<label x="12.7" y="167.64" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
+<wire x1="-38.1" y1="114.3" x2="-43.18" y2="114.3" width="0.1524" layer="91" grouprefs="EQUALIZER"/>
+<label x="-43.18" y="114.3" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="EQUALIZER"/>
 </segment>
 </net>
 <net name="SCK" class="0">
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="2"/>
-<wire x1="177.8" y1="76.2" x2="165.1" y2="76.2" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<label x="165.1" y="76.2" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="175.26" x2="-35.56" y2="175.26" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<label x="-35.56" y="175.26" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D13"/>
-<wire x1="121.92" y1="33.02" x2="129.54" y2="33.02" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="129.54" y="33.02" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="127" y1="30.48" x2="134.62" y2="30.48" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="134.62" y="30.48" size="1.778" layer="95" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="3"/>
-<wire x1="177.8" y1="73.66" x2="165.1" y2="73.66" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<label x="165.1" y="73.66" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="172.72" x2="-35.56" y2="172.72" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<label x="-35.56" y="172.72" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D11"/>
-<wire x1="81.28" y1="35.56" x2="78.74" y2="35.56" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="78.74" y="35.56" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="86.36" y1="33.02" x2="83.82" y2="33.02" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="83.82" y="33.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="MISO" class="0">
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="4"/>
-<wire x1="177.8" y1="71.12" x2="165.1" y2="71.12" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<label x="165.1" y="71.12" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="170.18" x2="-35.56" y2="170.18" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<label x="-35.56" y="170.18" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D12"/>
-<wire x1="81.28" y1="33.02" x2="78.74" y2="33.02" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="78.74" y="33.02" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="86.36" y1="30.48" x2="83.82" y2="30.48" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="83.82" y="30.48" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="SS" class="0">
 <segment>
 <pinref part="MICRO_SD_MODULE" gate="A" pin="1"/>
-<wire x1="177.8" y1="78.74" x2="165.1" y2="78.74" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
-<label x="165.1" y="78.74" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
+<wire x1="-22.86" y1="177.8" x2="-35.56" y2="177.8" width="0.1524" layer="91" grouprefs="CARD_MODULE"/>
+<label x="-35.56" y="177.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CARD_MODULE"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D10"/>
-<wire x1="81.28" y1="38.1" x2="78.74" y2="38.1" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="78.74" y="38.1" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="86.36" y1="35.56" x2="83.82" y2="35.56" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="83.82" y="35.56" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="AUDIO_PASS" class="0">
 <segment>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D9"/>
-<wire x1="81.28" y1="40.64" x2="78.74" y2="40.64" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
-<label x="78.74" y="40.64" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+<wire x1="86.36" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
+<label x="83.82" y="38.1" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
 </segment>
 </net>
 <net name="START_REC_BTN" class="0">
@@ -21451,16 +21431,9 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <label x="-22.86" y="45.72" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
 </segment>
 <segment>
-<pinref part="S3" gate="1" pin="P1"/>
-<wire x1="-83.82" y1="71.12" x2="-88.9" y2="71.12" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="71.12" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-88.9" y1="78.74" x2="-93.98" y2="78.74" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="S3" gate="1" pin="P"/>
-<wire x1="-83.82" y1="68.58" x2="-86.36" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-86.36" y1="68.58" x2="-86.36" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<pinref part="S3" gate="1" pin="S1"/>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="66.04" x2="-81.28" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-73.66" y="68.58" grouprefs="CONTROLLERS"/>
+<label x="-93.98" y="78.74" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="STOP_REC_BTN" class="0">
@@ -21470,52 +21443,68 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <label x="-22.86" y="43.18" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
 </segment>
 <segment>
-<pinref part="S2" gate="1" pin="P1"/>
-<wire x1="-83.82" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="50.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-88.9" y1="55.88" x2="-93.98" y2="55.88" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="S2" gate="1" pin="P"/>
-<wire x1="-83.82" y1="48.26" x2="-86.36" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-86.36" y1="48.26" x2="-86.36" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<pinref part="S2" gate="1" pin="S1"/>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="45.72" x2="-81.28" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-73.66" y="48.26" grouprefs="CONTROLLERS"/>
-</segment>
-</net>
-<net name="GND1" class="0">
-<segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="-58.42" y1="45.72" x2="-71.12" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-</segment>
-</net>
-<net name="+5V1" class="0">
-<segment>
-<wire x1="-73.66" y1="48.26" x2="-63.5" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-63.5" y1="48.26" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="S2" gate="1" pin="S"/>
-<junction x="-73.66" y="50.8" grouprefs="CONTROLLERS"/>
-</segment>
-</net>
-<net name="GND2" class="0">
-<segment>
-<pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="-58.42" y1="66.04" x2="-71.12" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-93.98" y="55.88" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="+5V2" class="0">
 <segment>
-<wire x1="-73.66" y1="68.58" x2="-63.5" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-63.5" y1="68.58" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-68.58" y1="76.2" x2="-68.58" y2="106.68" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="P+5" gate="1" pin="+5V"/>
+<wire x1="-68.58" y1="172.72" x2="-68.58" y2="157.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="R5" gate="1" pin="E"/>
+<wire x1="-68.58" y1="157.48" x2="-68.58" y2="132.08" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="129.54" x2="-81.28" y2="132.08" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="132.08" x2="-68.58" y2="132.08" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="RW1" gate="1" pin="E"/>
+<wire x1="-81.28" y1="154.94" x2="-81.28" y2="157.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="157.48" x2="-68.58" y2="157.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-68.58" y="157.48" grouprefs="CONTROLLERS"/>
+<wire x1="-78.74" y1="99.06" x2="-68.58" y2="99.06" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-68.58" y1="99.06" x2="-68.58" y2="132.08" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-68.58" y="132.08" grouprefs="CONTROLLERS"/>
+<pinref part="IR1" gate="A" pin="VO"/>
+<wire x1="-68.58" y1="99.06" x2="-68.58" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-68.58" y1="76.2" x2="-68.58" y2="53.34" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-68.58" y1="53.34" x2="-68.58" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-68.58" y1="30.48" x2="-93.98" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-68.58" y="99.06" grouprefs="CONTROLLERS"/>
+<pinref part="S3" gate="1" pin="S1"/>
+<wire x1="-78.74" y1="76.2" x2="-68.58" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-68.58" y="76.2" grouprefs="CONTROLLERS"/>
+<pinref part="S1" gate="1" pin="S1"/>
+<wire x1="-68.58" y1="53.34" x2="-68.58" y2="83.82" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="S2" gate="1" pin="S1"/>
+<wire x1="-78.74" y1="53.34" x2="-68.58" y2="53.34" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-68.58" y="53.34" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="S2" gate="1" pin="P1"/>
+<wire x1="-88.9" y1="53.34" x2="-91.44" y2="53.34" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-91.44" y1="53.34" x2="-91.44" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="-91.44" y1="50.8" x2="-86.36" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="S3" gate="1" pin="S"/>
-<junction x="-73.66" y="71.12" grouprefs="CONTROLLERS"/>
+<pinref part="S3" gate="1" pin="P1"/>
+<wire x1="-88.9" y1="76.2" x2="-91.44" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-91.44" y1="76.2" x2="-91.44" y2="73.66" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="-91.44" y1="73.66" x2="-86.36" y2="73.66" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="S1" gate="1" pin="P1"/>
+<wire x1="-88.9" y1="99.06" x2="-91.44" y2="99.06" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-91.44" y1="99.06" x2="-91.44" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="-91.44" y1="96.52" x2="-86.36" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 </nets>

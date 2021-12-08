@@ -36,20 +36,21 @@ void setup()
     Serial.println();
     Serial.println("Audio controller is starting..");
 
-	if (!memCard.begin(SD_SS_PIN))
-	{
-		Serial.println("Error! SD init failed");
-		while (true);
-	}
+    if (!memCard.begin(SD_SS_PIN))
+    {
+        Serial.println("Error! SD init failed");
+        while (true);
+    }
 
-	Recorder::setInputPin(AUDIO_INPUT_PIN);
-	Recorder::setSampleRate(SAMPLING_RATE);
+    Recorder::setInputPin(AUDIO_INPUT_PIN);
+    Recorder::setSampleRate(SAMPLING_RATE);
 
     Wire.begin(static_cast<uint8_t>(I2CAddresses::audioController));
     Wire.onReceive(onI2CReceive);
 
     Serial.println("Audio controller is ready!");
     Serial.println();
+    Serial.flush();
 }
 
 void loop() {}
@@ -83,7 +84,7 @@ inline void readI2CArgToBuff(char* outBuff, uint8_t len)
 
     while (buffIndex < buffLimit)
     {
-        outBuff[buffIndex++] = 
+        outBuff[buffIndex++] =
             static_cast<byte>(Wire.read());
     }
     outBuff[buffIndex] = '\0';
@@ -92,10 +93,11 @@ inline void readI2CArgToBuff(char* outBuff, uint8_t len)
 void startRecording(const char* baseFileName)
 {
     if (isRecording) return;
-    
+
     Serial.print("New recording: ");
     Serial.println(baseFileName);
-    
+    Serial.flush();
+
     if (!getFileName(baseFileName, fileName))
     {
         Serial.println("Error! File duplicate limit exceeded");
@@ -113,6 +115,7 @@ void startRecording(const char* baseFileName)
 
     Serial.print("Recording into file: ");
     Serial.println(fileName);
+    Serial.flush();
 }
 
 void cancelRecording()
@@ -136,6 +139,7 @@ void stopRecording()
 
     Serial.println("Recording stopped");
     Serial.println();
+    Serial.flush();
 }
 
 bool getFileName(const char* baseName, char* outFileName)
@@ -145,7 +149,7 @@ bool getFileName(const char* baseName, char* outFileName)
     do
     {
         if (!memCard.exists(outFileName)) return true;
-        snprintf(outFileName, MAX_FILE_NAME_LEN, 
+        snprintf(outFileName, MAX_FILE_NAME_LEN,
             "%s (%d).wav", baseName, ++dupIndex);
     } while (dupIndex <= MAX_DUP_FILE_NUM);
     return false;

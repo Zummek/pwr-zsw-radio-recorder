@@ -10,7 +10,7 @@
 void onRDSChange();
 
 void sendCmdToI2CDev(I2CAddresses dstDevice, uint8_t cmd);
-void sendCmdToI2CDevWithArg(I2CAddresses dstDevice, 
+void sendCmdToI2CDevWithArg(I2CAddresses dstDevice,
     uint8_t cmd, const char* cmdArg);
 
 bool hasUserStartedRecording = false;
@@ -35,6 +35,7 @@ void loop()
 {
     AppRadio::checkRDS();
     RecAction action = Controllers::readAndProcess();
+
     switch (action)
     {
     case RecAction::startRecAction:
@@ -43,6 +44,7 @@ void loop()
             static_cast<uint8_t>(
                 I2CCommands::audioController::startRecording),
             AppRadio::rdsText);
+        Lcd::displayRecording("R");
         hasUserStartedRecording = true;
         break;
     case RecAction::stopRecAction:
@@ -51,6 +53,7 @@ void loop()
             I2CAddresses::audioController,
             static_cast<uint8_t>(
                 I2CCommands::audioController::stopRecording));
+        Lcd::displayRecording(" ");
         hasUserStartedRecording = false;
         break;
     default:
@@ -90,7 +93,7 @@ void sendCmdToI2CDev(I2CAddresses dstDevice, uint8_t cmd)
     Wire.endTransmission();
 }
 
-void sendCmdToI2CDevWithArg(I2CAddresses dstDevice, 
+void sendCmdToI2CDevWithArg(I2CAddresses dstDevice,
     uint8_t cmd, const char* cmdArg)
 {
     byte I2CMsg[I2C_MAX_ARG_SIZE + 1];
@@ -100,7 +103,7 @@ void sendCmdToI2CDevWithArg(I2CAddresses dstDevice,
         = I2C_MAX_ARG_SIZE - 1;
     uint8_t argLen = strlen(cmdArg);
     if (argLen > maxArgLen) argLen = maxArgLen;
-    strncpy(reinterpret_cast<char*>(&I2CMsg[1]), 
+    strncpy(reinterpret_cast<char*>(&I2CMsg[1]),
         cmdArg, argLen);
     I2CMsg[argLen] = '\0';
 

@@ -6,7 +6,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define BUFF_SIZE 256
+#define BUFF_SIZE 96
 
 #define ENABLE_NESTED_INTS() sei()
 
@@ -80,11 +80,11 @@ void setADCFreq(uint16_t sampleRate);
 uint8_t srcPin;
 uint16_t outSampleRate;
 
-WavFile* outFile = nullptr;
+WavFile outFile;
 volatile byte buffs[2][BUFF_SIZE];
 volatile bool buffReady[2];
-volatile size_t buffIndex;
-volatile size_t sampleIndex;
+volatile uint8_t buffIndex;
+volatile uint8_t sampleIndex;
 
 void Recorder::setInputPin(uint8_t pin)
 {
@@ -98,9 +98,16 @@ void Recorder::setSampleRate(uint16_t sampleRate)
 
 bool Recorder::startRecording(File& outputFile)
 {
-    if (outFile) return false;
-    outFile = new WavFile(outputFile, outSampleRate);
-    outFile->begin();
+    if (outFile.isOpened()) return false;
+
+    buffReady[0] = false;
+    buffReady[1] = false;
+    buffIndex = 0;
+    sampleIndex = 0;
+
+    outFile = WavFile(outputFile, outSampleRate);
+    outFile.begin();
+
     setUpADC(srcPin, outSampleRate);
     setUpTimer(outSampleRate);
     return true;
@@ -108,21 +115,20 @@ bool Recorder::startRecording(File& outputFile)
 
 void Recorder::stopRecording()
 {
-    if (!outFile) return;
+    if (!outFile.isOpened()) return;
     stopTimer();
     stopADC();
-    outFile->close();
-    delete outFile;
+    outFile.close();
 }
 
 ISR(TIMER1_COMPA_vect)
 {
     TIMER1_INT_MASK_REG &= ~TIMER1_INT_COMPA_ENABLE;
     ENABLE_NESTED_INTS();
-    size_t otherBuffIndex = !buffIndex;
+    uint8_t otherBuffIndex = !buffIndex;
     if (buffReady[otherBuffIndex])
     {
-        outFile->write(const_cast<const byte*>(buffs[otherBuffIndex]), BUFF_SIZE);
+        outFile.write(const_cast<const byte*>(buffs[otherBuffIndex]), BUFF_SIZE);
         buffReady[otherBuffIndex] = false;
     }
     TIMER1_INT_MASK_REG |= TIMER1_INT_COMPA_ENABLE;
@@ -152,10 +158,10 @@ inline void setUpTimer(uint16_t sampleRate)
 {
     POWER_RED_REG &= ~POWER_RED_TIMER1;
 
-    TIMER1_CTRL_REG_A = 
+    TIMER1_CTRL_REG_A =
         (TIMER1_CTRL_REG_A & ~TIMER1_MODE_MASK_A)
         | TIMER1_MODE_FAST_PWM_ISR_A;
-    TIMER1_CTRL_REG_B = 
+    TIMER1_CTRL_REG_B =
         (TIMER1_CTRL_REG_B & ~TIMER1_MODE_MASK_B)
         | TIMER1_MODE_FAST_PWM_ISR_B;
     uint16_t timer1Top = (F_CPU / sampleRate) - 1;
@@ -164,14 +170,14 @@ inline void setUpTimer(uint16_t sampleRate)
 #ifdef AUDIO_PASSTHROUGH
     pinMode(TIMER1_OUT_PIN_A, OUTPUT);
 
-    TIMER1_CTRL_REG_A = 
+    TIMER1_CTRL_REG_A =
         (TIMER1_CTRL_REG_A & ~TIMER1_OUT_MODE_MASK_A)
         | TIMER1_OUT_MODE_TOGGLE_NO_INV_A;
 #endif
 
     TIMER1_INT_MASK_REG |= TIMER1_INT_COMPA_ENABLE;
-    
-    TIMER1_CTRL_REG_B = 
+
+    TIMER1_CTRL_REG_B =
         (TIMER1_CTRL_REG_B & ~TIMER1_CLOCK_MASK)
         | TIMER1_CLOCK_PRESC_X1;
 }
@@ -179,14 +185,14 @@ inline void setUpTimer(uint16_t sampleRate)
 inline void stopTimer()
 {
 #ifdef AUDIO_PASSTHROUGH
-    TIMER1_CTRL_REG_A = 
+    TIMER1_CTRL_REG_A =
         (TIMER1_CTRL_REG_A & ~TIMER1_OUT_MODE_MASK_A)
         | TIMER1_OUT_MODE_OFF_A;
 #endif
-    
+
     TIMER1_INT_MASK_REG &= ~TIMER1_INT_COMPA_ENABLE;
 
-    TIMER1_CTRL_REG_B = 
+    TIMER1_CTRL_REG_B =
         (TIMER1_CTRL_REG_B & ~TIMER1_CLOCK_MASK)
         | TIMER1_CLOCK_NO_CLOCK;
 }
@@ -199,13 +205,13 @@ inline void setUpADC(uint8_t inputPin, uint16_t sampleRate)
 
     setADCFreq(sampleRate);
 
-    ADC_IN_REG = 
+    ADC_IN_REG =
         (ADC_IN_REG & ~ADC_REF_VOLT_MASK)
         | ADC_REF_VOLT_AVCC;
     setADCSource(inputPin);
 
     ADC_IN_REG |= ADC_LEFT_ALIGN;
-    
+
     ADC_CTRL_REG_B =
         (ADC_CTRL_REG_B & ~ADC_TRIGGER_MASK)
         | ADC_TRIGGER_TIMER1_COMPB;
@@ -216,9 +222,8 @@ inline void setUpADC(uint8_t inputPin, uint16_t sampleRate)
 
 inline void stopADC()
 {
-    ADC_CTRL_REG_A &= ~ADC_INT_ENABLE;
-
-    ADC_CTRL_REG_A &= ~ADC_ENABLE;
+    ADC_CTRL_REG_A = 0;
+    ADC_CTRL_REG_B = 0;
 }
 
 inline void setADCSource(uint8_t pin)
@@ -226,27 +231,27 @@ inline void setADCSource(uint8_t pin)
     // Code taken from Arduino's analogRead()
 #if defined(analogPinToChannel)
 #if defined(__AVR_ATmega32U4__)
-	if (pin >= 18) pin -= 18;
+    if (pin >= 18) pin -= 18;
 #endif
-	pin = analogPinToChannel(pin);
+    pin = analogPinToChannel(pin);
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-	if (pin >= 54) pin -= 54;
+    if (pin >= 54) pin -= 54;
 #elif defined(__AVR_ATmega32U4__)
-	if (pin >= 18) pin -= 18;
+    if (pin >= 18) pin -= 18;
 #elif defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644PA__)
-	if (pin >= 24) pin -= 24;
+    if (pin >= 24) pin -= 24;
 #else
-	if (pin >= 14) pin -= 14;
+    if (pin >= 14) pin -= 14;
 #endif
 
 #if ADC_PIN_HAS_6TH_BIT
-	ADC_CTRL_REG_B = 
-        (ADC_CTRL_REG_B & ~ADC_PIN_6TH_BIT) 
+    ADC_CTRL_REG_B =
+        (ADC_CTRL_REG_B & ~ADC_PIN_6TH_BIT)
         | ADC_PIN_MOVE_TO_6TH_BIT((pin >> 3) & 0x01);
 #endif
-    
-	ADC_IN_REG = 
-        (ADC_IN_REG & ~ADC_PIN_4_BIT_MASK) 
+
+    ADC_IN_REG =
+        (ADC_IN_REG & ~ADC_PIN_4_BIT_MASK)
         | (pin & ADC_PIN_3_BIT_MASK);
 }
 
@@ -255,7 +260,7 @@ inline void setADCFreq(uint16_t sampleRate)
     static const uint8_t prescVals[] = {
         128, 64, 32, 16, 8, 4, 2
     };
-    static constexpr uint8_t valCount = 
+    static constexpr uint8_t valCount =
         sizeof(prescVals) / sizeof(prescVals[0]);
 
     uint8_t valIndex = 0;
@@ -263,7 +268,7 @@ inline void setADCFreq(uint16_t sampleRate)
     for (; valIndex < valCount; ++valIndex)
     {
         if (F_CPU / prescVals[valIndex] / ADC_CPU_CYCLES
-            > doubleSampleRate)
+    > doubleSampleRate)
         {
             break;
         }

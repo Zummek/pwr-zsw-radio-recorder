@@ -96,7 +96,7 @@ void WavFile::begin()
     writeHeader();
 }
 
-void WavFile::write(const byte *inBuff, size_t buffSize)
+void WavFile::write(const byte *inBuff, uint8_t buffSize)
 {
     if (isObjectClosed) return;
     file.write(inBuff, buffSize);

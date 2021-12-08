@@ -19,7 +19,7 @@ private:
 public:
     WavFile(File& fileObj, uint16_t sampleRate);
     void begin();
-    void write(const byte* inBuff, size_t buffSize);
+    void write(const byte* inBuff, uint8_t buffSize);
     void close();
 };
 

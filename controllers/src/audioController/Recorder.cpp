@@ -6,7 +6,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define BUFF_SIZE 256
+#define BUFF_SIZE 128
 
 #define ENABLE_NESTED_INTS() sei()
 
@@ -83,8 +83,14 @@ uint16_t outSampleRate;
 WavFile* outFile = nullptr;
 volatile byte buffs[2][BUFF_SIZE];
 volatile bool buffReady[2];
-volatile size_t buffIndex;
-volatile size_t sampleIndex;
+volatile uint8_t buffIndex;
+volatile uint8_t sampleIndex;
+
+volatile uint8_t lastSampleIndex = -1;
+volatile uint32_t totalSampleIndex = 0;
+volatile uint32_t sampleIndexCount = 0;
+volatile uint8_t lastSampleIndexIndex = -1;
+volatile uint8_t miss = 0;
 
 void Recorder::setInputPin(uint8_t pin)
 {
@@ -98,9 +104,22 @@ void Recorder::setSampleRate(uint16_t sampleRate)
 
 bool Recorder::startRecording(File& outputFile)
 {
+    miss = 0;
+    lastSampleIndex = -1;
+    totalSampleIndex = 0;
+    sampleIndexCount = 0;
+    lastSampleIndexIndex = -1;
+
     if (outFile) return false;
+    
+    buffReady[0] = false;
+    buffReady[1] = false;
+    buffIndex = 0;
+    sampleIndex = 0;
+
     outFile = new WavFile(outputFile, outSampleRate);
     outFile->begin();
+    
     setUpADC(srcPin, outSampleRate);
     setUpTimer(outSampleRate);
     return true;
@@ -108,6 +127,25 @@ bool Recorder::startRecording(File& outputFile)
 
 void Recorder::stopRecording()
 {
+    Serial.print("miss:"); 
+    Serial.println(miss); 
+    Serial.flush();
+    Serial.print("last sample:"); 
+    Serial.println(lastSampleIndex);
+    Serial.flush();
+    Serial.print("last sample index:"); 
+    Serial.println(lastSampleIndexIndex);
+    Serial.flush();
+    Serial.print("total last sample:"); 
+    Serial.println(totalSampleIndex);
+    Serial.flush();
+    Serial.print("sd write count:"); 
+    Serial.println(sampleIndexCount);
+    Serial.flush();
+    Serial.print("avg last sample:"); 
+    Serial.println(((float) totalSampleIndex) / sampleIndexCount);
+    Serial.flush();
+
     if (!outFile) return;
     stopTimer();
     stopADC();
@@ -119,12 +157,21 @@ ISR(TIMER1_COMPA_vect)
 {
     TIMER1_INT_MASK_REG &= ~TIMER1_INT_COMPA_ENABLE;
     ENABLE_NESTED_INTS();
-    size_t otherBuffIndex = !buffIndex;
+    uint8_t otherBuffIndex = !buffIndex;
     if (buffReady[otherBuffIndex])
     {
         outFile->write(const_cast<const byte*>(buffs[otherBuffIndex]), BUFF_SIZE);
         buffReady[otherBuffIndex] = false;
     }
+    if (sampleIndex >= lastSampleIndex)
+    {
+        lastSampleIndex = sampleIndex;
+        lastSampleIndexIndex = sampleIndexCount;
+    }
+    totalSampleIndex += sampleIndex;
+    ++sampleIndexCount;
+    
+    //Serial.println(sampleIndex); Serial.flush();
     TIMER1_INT_MASK_REG |= TIMER1_INT_COMPA_ENABLE;
 }
 
@@ -142,6 +189,7 @@ ISR(ADC_vect)
     {
         buffReady[buffIndex] = true;
         buffIndex = !buffIndex;
+        if (buffReady[buffIndex]) ++miss;
         sampleIndex = 0;
     }
 

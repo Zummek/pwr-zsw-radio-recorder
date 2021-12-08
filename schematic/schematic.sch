@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -20780,6 +20780,10 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <part name="MICRO_SD_MODULE" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="S2" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" package3d_urn="urn:adsk.eagle:package:27496/1"/>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="10k"/>
+<part name="S3" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" package3d_urn="urn:adsk.eagle:package:27496/1"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -20846,31 +20850,31 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <instance part="GND4" gate="1" x="-26.67" y="100.1268" smashed="yes" grouprefs="POWER_FILTRATION">
 <attribute name="VALUE" x="-29.21" y="97.5868" size="1.778" layer="96"/>
 </instance>
-<instance part="RW1" gate="1" x="-76.2" y="88.9" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-70.993" y="84.074" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-70.866" y="90.678" size="1.778" layer="96" rot="MR90"/>
+<instance part="RW1" gate="1" x="-76.2" y="129.54" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-70.993" y="124.714" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-70.866" y="131.318" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="R5" gate="1" x="-76.2" y="68.58" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-72.517" y="64.516" size="1.778" layer="95" rot="MR90"/>
-<attribute name="VALUE" x="-72.39" y="69.85" size="1.778" layer="96" rot="MR90"/>
+<instance part="R5" gate="1" x="-76.2" y="109.22" smashed="yes" rot="MR0" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-72.517" y="105.156" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-72.39" y="110.49" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="GND5" gate="1" x="-58.42" y="111.76" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-55.88" y="114.3" size="1.778" layer="96" rot="R180"/>
+<instance part="GND5" gate="1" x="-58.42" y="160.02" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-55.88" y="162.56" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+5" gate="1" x="-63.5" y="111.76" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="VALUE" x="-60.96" y="114.3" size="1.778" layer="96" rot="R180"/>
+<instance part="P+5" gate="1" x="-63.5" y="154.94" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="VALUE" x="-60.96" y="157.48" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C3" gate="G$1" x="-85.09" y="95.4532" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-86.233" y="94.9706" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-86.233" y="100.0506" size="1.778" layer="96" rot="R180"/>
+<instance part="C3" gate="G$1" x="-85.09" y="136.0932" smashed="yes" rot="R180" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-86.233" y="135.6106" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-86.233" y="140.6906" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="S1" gate="1" x="-78.74" y="50.8" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-81.28" y="57.15" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-75.565" y="54.61" size="1.778" layer="96"/>
+<instance part="S1" gate="1" x="-78.74" y="91.44" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-81.28" y="97.79" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-75.565" y="95.25" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="-76.2" y="45.72" smashed="yes" grouprefs="CONTROLLERS">
-<attribute name="NAME" x="-80.01" y="47.2186" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-80.01" y="42.418" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="-76.2" y="86.36" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-80.01" y="87.8586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.01" y="83.058" size="1.778" layer="96"/>
 </instance>
 <instance part="IR1" gate="A" x="-91.44" y="30.48" smashed="yes" grouprefs="CONTROLLERS">
 <attribute name="NAME" x="-100.33" y="38.1" size="1.778" layer="95"/>
@@ -20938,6 +20942,22 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </instance>
 <instance part="P+7" gate="VCC" x="162.56" y="60.96" smashed="yes" grouprefs="CARD_MODULE">
 <attribute name="VALUE" x="160.02" y="60.96" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="S2" gate="1" x="-78.74" y="50.8" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-81.28" y="57.15" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-75.565" y="54.61" size="1.778" layer="96"/>
+</instance>
+<instance part="R8" gate="G$1" x="-76.2" y="45.72" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-80.01" y="47.2186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.01" y="42.418" size="1.778" layer="96"/>
+</instance>
+<instance part="S3" gate="1" x="-78.74" y="71.12" smashed="yes" rot="R270" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-81.28" y="77.47" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-75.565" y="74.93" size="1.778" layer="96"/>
+</instance>
+<instance part="R9" gate="G$1" x="-76.2" y="66.04" smashed="yes" grouprefs="CONTROLLERS">
+<attribute name="NAME" x="-80.01" y="67.5386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.01" y="62.738" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -21035,28 +21055,28 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </segment>
 <segment>
 <pinref part="R5" gate="1" pin="A"/>
-<wire x1="-76.2" y1="63.5" x2="-76.2" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="104.14" x2="-76.2" y2="101.6" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="-76.2" y1="60.96" x2="-58.42" y2="60.96" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="60.96" x2="-58.42" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="101.6" x2="-58.42" y2="101.6" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="101.6" x2="-58.42" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="RW1" gate="1" pin="A"/>
-<wire x1="-58.42" y1="81.28" x2="-58.42" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="104.14" x2="-58.42" y2="109.22" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="83.82" x2="-76.2" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="81.28" x2="-58.42" y2="81.28" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="81.28" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="121.92" x2="-58.42" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="144.78" x2="-58.42" y2="157.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="124.46" x2="-76.2" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="121.92" x2="-58.42" y2="121.92" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="121.92" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="-"/>
-<wire x1="-85.09" y1="100.5332" x2="-85.09" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-85.09" y1="104.14" x2="-58.42" y2="104.14" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="104.14" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="60.96" x2="-58.42" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="60.96" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="141.1732" x2="-85.09" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="144.78" x2="-58.42" y2="144.78" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="144.78" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="101.6" x2="-58.42" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="101.6" grouprefs="CONTROLLERS"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="-58.42" y1="45.72" x2="-71.12" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="86.36" x2="-71.12" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="IR1" gate="A" pin="GND"/>
 <wire x1="-78.74" y1="25.4" x2="-58.42" y2="25.4" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-58.42" y1="25.4" x2="-58.42" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-58.42" y="45.72" grouprefs="CONTROLLERS"/>
+<wire x1="-58.42" y1="25.4" x2="-58.42" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-58.42" y="86.36" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="I2C_CONVERTER" gate="A" pin="1"/>
@@ -21126,23 +21146,24 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
-<wire x1="-63.5" y1="109.22" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="152.4" x2="-63.5" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="R5" gate="1" pin="E"/>
-<wire x1="-63.5" y1="96.52" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="73.66" x2="-76.2" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="76.2" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="137.16" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="114.3" x2="-76.2" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="116.84" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="RW1" gate="1" pin="E"/>
-<wire x1="-76.2" y1="93.98" x2="-76.2" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-76.2" y1="96.52" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="96.52" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="134.62" x2="-76.2" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-76.2" y1="137.16" x2="-63.5" y2="137.16" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="137.16" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="S"/>
-<wire x1="-73.66" y1="48.26" x2="-63.5" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-63.5" y1="48.26" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="76.2" grouprefs="CONTROLLERS"/>
+<wire x1="-73.66" y1="88.9" x2="-63.5" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="88.9" x2="-63.5" y2="116.84" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="116.84" grouprefs="CONTROLLERS"/>
 <pinref part="IR1" gate="A" pin="VO"/>
-<wire x1="-63.5" y1="48.26" x2="-63.5" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="88.9" x2="-63.5" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <wire x1="-63.5" y1="30.48" x2="-78.74" y2="30.48" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-63.5" y="48.26" grouprefs="CONTROLLERS"/>
+<junction x="-63.5" y="88.9" grouprefs="CONTROLLERS"/>
+<junction x="-73.66" y="91.44" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -21191,12 +21212,12 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <net name="FREQ_POT" class="0">
 <segment>
 <pinref part="RW1" gate="1" pin="S"/>
-<wire x1="-81.28" y1="88.9" x2="-85.09" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="88.9" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="129.54" x2="-85.09" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="129.54" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="-85.09" y1="88.9" x2="-88.9" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-85.09" y1="92.9132" x2="-85.09" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<junction x="-85.09" y="88.9" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="129.54" x2="-88.9" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-85.09" y1="133.5532" x2="-85.09" y2="129.54" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-85.09" y="129.54" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A1"/>
@@ -21207,8 +21228,8 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <net name="VOLUME_POT" class="0">
 <segment>
 <pinref part="R5" gate="1" pin="S"/>
-<wire x1="-81.28" y1="68.58" x2="-86.36" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-86.36" y="68.58" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-81.28" y1="109.22" x2="-86.36" y2="109.22" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-86.36" y="109.22" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="A0"/>
@@ -21219,14 +21240,15 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <net name="MUTE_BTN" class="0">
 <segment>
 <pinref part="S1" gate="1" pin="P1"/>
-<wire x1="-83.82" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<label x="-88.9" y="50.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<wire x1="-83.82" y1="91.44" x2="-88.9" y2="91.44" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="91.44" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="P"/>
-<wire x1="-83.82" y1="48.26" x2="-86.36" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
-<wire x1="-86.36" y1="48.26" x2="-86.36" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-83.82" y1="88.9" x2="-86.36" y2="88.9" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="88.9" x2="-86.36" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
 <pinref part="S1" gate="1" pin="S1"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="-86.36" y1="45.72" x2="-81.28" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="86.36" x2="-81.28" y2="86.36" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-73.66" y="88.9" grouprefs="CONTROLLERS"/>
 </segment>
 <segment>
 <wire x1="-17.78" y1="55.88" x2="-22.86" y2="55.88" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
@@ -21420,6 +21442,80 @@ Source: http://www.vishay.com/docs/82042/82042.pdf</description>
 <pinref part="ARDUINO_NANO_AUDIO_CONTROLLER" gate="G$1" pin="D9"/>
 <wire x1="81.28" y1="40.64" x2="78.74" y2="40.64" width="0.1524" layer="91" grouprefs="AUDIO_CONTOLLER"/>
 <label x="78.74" y="40.64" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="AUDIO_CONTOLLER"/>
+</segment>
+</net>
+<net name="START_REC_BTN" class="0">
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D6"/>
+<wire x1="-17.78" y1="45.72" x2="-22.86" y2="45.72" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="-22.86" y="45.72" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
+</segment>
+<segment>
+<pinref part="S3" gate="1" pin="P1"/>
+<wire x1="-83.82" y1="71.12" x2="-88.9" y2="71.12" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="71.12" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<pinref part="S3" gate="1" pin="P"/>
+<wire x1="-83.82" y1="68.58" x2="-86.36" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="68.58" x2="-86.36" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="S3" gate="1" pin="S1"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="-86.36" y1="66.04" x2="-81.28" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-73.66" y="68.58" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="STOP_REC_BTN" class="0">
+<segment>
+<pinref part="ARDUINO_NANO_USER_CONTROLLER" gate="G$1" pin="D7"/>
+<wire x1="-17.78" y1="43.18" x2="-22.86" y2="43.18" width="0.1524" layer="91" grouprefs="USER_CONTROLLER"/>
+<label x="-22.86" y="43.18" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="USER_CONTROLLER"/>
+</segment>
+<segment>
+<pinref part="S2" gate="1" pin="P1"/>
+<wire x1="-83.82" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<label x="-88.9" y="50.8" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="CONTROLLERS"/>
+<pinref part="S2" gate="1" pin="P"/>
+<wire x1="-83.82" y1="48.26" x2="-86.36" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-86.36" y1="48.26" x2="-86.36" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<pinref part="S2" gate="1" pin="S1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="-86.36" y1="45.72" x2="-81.28" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<junction x="-73.66" y="48.26" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="GND1" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="45.72" x2="-71.12" y2="45.72" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="+5V1" class="0">
+<segment>
+<wire x1="-73.66" y1="48.26" x2="-63.5" y2="48.26" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="48.26" x2="-63.5" y2="76.2" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="S2" gate="1" pin="S"/>
+<junction x="-73.66" y="50.8" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="GND2" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="66.04" x2="-71.12" y2="66.04" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="+5V2" class="0">
+<segment>
+<wire x1="-73.66" y1="68.58" x2="-63.5" y2="68.58" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+<wire x1="-63.5" y1="68.58" x2="-63.5" y2="96.52" width="0.1524" layer="91" grouprefs="CONTROLLERS"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="S3" gate="1" pin="S"/>
+<junction x="-73.66" y="71.12" grouprefs="CONTROLLERS"/>
 </segment>
 </net>
 </nets>

@@ -34,10 +34,10 @@ void setup()
 void loop()
 {
     AppRadio::checkRDS();
-    UserAction action = Controllers::readAndProcess();
+    RecAction action = Controllers::readAndProcess();
     switch (action)
     {
-    case UserAction::startBtnPress:
+    case RecAction::startRecAction:
         sendCmdToI2CDevWithArg(
             I2CAddresses::audioController,
             static_cast<uint8_t>(
@@ -45,7 +45,7 @@ void loop()
             AppRadio::rdsText);
         hasUserStartedRecording = true;
         break;
-    case UserAction::stopBtnPress:
+    case RecAction::stopRecAction:
         if (!hasUserStartedRecording) break;
         sendCmdToI2CDev(
             I2CAddresses::audioController,

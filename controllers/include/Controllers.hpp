@@ -1,6 +1,12 @@
 #ifndef CONTROLLERS_H
 #define CONTROLLERS_H
 
+#include "PushButton.hpp"
+
+#include <Arduino.h>
+#include <Ewma.h>
+#include "AppRadio.hpp"
+
 #define FREQ_POT_PIN A1
 #define FREQ_POT_MIN 30
 #define FREQ_POT_MAX 1020
@@ -10,25 +16,15 @@
 #define VOLUME_POT_MAX 1020
 
 #define MUTE_BTN_PIN 2
+#define START_REC_BTN_PIN 6
+#define STOP_REC_BTN_PIN 7
 
 #define IR_RECEIVER_PIN 12
 
-#include <Arduino.h>
-#include <Ewma.h>
-#include "AppRadio.hpp"
-
-struct DebounceButton
+enum class RecAction
 {
-  bool state;
-  bool lastState;
-  unsigned long lastDebounceTime = 0;
-  unsigned long debounceDelay = 50;
-};
-
-enum class UserAction
-{
-  startBtnPress,
-  stopBtnPress,
+  startRecAction,
+  stopRecAction,
   idle
 };
 
@@ -41,15 +37,16 @@ public:
   static int volume;
   static bool bloackManuallyVolume;
   static Ewma volumeFilter;
-  static struct DebounceButton muteBtn;
+  static PushButton muteBtn;
+  static PushButton startRecBtn;
+  static PushButton stopRecBtn;
   static bool allowIRRepeat;
 
   static void init();
-  static UserAction readAndProcess();
+  static RecAction readAndProcess();
   static void readFrequency();
   static void readVolume();
-  static bool readMute();
-  static void decodeIR();
+  static RecAction decodeIR();
   static int getFormatedFreq();
   static int getFormatedVolume();
 

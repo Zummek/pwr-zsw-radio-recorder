@@ -8,25 +8,33 @@ int Controllers::frequency;
 Ewma Controllers::volumeFilter(0.5);
 bool Controllers::bloackManuallyVolume = false;
 int Controllers::volume;
-struct DebounceButton Controllers::muteBtn;
+PushButton Controllers::muteBtn(MUTE_BTN_PIN);
+PushButton Controllers::startRecBtn(START_REC_BTN_PIN);
+PushButton Controllers::stopRecBtn(STOP_REC_BTN_PIN);
 bool Controllers::allowIRRepeat = false;
 
 void Controllers::init()
 {
-  pinMode(MUTE_BTN_PIN, INPUT);
+  muteBtn.init();
+  startRecBtn.init();
+  stopRecBtn.init();
   IrReceiver.begin(IR_RECEIVER_PIN);
 }
 
-UserAction Controllers::readAndProcess()
+RecAction Controllers::readAndProcess()
 {
   readFrequency();
   AppRadio::setFrequency(getFormatedFreq());
   readVolume();
   AppRadio::setVolume(getFormatedVolume());
-  if (readMute())
+  if (muteBtn.isPressed())
     AppRadio::switchMute();
-  decodeIR();
-  return UserAction::idle;
+  RecAction action = decodeIR();
+  if (startRecBtn.isPressed())
+    action = RecAction::startRecAction;
+  if (stopRecBtn.isPressed())
+    action = RecAction::stopRecAction;
+  return action;
 }
 
 void Controllers::readFrequency()
@@ -49,36 +57,9 @@ void Controllers::readVolume()
   }
 }
 
-bool Controllers::readMute()
+RecAction Controllers::decodeIR()
 {
-  int reading = digitalRead(MUTE_BTN_PIN);
-
-  if (reading != muteBtn.lastState)
-  {
-    muteBtn.lastDebounceTime = millis();
-  }
-
-  if ((millis() - muteBtn.lastDebounceTime) > muteBtn.debounceDelay)
-  {
-    if (reading != muteBtn.state)
-    {
-      muteBtn.state = reading;
-
-      if (muteBtn.state == HIGH)
-      {
-        muteBtn.lastState = reading;
-        return true;
-      }
-    }
-  }
-
-  muteBtn.lastState = reading;
-
-  return false;
-}
-
-void Controllers::decodeIR()
-{
+  RecAction outAction = RecAction::idle;
   if (IrReceiver.decode()) {
     if (allowIRRepeat || !(IrReceiver.decodedIRData.flags & (IRDATA_FLAGS_IS_AUTO_REPEAT | IRDATA_FLAGS_IS_REPEAT)))
     {
@@ -87,7 +68,7 @@ void Controllers::decodeIR()
       switch (IrReceiver.decodedIRData.command)
       {
       case 0xC:
-        Serial.println("START RECORDING");
+        outAction = RecAction::startRecAction;
         break;
       case 0x20:
         blockManuallyFrequency = true;
@@ -113,15 +94,15 @@ void Controllers::decodeIR()
         allowIRRepeat = true;
         break;
       case 0xB:
-        Serial.println("NONE");
+        outAction = RecAction::stopRecAction;
         break;
-
       default:
         IrReceiver.printIRResultShort(&Serial);
       }
     }
     IrReceiver.resume();
   }
+  return outAction;
 }
 
 int Controllers::getFormatedFreq()

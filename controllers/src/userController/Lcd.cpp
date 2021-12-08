@@ -1,5 +1,5 @@
-#include "Lcd.h"
-#include "Equalizer.h"
+#include "Lcd.hpp"
+#include "Equalizer.hpp"
 #include "Arduino.h"
 
 byte char1[8] = {

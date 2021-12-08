@@ -1,5 +1,5 @@
-#ifndef CONTROLLERS_h
-#define CONTROLLERS_h
+#ifndef CONTROLLERS_H
+#define CONTROLLERS_H
 
 #define FREQ_POT_PIN A1
 #define FREQ_POT_MIN 30
@@ -15,7 +15,7 @@
 
 #include <Arduino.h>
 #include <Ewma.h>
-#include "AppRadio.h"
+#include "AppRadio.hpp"
 
 struct DebounceButton
 {
@@ -23,6 +23,13 @@ struct DebounceButton
   bool lastState;
   unsigned long lastDebounceTime = 0;
   unsigned long debounceDelay = 50;
+};
+
+enum class UserAction
+{
+  startBtnPress,
+  stopBtnPress,
+  idle
 };
 
 class Controllers
@@ -38,7 +45,7 @@ public:
   static bool allowIRRepeat;
 
   static void init();
-  static void readAndProcess();
+  static UserAction readAndProcess();
   static void readFrequency();
   static void readVolume();
   static bool readMute();

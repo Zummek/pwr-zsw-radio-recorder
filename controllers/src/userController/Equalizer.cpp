@@ -1,4 +1,4 @@
-#include "Equalizer.h"
+#include "Equalizer.hpp"
 #include "Arduino.h"
 
 int Equalizer::bandValues[EQUALIZER_BAUNDS_COUNT];
